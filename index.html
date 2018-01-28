@@ -61,7 +61,7 @@
       });
       
       const handleHover = (d) => {
-        console.log(d.properties.admin);
+        //console.log(d.properties.admin);
       }
       
     
@@ -69,7 +69,7 @@
          
          const countries = data.features
          
-         countries[61] = {properties: {admin: 'Russia'}};
+         //countries[61] = {properties: {admin: 'Russia'}};
          
          const map = svg.append('g').attr('class', 'boundary');
          
@@ -77,11 +77,17 @@
         
         // const color = d3.scaleLinear().domain([0,71]).range(['orange', 'blue']);
         // 
+        
+        // const body = ['€', 'EU']
+        // 
+        // let filter = 
+        // 
         const colorify = (data) => {
-          console.log(data.properties.admin);
+
           let stateName = data.properties.admin
           if (!membership[stateName]) {return}
-          return (membership[stateName].Currency === "€") ? 'blue' : 'red'
+        
+          return (membership[stateName].EU === 'EU') ? 'blue' : 'red'
         
         }
         
