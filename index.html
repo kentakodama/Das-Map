@@ -69,7 +69,7 @@
          
          const countries = data.features
          
-         countries[61] = {};
+         countries[61] = {properties: {admin: 'Russia'}};
          
          const map = svg.append('g').attr('class', 'boundary');
          
@@ -77,15 +77,18 @@
         
         // const color = d3.scaleLinear().domain([0,71]).range(['orange', 'blue']);
         // 
-        // const colorify = (data) => {
-        //   return (data.State === ) ? ''
-        // 
-        // }
+        const colorify = (data) => {
+          console.log(data.properties.admin);
+          let stateName = data.properties.admin
+          if (!membership[stateName]) {return}
+          return (membership[stateName].Currency === "€") ? 'blue' : 'red'
+        
+        }
         
         europe.enter()
           .append('path')
           .attr('d', path)
-          .attr('fill', colorify(d))
+          .attr('fill', (d) => colorify(d))
           .on('mouseover', handleHover)
           
           
