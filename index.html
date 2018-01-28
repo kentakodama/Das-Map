@@ -15,10 +15,10 @@
     
       const height = 600;
       const width = 1200;
-      
+      var projection = d3.geoMercator();
       let europe = void 0;
       
-      const path = d3.geoPath()
+      const path = d3.geoPath().projection(projection);
       
       const svg = d3.select('#map')
                     .append('svg')
@@ -37,12 +37,34 @@
       });
       
     
-      d3.json("region_un_Europe_subunits.json", function(data) {
+      d3.json("region_un_Europe_subunits.json", function(error, data) {
          
          // const countries = topojson.feature(data.features)
+
+         const countries = data.features
+        console.log(countries);
+         const map = svg.append('g')
          
-         console.log(data);
-         
+         europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
+        
+        
+        
+        // var color = d3.scaleLinear().domain([0,100]).range(['red', 'blue']);
+        // 
+        // const colorify = function(data) {
+        //   let percent_democrats = countiesVotesIndex[parseInt(data.id)];
+        //   if(!percent_democrats) return '#9b0061'
+        //   return color(percent_democrats)
+        // }
+        // 
+        europe.enter()
+          .append('path')
+          .attr('d', path)
+          .attr('fill', 'gray')
+          .attr('fill', '#eee');
+        
+        europe.exit().remove();
+        
          
       })
 
