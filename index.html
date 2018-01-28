@@ -10,12 +10,26 @@
     <script src="http://d3js.org/topojson.v3.min.js"></script>
     
     <p>hello world</p>
-    
+    <style>
+        svg {
+          border-style: solid;
+          border-width: 1px;
+          border-color: #ccc;
+        }
+        
+        .boundary {
+          fill: #ddd;
+          stroke: #888;
+          stroke-linejoin: round;
+        }
+    </style>
     <script>
     
       const height = 600;
       const width = 900;
-      var projection = d3.geoMercator().center([ 15, 60 ]) 
+      // geoOrthographic
+      var projection = d3.geoMercator()
+                    .center([ 15, 60 ]) 
 								   .translate([ width/2, height/2 ]) 
 								   .scale([ width/2.3 ]); 
       let europe = void 0;
@@ -48,25 +62,20 @@
          
          
          
-         const map = svg.append('g')
+         const map = svg.append('g').attr('class', 'boundary');
          
          europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
         
         
         
-        // var color = d3.scaleLinear().domain([0,100]).range(['red', 'blue']);
-        // 
-        // const colorify = function(data) {
-        //   let percent_democrats = countiesVotesIndex[parseInt(data.id)];
-        //   if(!percent_democrats) return '#9b0061'
-        //   return color(percent_democrats)
-        // }
-        // 
+        var color = d3.scaleLinear().domain([0,72]).range(['orange', 'blue']);
+  
+        
         europe.enter()
           .append('path')
           .attr('d', path)
-          .attr('fill', 'gray')
-          .attr('fill', '#eee');
+          .attr('fill', (d, i) => color(i))
+      
         
         europe.exit().remove();
         
