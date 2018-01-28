@@ -60,6 +60,10 @@
   
       });
       
+      const handleHover = (d) => {
+        console.log(d.properties.admin);
+      }
+      
     
       d3.json("region_un_Europe_subunits.json", function(error, data) {
          
@@ -85,6 +89,7 @@
           .append('path')
           .attr('d', path)
           .attr('fill', (d, i) => color(i))
+          .on('mouseover', handleHover)
           
           
         
