@@ -1,0 +1,52 @@
+State,GNI,Wage,UN,CouncilEurope,OSCE,EU,EEA,CurrencyUnion,Schengen,Currency,OECD,WTO[13],NATO[15]
+Albania,"3,950",332,UN,CoE,OSCE,Candidate,,,EU visa-free,ALL,,WTO,NATO
+Andorra,"41,130",,UN,CoE,OSCE,,,EUCU,EU visa-free,€,,obs,
+Armenia,"3,100",,UN,CoE,OSCE,,,EACU,,AMD,,WTO,PfP
+Austria,"46,850","2,758",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,PfP
+Azerbaijan,"4,840",,UN,CoE,OSCE,,,,,AZN,GUAM,obs,PfP
+Belarus,"5,540",528,UN,obs,OSCE,,,EACU,,BYR,,obs,PfP
+Belgium,"45,310","2,464",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Bosnia and Herz.,"4,700",590,UN,CoE,OSCE,,,,EU visa-free,BAM,,obs,MAP
+Bulgaria,"5,770",,UN,CoE,OSCE,EU,EEA,EUCU,EU visa-free,BGN,,WTO,NATO
+Croatia,"13,810","1,020",UN,CoE,OSCE,EU,EEA,EUCU,EU visa-free,HRK,,WTO,NATO
+Cyprus,"26,940","2,235",UN,CoE,OSCE,EU,EEA,EUCU,EU visa-free,€,,WTO,
+Czech Republic,"17,310",1081,UN,CoE,OSCE,EU,EEA,EUCU,Schengen,CZK,OECD,WTO,NATO
+Denmark,"58,930","3,226",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,DKK,OECD,WTO,NATO
+Estonia,"14,060","1,098",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Finland,"45,680","2,758",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,PfP
+France,"42,680","2,468",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Georgia,"2,530",,UN,CoE,OSCE,,,,,GEL,GUAM,WTO,PfP
+Germany,"42,560","2,754",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Greece,"28,630","1,851",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Hungary,"12,980",516,UN,CoE,OSCE,EU,EEA,EUCU,Schengen,HUF,OECD,WTO,NATO
+Iceland,"43,220",,UN,CoE,OSCE,,EEA,,Schengen,ISK,OECD,WTO,NATO
+Ireland,"44,310","2,733",UN,CoE,OSCE,EU,EEA,EUCU,,€,OECD,WTO,PfP
+Italy,"35,080","1,967",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Kazakhstan,"6,740",425,UN,appl,OSCE,,,EACU,,KZT,,obs,PfP
+Kosovo,"3,240",,,,,,,,,€,,,
+Latvia,"12,390",632,UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,,WTO,NATO
+Liechtenstein,"113,210",,UN,CoE,OSCE,,EEA,,Schengen,CHF,,WTO,
+Lithuania,"15,080",668,UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,,WTO,NATO
+Luxembourg,"74,430","3,636",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Macedonia,"4,400",460,UN,CoE,OSCE,Candidate,,,EU visa-free,MKD,,WTO,MAP
+Malta,"16,690",">1,626",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,,WTO,PfP
+Moldova,"1,590",249,UN,CoE,OSCE,,,,,MDL,GUAM,WTO,PfP
+Monaco,"203,900",,UN,CoE,OSCE,,,EUCU,Schengen 2,€,,,
+Montenegro,"6,550",699,UN,CoE,OSCE,Candidate,,,EU visa-free,€,,WTO,NATO
+Netherlands,"49,350","2,673",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Norway,"86,440","6,079",UN,CoE,OSCE,,EEA,,Schengen,NOK,OECD,WTO,NATO
+Poland,"12,260",612,UN,CoE,OSCE,EU,EEA,EUCU,Schengen,PLN,OECD,WTO,NATO
+Portugal,"20,940","1,405",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Romania,"8,330",515,UN,CoE,OSCE,EU,EEA,EUCU,EU visa-free,RON,,WTO,NATO
+Russia,"9,370",675,UN,CoE,OSCE,,,EACU,,RUB,,WTO,PfP
+San Marino,"50,670",,UN,CoE,OSCE,,,EUCU,Schengen,€,,,
+Serbia,"5,990",461,UN,CoE,OSCE,Candidate,,,EU visa-free,RSD,,obs,PfP
+Slovakia,"16,130",857,UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Slovenia,"23,520","1,405",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Spain,"31,870","2,056",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,€,OECD,WTO,NATO
+Sweden,"48,930","2,910",UN,CoE,OSCE,EU,EEA,EUCU,Schengen,SEK,OECD,WTO,PfP
+Switzerland,"56,370",,UN,CoE,OSCE,,bilat 3,,Schengen,CHF,OECD,WTO,PfP
+Turkey,"8,730","1,123",UN,CoE,OSCE,Candidate,,EUCU,,TRY,OECD,WTO,NATO
+Ukraine,"2,800",287,UN,CoE,OSCE,,,,,UAH,GUAM,WTO,PfP
+United Kingdom,"41,520","3,712",UN,CoE,OSCE,EU,EEA,EUCU,,GBP,OECD,WTO,NATO
+Vatican City,n/d,,obs,obs,OSCE,,,,Schengen,€,,obs,
