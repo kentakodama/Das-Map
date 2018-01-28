@@ -60,7 +60,7 @@
          const countries = data.features
         console.log(countries);
          
-         
+         countries[61] = {};
          
          const map = svg.append('g').attr('class', 'boundary');
          
@@ -68,14 +68,17 @@
         
         
         
-        var color = d3.scaleLinear().domain([0,72]).range(['orange', 'blue']);
+        var color = d3.scaleLinear().domain([0,71]).range(['orange', 'blue']);
+        
   
+        
         
         europe.enter()
           .append('path')
           .attr('d', path)
           .attr('fill', (d, i) => color(i))
-      
+          
+          
         
         europe.exit().remove();
         
