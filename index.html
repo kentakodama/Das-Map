@@ -28,10 +28,14 @@
       const height = 600;
       const width = 900;
       // geoOrthographic
-      var projection = d3.geoMercator()
-                    .center([ 15, 60 ]) 
-								   .translate([ width/2, height/2 ]) 
-								   .scale([ width/2.3 ]); 
+      // var projection = d3.geoMercator()
+      //               .center([ 15, 60 ]) 
+			// 					   .translate([ width/2, height/2 ]) 
+			// 					   .scale([ width/2.3 ]); 
+      
+      
+      
+      
       let europe = void 0;
       
       const path = d3.geoPath().projection(projection);
