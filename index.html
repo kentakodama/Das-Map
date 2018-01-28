@@ -12,6 +12,19 @@
     <p>hello world</p>
     
     <script>
+    
+      const height = 600;
+      const width = 1200;
+      
+      let europe = void 0;
+      
+      const path = d3.geoPath()
+      
+      const svg = d3.select('#map')
+                    .append('svg')
+                    .attr('height', height)
+                    .attr('width', width)
+      
       
       const membership = {};
     
@@ -22,6 +35,34 @@
         }
         console.log(membership);
       });
+      
+      d3.json("https://d3js.org/us-10m.v1.json", function(data) {
+        console.log(data.objects.counties);
+        const counties = topojson.feature(data, data.objects.counties)
+        
+        const map = svg.append('g')
+        
+        europe = map.selectAll('path').data(counties.features) //must always be features regardless of what it says in json
+        
+        
+        var color = d3.scaleLinear().domain([0,100]).range(['red', 'blue']);
+        
+        const colorify = function(data) {
+          let percent_democrats = countiesVotesIndex[parseInt(data.id)];
+          if(!percent_democrats) return '#9b0061'
+          return color(percent_democrats)
+        }
+        
+        europe.enter()
+          .append('path')
+          .attr('d', path)
+          .attr('fill', (d) => colorify(d))
+          .on('mouseover', handleHover)
+        europe.attr('fill', '#eee');
+        
+        europe.exit().remove();
+        
+      })
       
     </script>
   </body>
