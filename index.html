@@ -33,18 +33,18 @@
         for (var i = 0; i < data.length; i++) {
           membership[i] = data[i]
         }
-        console.log(membership);
+  
       });
       
     
-      d3.json("./region_un_Europe_subunits.json", function(data) {
+      d3.json("region_un_Europe_subunits.json", function(data) {
          
-         const countries = topojson.feature(data)
+         // const countries = topojson.feature(data.features)
          
-         console.log(countries);
+         console.log(data);
          
          
-      });
+      })
 
       
     </script>
