@@ -55,9 +55,9 @@
       d3.csv("EuropeanStates.csv", function(data) {
         
         for (var i = 0; i < data.length; i++) {
-          membership[i] = data[i]
+          membership[data[i].State] = data[i]
         }
-  
+          console.log(membership);
       });
       
       const handleHover = (d) => {
@@ -67,10 +67,7 @@
     
       d3.json("region_un_Europe_subunits.json", function(error, data) {
          
-         // const countries = topojson.feature(data.features)
-
          const countries = data.features
-        console.log(countries);
          
          countries[61] = {};
          
@@ -78,17 +75,17 @@
          
          europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
         
-        
-        
-        var color = d3.scaleLinear().domain([0,71]).range(['orange', 'blue']);
-        
-  
-        
+        // const color = d3.scaleLinear().domain([0,71]).range(['orange', 'blue']);
+        // 
+        // const colorify = (data) => {
+        //   return (data.State === ) ? ''
+        // 
+        // }
         
         europe.enter()
           .append('path')
           .attr('d', path)
-          .attr('fill', (d, i) => color(i))
+          .attr('fill', colorify(d))
           .on('mouseover', handleHover)
           
           
