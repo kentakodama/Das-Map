@@ -13,14 +13,15 @@
     
     <script>
       
+      const membership = {};
     
-  d3.csv("election-results-by-county.csv", function(data) {
-    
-    for (var i = 0; i < data.length; i++) {
-      countiesVotesIndex[data[i].combined_fips] = Math.round(data[i].per_dem * 100);
-    }
-    console.log(countiesVotesIndex);
-  });
+      d3.csv("EuropeanStates.csv", function(data) {
+        
+        for (var i = 0; i < data.length; i++) {
+          membership[i] = data[i]
+        }
+        console.log(membership);
+      });
       
     </script>
   </body>
