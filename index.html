@@ -15,7 +15,9 @@
     
       const height = 600;
       const width = 1200;
-      var projection = d3.geoMercator();
+      var projection = d3.geoMercator().center([ 13, 52 ]) 
+								   .translate([ width/2, height/2 ]) 
+								   .scale([ width/1.5 ]); 
       let europe = void 0;
       
       const path = d3.geoPath().projection(projection);
@@ -43,6 +45,9 @@
 
          const countries = data.features
         console.log(countries);
+         
+         
+         
          const map = svg.append('g')
          
          europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
