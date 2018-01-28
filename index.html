@@ -33,7 +33,11 @@
 			// 					   .translate([ width/2, height/2 ]) 
 			// 					   .scale([ width/2.3 ]); 
       
-      
+      const projection = d3.geoOrthographic()
+                        .center([ 10, 30 ]) 
+     					          .translate([ width/2, height/2 ]) 
+     					          .scale([ width * 1.1 ])
+                        .rotate([-10, -20, -10 ]); 
       
       
       let europe = void 0;
