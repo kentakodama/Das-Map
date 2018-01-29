@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>Europe Explained</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./jquery.scrollorama.js"></script>
+    <!-- <script src="./jquery.scrollorama.js"></script> -->
+    <script src="./ScrollMagic.js"></script>
   </head>
   <body>
     
@@ -12,11 +13,16 @@
   		<h2>Welcome to Europe</h2>
   	</div>
     <div class="scrollblock">
-      <div id="map"></div>
-      <h3 id="unpin">&#9733; Then unpin it &#9733;</h3>
+      <!-- <div id="map"></div> -->
+      <div id="my-sticky-element">
+        
+      </div>
+      <p>hello</p>
+      <!-- <h3 id="unpin">&#9733; Then unpin it &#9733;</h3> -->
     </div>
-    
-    <div class="scrollblock"></div>
+    <div class="scrollblock">
+      <h1 id='explanation'>explanation</h1>
+    </div>
     <div class="scrollblock"></div>
     
     <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
@@ -24,6 +30,7 @@
     
     <p>hello europe</p>
     <style>
+        
         svg {
           border-style: solid;
           border-width: 1px;
@@ -50,24 +57,36 @@
     
     
     
-    $(document).ready(function() {
-        let scrollorama = $.scrollorama({
-            blocks:'.scrollblock'
-        });
-        
-        // scrollorama.animate('#map',{
-        //   duration:400, property:'opacity'
-        // })
-        
-        scrollorama.onBlockChange(function() {
-            console.log('You just scrolled to block#'+scrollorama.blockIndex);
-        });
-        
-        scrollorama.animate('#unpin',{ duration:500, property:'padding-top', start:400, pin:true })
-				
-    });
-
+    // $(document).ready(function() {
+    //     let scrollorama = $.scrollorama({
+    //         blocks:'.scrollblock'
+    //     });
+    // 
+    //     // scrollorama.animate('#map',{
+    //     //   duration:400, property:'opacity'
+    //     // })
+    // 
+    //     scrollorama.onBlockChange(function() {
+    //         console.log('You just scrolled to block#'+scrollorama.blockIndex);
+    //     });
+    // 
+    //     scrollorama.animate('#map',{ duration:500, property:'padding-top', start:400, pin:false })
+    // 
+    //     scrollorama.animate('#unpin',{ duration:5000, property:'padding-top', start:400, pin:true })
+    // 
+    // });
     
+    // init controller
+        var controller = new ScrollMagic.Controller();
+
+        // create a scene
+        new ScrollMagic.Scene({
+        		duration: 300,	// the scne should last for a scroll distance of 100px
+        		offset: 150		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#my-sticky-element") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+            
     
       const height = 600;
       const width = 900;
