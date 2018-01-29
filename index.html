@@ -13,7 +13,9 @@
       <!-- must put all the content on the sides here -->
       <!-- only things place above the pinned item will float over it -->
       <!-- in order to space this stuff here, must use css styling with px, cumulatively less than duration -->
-  	</div>
+      <div class="intro">
+        
+      </div>
     
     <!-- this makes the div stay in place dont delete -->
     <div class="scrollblock"> 
@@ -29,6 +31,17 @@
     </div>
   
     <p>hello europe</p>
+    
+    <div class="category" id='eu'>
+      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    </div>
+    <div class="category" id='euro'>
+      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    </div>
+    <div class="category" id='schengen'>
+      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    </div>
+  </div>
     
     <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
     <script src="http://d3js.org/topojson.v3.min.js"></script>
@@ -55,42 +68,46 @@
           height: 800px;
           width: 100%;
         }
+        .category {
+          height: 100%;
+          width: 100%;
+        }
+        .intro {
+          height: 100%;
+          width: 100%;
+        }
+    
     </style>
     <script>
     
     
-    
-    
-    // $(document).ready(function() {
-    //     let scrollorama = $.scrollorama({
-    //         blocks:'.scrollblock'
-    //     });
-    // 
-    //     // scrollorama.animate('#map',{
-    //     //   duration:400, property:'opacity'
-    //     // })
-    // 
-    //     scrollorama.onBlockChange(function() {
-    //         console.log('You just scrolled to block#'+scrollorama.blockIndex);
-    //     });
-    // 
-    //     scrollorama.animate('#map',{ duration:500, property:'padding-top', start:400, pin:false })
-    // 
-    //     scrollorama.animate('#unpin',{ duration:5000, property:'padding-top', start:400, pin:true })
-    // 
-    // });
-    
+
+
     // init controller
-        var controller = new ScrollMagic.Controller();
+        var controller = new ScrollMagic.Controller({
+    			globalSceneOptions: {
+    				triggerHook: 'onLeave'
+    			}
+    		});
 
         // create a scene
         new ScrollMagic.Scene({
         		duration: 3000,	// the scne should last for a scroll distance of 100px
-        		offset: 150		// start this scene after scrolling for 50px
+        		offset: 330		// start this scene after scrolling for 50px
         	})
         	.setPin("#map") // pins the element for the the scene's duration
         	.addTo(controller); // assign the scene to the controller
-            
+        
+        var slides = document.querySelectorAll(".category");
+
+        for (var i=0; i<slides.length; i++) {
+    			new ScrollMagic.Scene({
+    					triggerElement: slides[i]
+    				})
+    				// .setPin(slides[i])
+    				.addIndicators() // add indicators (requires plugin)
+    				.addTo(controller);
+    		}    
     
       const height = 600;
       const width = 900;
