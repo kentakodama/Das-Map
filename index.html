@@ -82,19 +82,23 @@
         // 
         // let filter = 
         // 
-        const colorify = (data) => {
+        
+        let organization = 'EU'
+        let membershipStatus = 'EU'
+        
+        const colorify = (data, org, status) => {
 
           let stateName = data.properties.admin
           if (!membership[stateName]) {return}
-        
-          return (membership[stateName].EU === 'EU') ? 'blue' : 'red'
+    
+          return (membership[stateName][organization] === membershipStatus) ? 'blue' : 'red'
         
         }
         
         europe.enter()
           .append('path')
           .attr('d', path)
-          .attr('fill', (d) => colorify(d))
+          .attr('fill', (d) => colorify(d, organization, membershipStatus))
           .on('mouseover', handleHover)
           
           
