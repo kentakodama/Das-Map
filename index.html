@@ -15,7 +15,7 @@
     <div class="scrollblock">
       <!-- <div id="map"></div> -->
       <div id="my-sticky-element">
-        
+        <p>this should stay</p>
       </div>
       <p>hello</p>
       <!-- <h3 id="unpin">&#9733; Then unpin it &#9733;</h3> -->
@@ -44,7 +44,7 @@
         }
         
         .scrollblock {
-          height: 900px;
+          height: 200px;
           width: 100%;
         }
         #unpin {
@@ -81,7 +81,7 @@
 
         // create a scene
         new ScrollMagic.Scene({
-        		duration: 300,	// the scne should last for a scroll distance of 100px
+        		duration: 3000,	// the scne should last for a scroll distance of 100px
         		offset: 150		// start this scene after scrolling for 50px
         	})
         	.setPin("#my-sticky-element") // pins the element for the the scene's duration
