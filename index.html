@@ -52,7 +52,9 @@
           border-style: solid;
           border-width: 1px;
           border-color: #ccc;
+          width: 60%;
         }
+        
         
         .boundary {
           fill: #ddd;
@@ -69,7 +71,7 @@
           width: 100%;
         }
         .category {
-          height: 100%;
+          height: 500px;
           width: 100%;
         }
         .intro {
@@ -92,7 +94,7 @@
 
         // create a scene
         new ScrollMagic.Scene({
-        		duration: 3000,	// the scne should last for a scroll distance of 100px
+        		duration: 1200,	// the scne should last for a scroll distance of 100px
         		offset: 330		// start this scene after scrolling for 50px
         	})
         	.setPin("#map") // pins the element for the the scene's duration
@@ -109,8 +111,8 @@
     				.addTo(controller);
     		}    
     
-      const height = 600;
-      const width = 900;
+      const height = 900;
+      const width = 1200;
       // geoOrthographic
       // var projection = d3.geoMercator()
       //               .center([ 15, 60 ]) 
@@ -118,9 +120,9 @@
 			// 					   .scale([ width/2.3 ]); 
       
       const projection = d3.geoOrthographic()
-                        .center([ 10, 30 ]) 
+                        .center([ 20, 28 ]) 
      					          .translate([ width/2, height/2 ]) 
-     					          .scale([ width * 1.1 ])
+     					          .scale([ width/1.2 ])
                         .rotate([-10, -20, -10 ]); 
       
       
