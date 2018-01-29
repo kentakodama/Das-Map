@@ -7,16 +7,17 @@
     <script src="./jquery.scrollorama.js"></script>
   </head>
   <body>
-    <div class="scrollblock"></div>
+    
     <div class="scrollblock" id="examples-pin">
-  		<h2>Pin It</h2>
-  		<h3 id="unpin">&#9733; Then unpin it &#9733;</h3>
+  		<h2>Welcome to Europe</h2>
   	</div>
     <div class="scrollblock">
-    
       <div id="map"></div>
-    
+      <h3 id="unpin">&#9733; Then unpin it &#9733;</h3>
     </div>
+    
+    <div class="scrollblock"></div>
+    <div class="scrollblock"></div>
     
     <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
     <script src="http://d3js.org/topojson.v3.min.js"></script>
@@ -39,7 +40,7 @@
           height: 900px;
           width: 100%;
         }
-        .unpin {
+        #unpin {
           height: 800px;
           width: 100%;
         }
@@ -54,15 +55,15 @@
             blocks:'.scrollblock'
         });
         
-        scrollorama.animate('#map',{
-          duration:400, property:'opacity'
-        })
+        // scrollorama.animate('#map',{
+        //   duration:400, property:'opacity'
+        // })
         
         scrollorama.onBlockChange(function() {
             console.log('You just scrolled to block#'+scrollorama.blockIndex);
         });
         
-        scrollorama.animate('#map',{ duration:500, property:'padding-top', start:400, pin:true })
+        scrollorama.animate('#unpin',{ duration:500, property:'padding-top', start:400, pin:true })
 				
     });
 
