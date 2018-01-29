@@ -10,13 +10,21 @@
     
     <div class="scrollblock" id="examples-pin">
   		<h2>Welcome to Europe</h2>
+      <!-- must put all the content on the sides here -->
+      <!-- only things place above the pinned item will float over it -->
+      <!-- in order to space this stuff here, must use css styling with px, cumulatively less than duration -->
   	</div>
-    <div class="scrollblock">
+    
+    <!-- this makes the div stay in place dont delete -->
+    <div class="scrollblock"> 
 
-      <div id="my-sticky-element">
-        <div id="map"></div>
-      </div>
+      <!-- <div id="my-sticky-element"> -->
+      <div id="map"></div>
+      <!-- </div> -->
+  
       <p>hello</p>
+      
+      <p>next hello</p>
     
     </div>
   
@@ -80,7 +88,7 @@
         		duration: 3000,	// the scne should last for a scroll distance of 100px
         		offset: 150		// start this scene after scrolling for 50px
         	})
-        	.setPin("#my-sticky-element") // pins the element for the the scene's duration
+        	.setPin("#map") // pins the element for the the scene's duration
         	.addTo(controller); // assign the scene to the controller
             
     
