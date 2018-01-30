@@ -128,6 +128,38 @@
     		} 
         
         new ScrollMagic.Scene({
+        		duration: 1000,	// the scne should last for a scroll distance of 100px
+        		offset: 0		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#eu") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+           
+    
+        new ScrollMagic.Scene({
+        		duration: 1000,	// the scne should last for a scroll distance of 100px
+        		offset: 650		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#euro") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+           
+    
+        new ScrollMagic.Scene({
+        		duration: 1000,	// the scne should last for a scroll distance of 100px
+        		offset: 3300		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#schengen") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+           
+    
+        new ScrollMagic.Scene({
+        		duration: 400,	// the scne should last for a scroll distance of 100px
+        		offset: 300		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#eu") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+           
+    
+        new ScrollMagic.Scene({
         		duration: 400,	// the scne should last for a scroll distance of 100px
         		offset: 300		// start this scene after scrolling for 50px
         	})
