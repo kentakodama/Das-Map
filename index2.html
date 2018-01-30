@@ -7,9 +7,7 @@
     <script src="./ScrollMagic.js"></script>
   </head>
   <body>
-    <div id="header">
-      
-    </div>
+
     <div class="green">
       
     </div>
@@ -31,19 +29,18 @@
     <script src="http://d3js.org/topojson.v3.min.js"></script>
     
     <style>
-    
-      #header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: purple;
-        height: 100px
+      
+      :root {
+        --example-top: null;
+      
       }
+  
       
       #example {
         background-color: red;
         height: 200px;
-        width: 100%
+        width: 100%;
+
       }
       
       .pin {
@@ -52,6 +49,9 @@
         width: 100%;
       }
       
+      .unpin {
+        position: relative;
+      }
     
       
       .green {
@@ -73,19 +73,36 @@
     </style>
     <script>
     
-    function getOffset(e){
+    function handleOffset(e){
       
       const offSet = window.pageYOffset
+      console.log(offSet);
+      let itemToPin;
       
-      if(offSet > 500 && offSet <= 700 ) {
-        const example = document.getElementById('example')
-        example.classList.add('pin')
-      } else if(offSet > 700) {
-        const example = document.getElementById('example')
-        example.classList.remove('pin')
+      if(offSet > 400 && offSet <= 800 ) {
+        itemToPin = document.getElementById('example')
+        itemToPin.classList.add('pin')
+      } else if(offSet > 800) {
+        // itemToPin = document.getElementById('example')
+        // itemToPin.offsetTop = 800px;
+        // // document.documentElement.style.setProperty(`--${this.name}`, topOfItem + suffix)
+        itemToPin = document.getElementById('example')
+        itemToPin.classList.remove('pin')
+        itemToPin.style.top = '800px';
+        // itemToPin.classList.add('unpin')
+      } else if(offSet < 200) {
+        itemToPin = document.getElementById('example')
+        itemToPin.classList.remove('pin')
+        itemToPin.style.top = '400px';
+        // itemToPin.classList.add('unpin')
       }
     }
-    window.onscroll=getOffset
+    window.onscroll=handleOffset
+    
+    
+    
+    
+    
         
     </script>
   </body>
