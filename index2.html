@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Europe Explained</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./ScrollMagic.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      
+    </div>
+    <div class="green">
+      
+    </div>
+  	<div id="example">
+      
+    </div>	
+  
+    <div class="blue">
+      
+    </div>
+    
+    <div class="orange">
+      
+    </div>
+
+
+    
+    <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/topojson.v3.min.js"></script>
+    
+    <style>
+    
+      #header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: purple;
+        height: 100px
+      }
+      
+      #example {
+        background-color: red;
+        height: 200px;
+        width: 100%
+      }
+      
+      .pin {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      
+    
+      
+      .green {
+        height: 400px;
+        width: 100%;
+        background-color: green;
+      }
+      .blue {
+        height: 800px;
+        width: 100%;
+        background-color: blue;
+      }
+      .orange {
+        height: 800px;
+        width: 100%;
+        background-color: orange;
+      }
+    
+    </style>
+    <script>
+    
+    function getOffset(e){
+      
+      const offSet = window.pageYOffset
+      
+      if(offSet > 500 && offSet <= 700 ) {
+        const example = document.getElementById('example')
+        example.classList.add('pin')
+      } else if(offSet > 700) {
+        const example = document.getElementById('example')
+        example.classList.remove('pin')
+      }
+    }
+    window.onscroll=getOffset
+        
+    </script>
+  </body>
+</html>
