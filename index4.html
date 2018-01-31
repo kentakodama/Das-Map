@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Europe Explained</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./ScrollMagic.js"></script>
+  </head>
+  <body>
+
+    <div class="scrollblock" id="examples-pin">
+  		<h2>Welcome to Europe</h2>
+      <!-- must put all the content on the sides here -->
+      <!-- only things place above the pinned item will float over it -->
+      <!-- in order to space this stuff here, must use css styling with px, cumulatively less than duration -->
+      <div class="intro">
+
+      </div>
+
+    <!-- this makes the div stay in place dont delete -->
+      <div class="scrollblock">
+
+        <div id="map"></div>
+
+
+        <p>hello</p>
+
+        <p>next hello</p>
+
+      </div>
+
+      <p>hello europe</p>
+      <div class="explanation">
+        <div class="category" id='eu'>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </div>
+        <div class="category" id='euro'>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </div>
+        <div class="category" id='schengen'>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/topojson.v3.min.js"></script>
+
+    <style>
+
+        svg {
+          border-style: solid;
+          border-width: 1px;
+          border-color: #ccc;
+          width: 60%;
+        }
+
+        .boundary {
+          fill: #ddd;
+          stroke: #888;
+          stroke-linejoin: round;
+        }
+
+        .scrollblock {
+          height: 200px;
+          width: 100%;
+        }
+        #unpin {
+          height: 800px;
+          width: 100%;
+        }
+        .explanation {
+          height: 500px;
+          width: 40%;
+          float: right;
+        }
+        .category {
+          height: 100vh;
+        }
+
+        .intro {
+          height: 100%;
+          width: 100%;
+        }
+
+        #eu {
+          background-color: red;
+        }
+
+        #euro {
+          background-color: blue;
+        }
+
+        #schengen {
+          background-color: yellow;
+        }
+
+    </style>
+    <script>
+
+
+
+
+    // init controller
+        var controller = new ScrollMagic.Controller({
+    			globalSceneOptions: {
+    				triggerHook: 'onLeave'
+    			}
+    		});
+
+        // create a scene
+        new ScrollMagic.Scene({
+        		duration: 2000,	// the scne should last for a scroll distance of 100px
+        		offset: 300		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#map") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+
+        var slides = document.querySelectorAll(".category");
+
+        for (var i=0; i<slides.length; i++) {
+    			new ScrollMagic.Scene({
+    					triggerElement: slides[i]
+    				})
+    				// .setPin(slides[i])
+    				.addIndicators() // add indicators (requires plugin)
+    				.addTo(controller);
+    		}
+
+        new ScrollMagic.Scene({
+        		duration: 1000,	// the scne should last for a scroll distance of 100px
+        		offset: 0		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#eu") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+
+
+        new ScrollMagic.Scene({
+        		duration: 1000,	// the scne should last for a scroll distance of 100px
+        		offset: 650		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#euro") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+
+
+        new ScrollMagic.Scene({
+        		duration: 1000,	// the scne should last for a scroll distance of 100px
+        		offset: 3300		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#schengen") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+
+
+        new ScrollMagic.Scene({
+        		duration: 400,	// the scne should last for a scroll distance of 100px
+        		offset: 300		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#eu") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+
+
+        new ScrollMagic.Scene({
+        		duration: 400,	// the scne should last for a scroll distance of 100px
+        		offset: 300		// start this scene after scrolling for 50px
+        	})
+        	.setPin("#eu") // pins the element for the the scene's duration
+        	.addTo(controller); // assign the scene to the controller
+
+
+      const height = 900;
+      const width = 1200;
+      // geoOrthographic
+      // var projection = d3.geoMercator()
+      //               .center([ 15, 60 ])
+			// 					   .translate([ width/2, height/2 ])
+			// 					   .scale([ width/2.3 ]);
+
+      const projection = d3.geoOrthographic()
+                        .center([ 20, 28 ])
+     					          .translate([ width/2, height/2 ])
+     					          .scale([ width/1.2 ])
+                        .rotate([-10, -20, -10 ]);
+
+
+      let europe = void 0;
+
+      const path = d3.geoPath().projection(projection);
+
+      const svg = d3.select('#map')
+                    .append('svg')
+                    .attr('height', height)
+                    .attr('width', width)
+
+
+      const membership = {};
+
+      d3.csv("EuropeanStates.csv", function(data) {
+
+        for (var i = 0; i < data.length; i++) {
+          membership[data[i].State] = data[i]
+        }
+          console.log(membership);
+      });
+
+      const handleHover = (d) => {
+        //console.log(d.properties.admin);
+      }
+
+
+      d3.json("region_un_Europe_subunits.json", function(error, data) {
+
+         const countries = data.features
+
+         //countries[61] = {properties: {admin: 'Russia'}};
+
+         const map = svg.append('g').attr('class', 'boundary');
+
+         europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
+
+        // const color = d3.scaleLinear().domain([0,71]).range(['orange', 'blue']);
+        //
+
+        // const body = ['€', 'EU']
+        //
+        // let filter =
+        //
+
+        let organization = 'EU'
+        let membershipStatus = 'EU'
+
+        const colorify = (data, org, status) => {
+
+          let stateName = data.properties.admin
+          if (!membership[stateName]) {return}
+
+          return (membership[stateName][organization] === membershipStatus) ? 'blue' : 'red'
+
+        }
+
+        europe.enter()
+          .append('path')
+          .attr('d', path)
+          .attr('fill', (d) => colorify(d, organization, membershipStatus))
+          .on('mouseover', handleHover)
+
+
+
+        europe.exit().remove();
+
+
+      })
+
+
+    </script>
+  </body>
+</html>
