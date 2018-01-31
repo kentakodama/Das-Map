@@ -12,8 +12,8 @@
 
     <style>
 
-      .block {
-        height: 400px;
+      .intro {
+        height: 100vh;
         width: 100%;
       }
 
@@ -32,7 +32,7 @@
       #map{
         width: 60%;
         height: 100vh;
-  
+
 
       }
       #pin2 {
@@ -71,8 +71,8 @@
 
     <div class="scrollContent">
 				<section id="titlechart">
-          <div class="block">
-
+          <div class="intro">
+            <p>welcome to Europe</p>
 					</div>
 					<script>
 						// init controller
@@ -86,10 +86,7 @@
             <div id="trigger2"></div>
           </div>
           <div class="pin-container">
-  					<div id="map">
-  						<p>Stay where you are (at least for a while).</p>
-
-  					</div>
+  					<div id="map"></div>
   					<div id="pin2">
               <div class="first"></div>
               <div id="trigger3"></div>
@@ -158,9 +155,7 @@
 						});
 					</script>
 				</section>
-        <div class="block">
 
-        </div>
 
 			</div>
       <script>
@@ -199,9 +194,7 @@
           console.log(membership);
       });
 
-      const handleHover = (d) => {
-        //console.log(d.properties.admin);
-      }
+
 
 
       d3.json("region_un_Europe_subunits.json", function(error, data) {
@@ -214,23 +207,23 @@
 
          europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
 
-        // const color = d3.scaleLinear().domain([0,71]).range(['orange', 'blue']);
-        //
 
-        // const body = ['€', 'EU']
-        //
-        // let filter =
-        //
+         const handleHover = (e) => {
+           //console.log(d.properties.admin);
+           console.log(e);
+         }
 
         let organization = 'EU'
         let membershipStatus = 'EU'
 
         const colorify = (data, org, status) => {
 
+          console.log(data, org, status);
+
           let stateName = data.properties.admin
           if (!membership[stateName]) {return}
 
-          return (membership[stateName][organization] === membershipStatus) ? 'blue' : 'red'
+          return (membership[stateName][organization] === status) ? 'blue' : 'red'
 
         }
 
@@ -238,7 +231,7 @@
           .append('path')
           .attr('d', path)
           .attr('fill', (d) => colorify(d, organization, membershipStatus))
-          .on('mouseover', handleHover)
+          .on('click', (d) => console.log(d.properties.admin))
 
 
 
@@ -246,6 +239,28 @@
 
 
       })
+
+      const clickMap = document.getElementById('map')
+      clickMap.addEventListener('click', () => {
+
+        let organization = 'Currency'
+        let membershipStatus = "€"
+
+
+
+        europe.enter()
+          .append('path')
+          .attr('d', path)
+          .attr('fill', 'red')
+          .attr('fill', (d) => colorify(d, organization, membershipStatus))
+
+
+
+
+        europe.exit().remove();
+
+      })
+
       </script>
   </body>
 </html>
