@@ -70,12 +70,12 @@
 					<script>
 						$(function () { // wait for document ready
 							// build scene
-							var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 3000})
+							var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger1",triggerHook: 0, duration: 3000})
 											.setPin("#pin1")
 											.addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-							var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 1200})
+							var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger2",triggerHook: 0, duration: 1200})
 											.setPin("#pin2")
 											.addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
