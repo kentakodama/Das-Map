@@ -7,36 +7,45 @@
     <script src="./ScrollMagic.js"></script>
   </head>
   <body>
-    
+
     <style>
-      
+
       .block {
         height: 400px;
         width: 100%;
       }
-      
+
+      .box2 {
+        height: 400px;
+        width: 100%;
+      }
+      .scrollmagic-pin-spacer {
+        height: 50px;
+      }
+
+      .pin-container {
+        display: flex;
+        flex-direction: row;
+      }
+      #pin1 {
+        width: 50%;
+        height: 500px;
+        background-color: red
+
+      }
+      #pin2 {
+        width: 50%;
+        height: 500px;
+        background-color: blue
+
+      }
+
     </style>
 
     <div class="scrollContent">
 				<section id="titlechart">
-					<div id="description">
-            <div class="block">
-              
-            </div>
-						<h1>Simple Pinning</h1>
-						<h2>Two examples of basic pinning.</h2>
-						<ol>
-							<li>A pin of a scene that has a duration will be pinned for the repective ammount of scrolled pixels and then released again.</li>
-							<li>If no duration is defined, the pinned element will never be released unless scrolling back past the trigger position.</li>
-						</ol>
-						<p>
-							Note that the first pin pushes down the following elements. A gap with the size of the scene's duration appears.<br>
-							This can be disabled using the option <code>pushFollowers: false</code>. For scenes with a duration of 0 "<code>pushFollowers</code>" is always disabled.
-						</p>
-						<p>
-							For more information check out the documentation on <a href="../../docs/ScrollMagic.Scene.html#setPin">Scene.setPin()</a>.
-						</p>
-						<a href="#" class="viewsource">view source</a>
+          <div class="block">
+
 					</div>
 					<script>
 						// init controller
@@ -45,26 +54,41 @@
 				</section>
 				<section class="demo">
 					<div class="spacer s2"></div>
-					<div id="trigger1" class="spacer s0"></div>
-					<div id="pin1" class="box2 blue">
-						<p>Stay where you are (at least for a while).</p>
-					</div>
+          <div class="trigger-container">
+            <div id="trigger1"></div>
+            <div id="trigger2"></div>
+          </div>
+          <div class="pin-container">
+  					<div id="pin1" class="box2">
+  						<p>Stay where you are (at least for a while).</p>
+  					</div>
+  					<div id="pin2" class="box2">
+  						<p>Stay where you are (at least for a while).</p>
+  					</div>
+          </div>
 					<div class="spacer s2"></div>
 					<script>
 						$(function () { // wait for document ready
 							// build scene
-							var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 300})
+							var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 3000})
 											.setPin("#pin1")
 											.addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
 											.addTo(controller);
+
+							var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 1200})
+											.setPin("#pin2")
+											.addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+											.addTo(controller);
+
 						});
 					</script>
 				</section>
         <div class="block">
-          
+
         </div>
-				
+
 			</div>
-    
+
+
   </body>
 </html>
