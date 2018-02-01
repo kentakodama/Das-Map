@@ -195,8 +195,17 @@
         },
         'NATO': {
           'NATO': 'blue'
+        },
+        'CurrencyUnion': {
+          'EUCU': 'blue'
+        },
+        'Schengen': {
+          'Schengen': 'blue',
+          'visa-free': 'red'
+        },
+        'EEA': {
+          'EEA': 'blue'
         }
-
 
       }
 
@@ -292,7 +301,7 @@
       const section3Waypoint = new Waypoint({
         element: document.getElementById('trigger3'),
         handler: function() {
-          console.log('this is the currency waypoint');
+          console.log('this is the Currency waypoint');
           handleUpdate('Currency')
         }
       })
@@ -300,22 +309,33 @@
       const section4Waypoint = new Waypoint({
         element: document.getElementById('trigger4'),
         handler: function() {
-          console.log('this is the nato waypoint');
-          handleUpdate('NATO')
+          console.log('this is the Schengen waypoint');
+          handleUpdate('Schengen')
         }
       })
 
       const section5Waypoint = new Waypoint({
         element: document.getElementById('trigger5'),
         handler: function() {
-          console.log('this is the waypoint');
+          console.log('this is the EEA waypoint');
+          handleUpdate('EEA')
         }
       })
+
 
       const section6Waypoint = new Waypoint({
         element: document.getElementById('trigger6'),
         handler: function() {
+          console.log('this is the CurrencyUnion waypoint');
+          handleUpdate('CurrencyUnion')
+        }
+      })
+
+      const section7Waypoint = new Waypoint({
+        element: document.getElementById('trigger7'),
+        handler: function() {
           console.log('this is the waypoint');
+          handleUpdate('NATO')
         }
       })
 
