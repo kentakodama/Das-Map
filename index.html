@@ -269,15 +269,17 @@
 
 
       const handleScroll = (e) => {
-
+        const sections = document.querySelectorAll('.section')
+        for (var i = 0; i < sections.length; i++) {
+          pos = sections[i].getBoundingClientRect().top
+          sections[i].dataset.yPosition = pos
+        }
         const section = document.querySelector('.section')
-        const rec = section.getBoundingClientRect()
-        console.log(rec.top);
-
+        console.log(section.dataset.yPosition);
 
       }
 
-
+  
 
 
       document.addEventListener('scroll', (e) => handleScroll())
