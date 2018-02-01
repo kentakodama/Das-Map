@@ -191,7 +191,15 @@
           'Candidate': 'red'
         },
         'Currency': {
-          '€': 'blue'
+          '€': 'blue',
+          'DKK': 'orange',
+          'SEK': 'orange',
+          'GBP': 'orange',
+        },
+        'Euro-relation': {
+          'yes': 'blue',
+          'obligated': '#87CEFA',
+          'exempt': 'orange'
         },
         'NATO': {
           'NATO': 'blue'
@@ -227,7 +235,7 @@
       console.log(membership);
       const handleUpdate = (category) => {
 
-  
+
         d3.selectAll('path')
             // .attr('stroke', '#555')
             .attr('fill', (d) => colorify(d, category))
@@ -284,7 +292,7 @@
         element: document.getElementById('trigger3'),
         handler: function() {
           console.log('this is the Currency waypoint');
-          handleUpdate('Currency')
+          handleUpdate('Euro-relation')
         }
       })
 
