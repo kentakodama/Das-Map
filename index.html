@@ -187,20 +187,34 @@
 
 
 
-      const colorify = (data, org, status) => {
+      const colorScheme = {
+        'EU': {
+          'EU': 'blue',
+          '': 'red'
+        },
+        'Currency': {
+          '€': 'blue'
+        }
+
+
+      }
+
+      const colorify = (data, cat) => {
 
 
         let stateName = data.properties.admin
         if (!membership[stateName]) {return}
 
-        return (membership[stateName][org] === status) ? 'blue' : 'red'
+        let status = membership[stateName][`${cat}`]
+        console.log(status);
+        return colorScheme[`${cat}`][`${status}`]
 
       }
 
 
 
       console.log(membership);
-      const handleUpdate = () => {
+      const handleUpdate = (category) => {
 
         console.log('clicked');
 
@@ -212,10 +226,10 @@
 
 
           europe.enter()
-            .append('path').transition().delay(1000).duration(500)
+            .append('path').transition()//.delay(1000).duration(500)
             .attr('d', path)
             .attr('stroke', '#555')
-            .attr('fill', (d) => colorify(d, organization, membershipStatus))
+            .attr('fill', (d) => colorify(d, category))
 
           europe.exit().remove();
 
@@ -247,13 +261,6 @@
       })
 
 
-      const clickMap = document.getElementById('map')
-      clickMap.addEventListener('click', () => {
-
-        handleUpdate()
-
-      })
-
       const ranges = {};
       let windowHeight = window.innerHeight
       const sections = document.querySelectorAll('.section')
@@ -269,6 +276,7 @@
         element: document.getElementById('trigger-first-section'),
         handler: function() {
           console.log('this is the first waypoint');
+          handleUpdate('EU')
         }
       })
 
@@ -276,6 +284,7 @@
         element: document.getElementById('trigger3'),
         handler: function() {
           console.log('this is the waypoint');
+          handleUpdate('Currency')
         }
       })
 
@@ -300,10 +309,6 @@
         }
       })
 
-
-
-
-      document.addEventListener('scroll', (e) => handleScroll())
 
     </script>
   </body>
