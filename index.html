@@ -5,6 +5,7 @@
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./ScrollMagic.js"></script>
+    <script src="./noframework.waypoints.min.js"></script>
     <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
     <script src="http://d3js.org/topojson.v3.min.js"></script>
   </head>
@@ -111,7 +112,7 @@
 											.addTo(controller);
 
               var event2 = new ScrollMagic.Scene({triggerElement: "#trigger2", reverse: true})
-                      .on('enter', ()=>console.log('bye'))
+                      .on('enter', ()=>console.log('this is reverse'))
                       // .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
                       .addTo(controller);
 
@@ -121,7 +122,7 @@
 											.addTo(controller);
 
               var event3 = new ScrollMagic.Scene({triggerElement: "#trigger3"})
-                      .on('enter', ()=>console.log('bye'))
+                      .on('enter', ()=>console.log('hi'))
                       // .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
                       .addTo(controller);
 
@@ -265,21 +266,53 @@
 
       })
 
+      const ranges = {};
+      let windowHeight = window.innerHeight
+      const sections = document.querySelectorAll('.section')
+      for (var i = 0; i < sections.length; i++) {
+        let top = sections[i].offsetTop + windowHeight
+
+        ranges[top] = i + 1;
+      }
 
 
 
-      const handleScroll = (e) => {
-        const sections = document.querySelectorAll('.section')
-        for (var i = 0; i < sections.length; i++) {
-          pos = sections[i].getBoundingClientRect().top
-          sections[i].dataset.yPosition = pos
-        }
-        const section = document.querySelector('.section')
-        console.log(section.dataset.yPosition);
+
+      const handleScroll = () => {
+
+        let topOfPage = window.pageYOffset
+        // if (!ranges[`${topOfPage}`]) { return }
+        // console.log('bingo!');
+        // console.log('ranges', ranges);
+
+        // console.log(topOfPage);
+        // console.log('topOfPage', topOfPage);
+        // console.log(`${window.pageYOffset}`);
+        // console.log(`you've enter section ${ranges[topOfPage]}`);
 
       }
 
-  
+      // const handleScroll = (e) => {
+      //   const sections = document.querySelectorAll('.section')
+      //   for (var i = 0; i < sections.length; i++) {
+      //     pos = sections[i].getBoundingClientRect().top
+      //     sections[i].dataset.yPosition = pos
+      //   }
+      //   const section = document.querySelector('.section')
+      //   console.log(section.dataset.yPosition);
+      //
+      // }
+
+      //get the top and bottom range for each section
+
+      var waypoint = new Waypoint({
+        element: document.getElementById('trigger3'),
+        handler: function() {
+          console.log('this is the waypoint');
+        }
+      })
+
+
 
 
       document.addEventListener('scroll', (e) => handleScroll())
