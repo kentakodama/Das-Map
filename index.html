@@ -182,18 +182,21 @@
       });
 
 
-      let organization = 'EU'
-      let membershipStatus = 'EU'
+      // let organization = 'EU'
+      // let membershipStatus = 'EU'
 
 
 
       const colorScheme = {
         'EU': {
           'EU': 'blue',
-          '': 'red'
+          'Candidate': 'red'
         },
         'Currency': {
           '€': 'blue'
+        },
+        'NATO': {
+          'NATO': 'blue'
         }
 
 
@@ -203,10 +206,10 @@
 
 
         let stateName = data.properties.admin
-        if (!membership[stateName]) {return}
+        if (!membership[stateName]) { return 'gray' }
 
         let status = membership[stateName][`${cat}`]
-        console.log(status);
+        if (!status) { return 'gray' }
         return colorScheme[`${cat}`][`${status}`]
 
       }
@@ -218,22 +221,27 @@
 
         console.log('clicked');
 
-        d3.json("region_un_Europe_subunits.json", function(error, data) {
+        // d3.json("region_un_Europe_subunits.json", function(error, data) {
+        //
+        //    const countries = data.features
+        //    map = svg.append('g').attr('class', 'boundary');
+        //    europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
+        //
+        //
+        //   europe.enter()
+        //     .append('path').transition()//.delay(1000).duration(500)
+        //     .attr('d', path)
+        //     .attr('stroke', '#555')
+        //     .attr('fill', (d) => colorify(d, category))
+        //
+        //   europe.exit().remove();
+        //
+        // })
 
-           const countries = data.features
-           map = svg.append('g').attr('class', 'boundary');
-           europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
-
-
-          europe.enter()
-            .append('path').transition()//.delay(1000).duration(500)
-            .attr('d', path)
+        d3.selectAll('path')
             .attr('stroke', '#555')
             .attr('fill', (d) => colorify(d, category))
 
-          europe.exit().remove();
-
-        })
 
       }
 
@@ -283,7 +291,7 @@
       const section3Waypoint = new Waypoint({
         element: document.getElementById('trigger3'),
         handler: function() {
-          console.log('this is the waypoint');
+          console.log('this is the currency waypoint');
           handleUpdate('Currency')
         }
       })
@@ -291,7 +299,8 @@
       const section4Waypoint = new Waypoint({
         element: document.getElementById('trigger4'),
         handler: function() {
-          console.log('this is the waypoint');
+          console.log('this is the nato waypoint');
+          handleUpdate('NATO')
         }
       })
 
