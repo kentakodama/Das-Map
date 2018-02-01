@@ -107,49 +107,49 @@
 							// build scene
 							var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger1",triggerHook: 0, duration: 10810})
 											.setPin("#map")
-											.addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
+											// .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
               var event2 = new ScrollMagic.Scene({triggerElement: "#trigger2"})
                       .on('enter', ()=>console.log('hello'))
-                      .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+                      // .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
                       .addTo(controller);
 
 							var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger2",triggerHook: 0, duration: 600})
 											.setPin("#pin2")
-											.addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
               var event3 = new ScrollMagic.Scene({triggerElement: "#trigger3"})
                       .on('enter', ()=>console.log('hello'))
-                      .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+                      // .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
                       .addTo(controller);
 
 							var scene3 = new ScrollMagic.Scene({triggerElement: "#trigger3",triggerHook: 0, duration: 600})
 											.setPin("#pin3")
-											.addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
 							var event4 = new ScrollMagic.Scene({triggerElement: "#trigger4"})
 											.on('enter', ()=>console.log('hello'))
-											.addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
 							var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger4",triggerHook: 0, duration: 600})
 											.setPin("#pin4")
-											.addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 							var scene5 = new ScrollMagic.Scene({triggerElement: "#trigger5",triggerHook: 0, duration: 600})
 											.setPin("#pin5")
-											.addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 							var scene6 = new ScrollMagic.Scene({triggerElement: "#trigger6",triggerHook: 0, duration: 600})
 											.setPin("#pin6")
-											.addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 							var scene7 = new ScrollMagic.Scene({triggerElement: "#trigger7",triggerHook: 0, duration: 600})
 											.setPin("#pin7")
-											.addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
 						});
@@ -195,43 +195,66 @@
       });
 
 
+      let organization = 'EU'
+      let membershipStatus = 'EU'
 
+      const colorify = (data, org, status) => {
+
+
+        let stateName = data.properties.admin
+        if (!membership[stateName]) {return}
+
+        return (membership[stateName][organization] === status) ? 'blue' : 'red'
+
+      }
+
+      console.log(membership);
+      const handleUpdate = () => {
+
+
+
+        console.log('clicked');
+
+        d3.json("region_un_Europe_subunits.json", function(error, data) {
+
+           const countries = data.features
+           map = svg.append('g').attr('class', 'boundary');
+           europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
+
+           organization = 'Currency'
+           membershipStatus = '€'
+
+          europe.enter()
+            .append('path')
+            .attr('d', path)
+            .attr('stroke', '#555')
+            .attr('fill', (d) => colorify(d, organization, membershipStatus))
+            // .on('click', (d) => console.log(d.properties.admin))
+
+
+
+          europe.exit().remove();
+
+
+        })
+
+      }
 
       d3.json("region_un_Europe_subunits.json", function(error, data) {
 
          const countries = data.features
 
-         //countries[61] = {properties: {admin: 'Russia'}};
-
-         const map = svg.append('g').attr('class', 'boundary');
+         map = svg.append('g').attr('class', 'boundary');
 
          europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
 
 
-         const handleHover = (e) => {
-           //console.log(d.properties.admin);
-           console.log(e);
-         }
-
-        let organization = 'EU'
-        let membershipStatus = 'EU'
-
-        const colorify = (data, org, status) => {
-
-          console.log(data, org, status);
-
-          let stateName = data.properties.admin
-          if (!membership[stateName]) {return}
-
-          return (membership[stateName][organization] === status) ? 'blue' : 'red'
-
-        }
-
         europe.enter()
           .append('path')
           .attr('d', path)
+          .attr('stroke', '#555')
           .attr('fill', (d) => colorify(d, organization, membershipStatus))
-          .on('click', (d) => console.log(d.properties.admin))
+          // .on('click', (d) => console.log(d.properties.admin))
 
 
 
@@ -239,28 +262,15 @@
 
 
       })
+
 
       const clickMap = document.getElementById('map')
       clickMap.addEventListener('click', () => {
 
-        let organization = 'Currency'
-        let membershipStatus = "€"
-
-
-
-        europe.enter()
-          .append('path')
-          .attr('d', path)
-          .attr('fill', 'red')
-          .attr('fill', (d) => colorify(d, organization, membershipStatus))
-
-
-
-
-        europe.exit().remove();
+        handleUpdate()
 
       })
 
-      </script>
+    </script>
   </body>
 </html>
