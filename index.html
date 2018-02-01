@@ -233,10 +233,31 @@
 
       const handleUpdate = (category) => {
 
+        d3.selectAll('path')
+            .attr('fill', (d) => colorify(d, category))
+      }
+
+      const adjustIncome = (realIncome) => {
+
+        if (realIncome > 50000) { realIncome = 50000 }
+        return realIncome
+      }
+
+      const handleIncome = () => {
+
+        const colorbyIncome = d3.scaleLinear().domain([100, 50000]).range(['yellow', 'red']);
 
         d3.selectAll('path')
-            // .attr('stroke', '#555')
-            .attr('fill', (d) => colorify(d, category))
+            .attr('fill', (d) => {
+              let stateName = d.properties.admin
+              if (!membership[stateName]) { return 'yellow' }
+              let status = membership[stateName]['GNI']
+              // console.log(parseInt(status.split(',').join('')));
+              let number = parseInt(status.split(',').join(''))
+              let adjusted = adjustIncome(number)
+              return colorbyIncome(adjusted)
+
+            })
 
 
       }
@@ -322,8 +343,8 @@
       const section7Waypoint = new Waypoint({
         element: document.getElementById('trigger7'),
         handler: function() {
-          console.log('this is the waypoint');
-          handleUpdate('NATO')
+          console.log('this is the income waypoint');
+          handleIncome()
         }
       })
 
