@@ -112,28 +112,13 @@
 											// .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-              var event2 = new ScrollMagic.Scene({triggerElement: "#trigger-explanation", reverse: true})
-                      .on('enter', ()=>console.log('this is reverse'))
-                      // .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
-                      .addTo(controller);
-
 							var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger-explanation",triggerHook: 0, duration: 600})
 											.setPin("#pin2")
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-              var event3 = new ScrollMagic.Scene({triggerElement: "#trigger3"})
-                      .on('enter', ()=>console.log('hi'))
-                      // .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
-                      .addTo(controller);
-
 							var scene3 = new ScrollMagic.Scene({triggerElement: "#trigger3",triggerHook: 0, duration: 600})
 											.setPin("#pin3")
-											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
-											.addTo(controller);
-
-							var event4 = new ScrollMagic.Scene({triggerElement: "#trigger4"})
-											.on('enter', ()=>console.log('hello'))
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
