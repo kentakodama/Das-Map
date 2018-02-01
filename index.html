@@ -182,8 +182,6 @@
       });
 
 
-      // let organization = 'EU'
-      // let membershipStatus = 'EU'
 
 
 
@@ -209,7 +207,8 @@
         if (!membership[stateName]) { return 'gray' }
 
         let status = membership[stateName][`${cat}`]
-        if (!status) { return 'gray' }
+        console.log(status);
+        if (!colorScheme[`${cat}`][`${status}`]) { return 'gray' }
         return colorScheme[`${cat}`][`${status}`]
 
       }
@@ -239,7 +238,7 @@
         // })
 
         d3.selectAll('path')
-            .attr('stroke', '#555')
+            // .attr('stroke', '#555')
             .attr('fill', (d) => colorify(d, category))
 
 
@@ -253,12 +252,14 @@
 
          europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
 
+         // let organization = 'EU'
+         // let membershipStatus = 'EU'
 
         europe.enter()
           .append('path')
           .attr('d', path)
           .attr('stroke', '#555')
-          .attr('fill', (d) => colorify(d, organization, membershipStatus))
+          .attr('fill', (d) => colorify(d, 'EU'))
           // .on('click', (d) => console.log(d.properties.admin))
 
 
