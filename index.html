@@ -227,25 +227,7 @@
       console.log(membership);
       const handleUpdate = (category) => {
 
-        console.log('clicked');
-
-        // d3.json("region_un_Europe_subunits.json", function(error, data) {
-        //
-        //    const countries = data.features
-        //    map = svg.append('g').attr('class', 'boundary');
-        //    europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
-        //
-        //
-        //   europe.enter()
-        //     .append('path').transition()//.delay(1000).duration(500)
-        //     .attr('d', path)
-        //     .attr('stroke', '#555')
-        //     .attr('fill', (d) => colorify(d, category))
-        //
-        //   europe.exit().remove();
-        //
-        // })
-
+  
         d3.selectAll('path')
             // .attr('stroke', '#555')
             .attr('fill', (d) => colorify(d, category))
