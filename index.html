@@ -224,7 +224,6 @@
         if (!membership[stateName]) { return 'gray' }
 
         let status = membership[stateName][`${cat}`]
-        console.log(status);
         if (!colorScheme[`${cat}`][`${status}`]) { return 'gray' }
         return colorScheme[`${cat}`][`${status}`]
 
@@ -232,7 +231,6 @@
 
 
 
-      console.log(membership);
       const handleUpdate = (category) => {
 
 
