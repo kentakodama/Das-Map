@@ -83,8 +83,9 @@
 				<section class="demo">
 					<div class="spacer s2"></div>
           <div class="trigger-container">
-            <div id="trigger1"></div>
-            <div id="trigger2"></div>
+            <div id="trigger-map"></div>
+            <div id="trigger-explanation"></div>
+            <div id="trigger-first-section"></div>
           </div>
           <div class="pin-container">
   					<div id="map"></div>
@@ -106,17 +107,17 @@
 					<script>
 						$(function () { // wait for document ready
 							// build scene
-							var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger1",triggerHook: 0, duration: 10810})
+							var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger-map",triggerHook: 0, duration: 10810})
 											.setPin("#map")
 											// .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-              var event2 = new ScrollMagic.Scene({triggerElement: "#trigger2", reverse: true})
+              var event2 = new ScrollMagic.Scene({triggerElement: "#trigger-explanation", reverse: true})
                       .on('enter', ()=>console.log('this is reverse'))
                       // .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
                       .addTo(controller);
 
-							var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger2",triggerHook: 0, duration: 600})
+							var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger-explanation",triggerHook: 0, duration: 600})
 											.setPin("#pin2")
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
@@ -305,8 +306,40 @@
 
       //get the top and bottom range for each section
 
-      var waypoint = new Waypoint({
+
+
+
+
+      const section1Waypoint = new Waypoint({
+        element: document.getElementById('trigger-first-section'),
+        handler: function() {
+          console.log('this is the first waypoint');
+        }
+      })
+
+      const section3Waypoint = new Waypoint({
         element: document.getElementById('trigger3'),
+        handler: function() {
+          console.log('this is the waypoint');
+        }
+      })
+
+      const section4Waypoint = new Waypoint({
+        element: document.getElementById('trigger4'),
+        handler: function() {
+          console.log('this is the waypoint');
+        }
+      })
+
+      const section5Waypoint = new Waypoint({
+        element: document.getElementById('trigger5'),
+        handler: function() {
+          console.log('this is the waypoint');
+        }
+      })
+
+      const section6Waypoint = new Waypoint({
+        element: document.getElementById('trigger6'),
         handler: function() {
           console.log('this is the waypoint');
         }
