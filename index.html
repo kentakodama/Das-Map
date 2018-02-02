@@ -91,15 +91,21 @@
   					<div id="map"></div>
   					<div id="pin2">
               <div class="first section"></div>
-              <div id="trigger3"></div>
+              <div id="reverse-enter-section-1"></div>
+              <div id="enter-section-2"></div>
               <div id="pin3" class="second section"></div>
-              <div id="trigger4"></div>
+              <div id="reverse-enter-section-2"></div>
+              <div id="enter-section-3"></div>
               <div id='pin4' class="third section"></div>
-              <div id="trigger5"></div>
+              <div id="reverse-enter-section-3"></div>
+              <div id="enter-seciton-4"></div>
+              <div id="reverse-enter-section-4"></div>
               <div id='pin5' class="fourth section"></div>
-              <div id="trigger6"></div>
+              <div id="enter-section-5"></div>
+              <div id="reverse-enter-section-5"></div>
               <div id='pin6' class="fifth section"></div>
-              <div id="trigger7"></div>
+              <div id="enter-section-6"></div>
+              <div id="reverse-enter-section-6"></div>
               <div id='pin7' class="sixth section"></div>
   					</div>
           </div>
@@ -117,24 +123,24 @@
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-							var scene3 = new ScrollMagic.Scene({triggerElement: "#trigger3",triggerHook: 0, duration: 600})
+							var scene3 = new ScrollMagic.Scene({triggerElement: "#enter-section-2",triggerHook: 0, duration: 600})
 											.setPin("#pin3")
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-							var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger4",triggerHook: 0, duration: 600})
+							var scene4 = new ScrollMagic.Scene({triggerElement: "#enter-section-3",triggerHook: 0, duration: 600})
 											.setPin("#pin4")
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
-							var scene5 = new ScrollMagic.Scene({triggerElement: "#trigger5",triggerHook: 0, duration: 600})
+							var scene5 = new ScrollMagic.Scene({triggerElement: "#enter-seciton-4",triggerHook: 0, duration: 600})
 											.setPin("#pin5")
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
-							var scene6 = new ScrollMagic.Scene({triggerElement: "#trigger6",triggerHook: 0, duration: 600})
+							var scene6 = new ScrollMagic.Scene({triggerElement: "#enter-section-5",triggerHook: 0, duration: 600})
 											.setPin("#pin6")
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
-							var scene7 = new ScrollMagic.Scene({triggerElement: "#trigger7",triggerHook: 0, duration: 600})
+							var scene7 = new ScrollMagic.Scene({triggerElement: "#enter-section-6",triggerHook: 0, duration: 600})
 											.setPin("#pin7")
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
@@ -299,53 +305,102 @@
 
 
 
-      const section1Waypoint = new Waypoint({
+      const enter1 = new Waypoint({
         element: document.getElementById('trigger-first-section'),
         handler: function() {
-          console.log('this is the first waypoint');
+          console.log('entered 1st');
           handleUpdate('EU')
         }
       })
+      const reverseEnter1 = new Waypoint({
+        element: document.getElementById('reverse-enter-section-1'),
+        handler: function() {
+          console.log('enter reverse 1st');
+          handleUpdate('EU')
+        },
+        offset: '50%'
+      })
 
-      const section3Waypoint = new Waypoint({
-        element: document.getElementById('trigger3'),
+      const enter2 = new Waypoint({
+        element: document.getElementById('enter-section-2'),
         handler: function() {
           console.log('this is the Currency waypoint');
           handleUpdate('Euro-relation')
         }
       })
+      const reverseEnter2 = new Waypoint({
+        element: document.getElementById('reverse-enter-section-2'),
+        handler: function() {
+          console.log('this is the Currency waypoint');
+          handleUpdate('Euro-relation')
+        },
+        offset: '50%'
+      })
 
-      const section4Waypoint = new Waypoint({
-        element: document.getElementById('trigger4'),
+      const enter3 = new Waypoint({
+        element: document.getElementById('enter-section-3'),
         handler: function() {
           console.log('this is the Schengen waypoint');
           handleUpdate('Schengen')
         }
       })
 
-      const section5Waypoint = new Waypoint({
-        element: document.getElementById('trigger5'),
+      const reverseEnter3 = new Waypoint({
+        element: document.getElementById('reverse-enter-section-3'),
+        handler: function() {
+          console.log('this is the Schengen waypoint');
+          handleUpdate('Schengen')
+        },
+        offset: '50%'
+      })
+
+      const enter4 = new Waypoint({
+        element: document.getElementById('enter-seciton-4'),
         handler: function() {
           console.log('this is the EEA waypoint');
           handleUpdate('EEA')
         }
       })
+      const reverseEnter4 = new Waypoint({
+        element: document.getElementById('reverse-enter-section-4'),
+        handler: function() {
+          console.log('this is the EEA waypoint');
+          handleUpdate('EEA')
+        },
+        offset: '50%'
+      })
 
 
-      const section6Waypoint = new Waypoint({
-        element: document.getElementById('trigger6'),
+      const enter5 = new Waypoint({
+        element: document.getElementById('enter-section-5'),
         handler: function() {
           console.log('this is the CurrencyUnion waypoint');
           handleUpdate('CurrencyUnion')
         }
       })
+      const reverseEnter5 = new Waypoint({
+        element: document.getElementById('reverse-enter-section-5'),
+        handler: function() {
+          console.log('this is the CurrencyUnion waypoint');
+          handleUpdate('CurrencyUnion')
+        },
+        offset: '50%'
+      })
 
-      const section7Waypoint = new Waypoint({
-        element: document.getElementById('trigger7'),
+      const enter6 = new Waypoint({
+        element: document.getElementById('enter-section-6'),
         handler: function() {
           console.log('this is the income waypoint');
           handleIncome()
         }
+      })
+      const reverseEnter6 = new Waypoint({
+        element: document.getElementById('reverse-enter-section-6'),
+        handler: function() {
+          console.log('this is the income waypoint');
+          handleIncome()
+        },
+        offset: '50%'
       })
 
 
