@@ -232,7 +232,11 @@
 
 
       const handleTransition = (cate) => {
-        let dur = 300;
+        let dur = 400;
+        if(cate === 'income') {
+          handleIncome(dur)
+          return
+        }
         makeMapTransparent(dur)
         handleMapColorUpdate(cate)
         makeMapOpaque(dur)
@@ -267,13 +271,10 @@
         return realIncome
       }
 
-      const handleIncome = () => {
+      const handleIncome = (duration) => {
 
         const colorbyIncome = d3.scaleLinear().domain([100, 50000]).range(['yellow', 'red']);
-        d3.selectAll('path')
-                .transition().duration(200)
-                .style('fill-opacity', 0.1)
-
+        makeMapTransparent(duration)
         d3.selectAll('path')
             .attr('fill', (d) => {
               let stateName = d.properties.admin
@@ -286,10 +287,7 @@
 
             })
 
-            setTimeout(() => d3.selectAll('path')
-                    .transition().duration(200)
-                    .style('fill-opacity', 1), 200)
-
+            makeMapOpaque(duration);
       }
 
       d3.json("region_un_Europe_subunits.json", function(error, data) {
@@ -416,14 +414,14 @@
         element: document.getElementById('enter-section-6'),
         handler: function() {
           console.log('this is the income waypoint');
-          handleIncome();
+          handleTransition('income');
         }
       })
       const reverseEnter6 = new Waypoint({
         element: document.getElementById('reverse-enter-section-6'),
         handler: function() {
           console.log('this is the income waypoint');
-          handleIncome()
+          handleTransition('income')
         },
         offset: '50%'
       })
