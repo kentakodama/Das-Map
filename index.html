@@ -271,9 +271,6 @@
 
          europe = map.selectAll('path').data(countries) //must always be features regardless of what it says in json
 
-         // let organization = 'EU'
-         // let membershipStatus = 'EU'
-
         europe.enter()
           .append('path')
           .attr('d', path)
@@ -281,11 +278,7 @@
           .attr('fill', (d) => colorify(d, 'EU'))
           // .on('click', (d) => console.log(d.properties.admin))
 
-
-
         europe.exit().remove();
-
-
       })
 
 
