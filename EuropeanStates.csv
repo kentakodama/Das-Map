@@ -1,52 +1,52 @@
-State,GNI,Wage,Year-joined,EU,EEA,CurrencyUnion,Schengen,Euro-relation,Currency,OECD,NATO
-Albania,"3,950",332,,Candidate,,,EU visa-free,,ALL,,NATO
+State,GNI,Wage,EU,Year-joined,EEA,CurrencyUnion,Schengen,Euro-relation,Currency,OECD,NATO
+Albania,"3,950",332,Candidate,,,,EU visa-free,,ALL,,NATO
 Andorra,"41,130",,,,,EUCU,EU visa-free,yes,€,,
 Armenia,"3,100",,,,,EACU,,,AMD,,PfP
-Austria,"46,850","2,758",1995,EU,EEA,EUCU,Schengen,yes,€,OECD,PfP
+Austria,"46,850","2,758",EU,1995,EEA,EUCU,Schengen,yes,€,OECD,PfP
 Azerbaijan,"4,840",,,,,,,,AZN,GUAM,PfP
 Belarus,"5,540",528,,,,EACU,,,BYR,,PfP
-Belgium,"45,310","2,464",1957,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Belgium,"45,310","2,464",EU,1957,EEA,EUCU,Schengen,yes,€,OECD,NATO
 Bosnia and Herz.,"4,700",590,,,,,EU visa-free,,BAM,,MAP
-Bulgaria,"5,770",,2007,EU,EEA,EUCU,EU visa-free,obligated,BGN,,NATO
-Croatia,"13,810","1,020",2013,EU,EEA,EUCU,EU visa-free,obligated,HRK,,NATO
-Cyprus,"26,940","2,235",2004,EU,EEA,EUCU,EU visa-free,yes,€,,
-Czech Republic,"17,310",1081,2004,EU,EEA,EUCU,Schengen,obligated,CZK,OECD,NATO
-Denmark,"58,930","3,226",,EU,EEA,EUCU,Schengen,exempt,DKK,OECD,NATO
-Estonia,"14,060","1,098",2004,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
-Finland,"45,680","2,758",1995,EU,EEA,EUCU,Schengen,yes,€,OECD,PfP
-France,"42,680","2,468",1957,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Bulgaria,"5,770",,EU,2007,EEA,EUCU,EU visa-free,obligated,BGN,,NATO
+Croatia,"13,810","1,020",EU,2013,EEA,EUCU,EU visa-free,obligated,HRK,,NATO
+Cyprus,"26,940","2,235",EU,2004,EEA,EUCU,EU visa-free,yes,€,,
+Czech Republic,"17,310",1081,EU,2004,EEA,EUCU,Schengen,obligated,CZK,OECD,NATO
+Denmark,"58,930","3,226",EU,,EEA,EUCU,Schengen,exempt,DKK,OECD,NATO
+Estonia,"14,060","1,098",EU,2004,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Finland,"45,680","2,758",EU,1995,EEA,EUCU,Schengen,yes,€,OECD,PfP
+France,"42,680","2,468",EU,1957,EEA,EUCU,Schengen,yes,€,OECD,NATO
 Georgia,"2,530",,,,,,,,GEL,GUAM,PfP
-Germany,"42,560","2,754",1957,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
-Greece,"28,630","1,851",1981,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
-Hungary,"12,980",516,2004,EU,EEA,EUCU,Schengen,obligated,HUF,OECD,NATO
+Germany,"42,560","2,754",EU,1957,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Greece,"28,630","1,851",EU,1981,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Hungary,"12,980",516,EU,2004,EEA,EUCU,Schengen,obligated,HUF,OECD,NATO
 Iceland,"43,220",,,,EEA,,Schengen,,ISK,OECD,NATO
-Ireland,"44,310","2,733",1973,EU,EEA,EUCU,,yes,€,OECD,PfP
-Italy,"35,080","1,967",1957,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Ireland,"44,310","2,733",EU,1973,EEA,EUCU,,yes,€,OECD,PfP
+Italy,"35,080","1,967",EU,1957,EEA,EUCU,Schengen,yes,€,OECD,NATO
 Kazakhstan,"6,740",425,,,,EACU,,,KZT,,PfP
 Kosovo,"3,240",,,,,,,yes,€,,
-Latvia,"12,390",632,2004,EU,EEA,EUCU,Schengen,yes,€,,NATO
+Latvia,"12,390",632,EU,2004,EEA,EUCU,Schengen,yes,€,,NATO
 Liechtenstein,"113,210",,,,EEA,,Schengen,,CHF,,
-Lithuania,"15,080",668,2004,EU,EEA,EUCU,Schengen,yes,€,,NATO
-Luxembourg,"74,430","3,636",1957,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
-Macedonia,"4,400",460,,Candidate,,,EU visa-free,,MKD,,MAP
-Malta,"16,690",">1,626",2004,EU,EEA,EUCU,Schengen,yes,€,,PfP
+Lithuania,"15,080",668,EU,2004,EEA,EUCU,Schengen,yes,€,,NATO
+Luxembourg,"74,430","3,636",EU,1957,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Macedonia,"4,400",460,Candidate,,,,EU visa-free,,MKD,,MAP
+Malta,"16,690",">1,626",EU,2004,EEA,EUCU,Schengen,yes,€,,PfP
 Moldova,"1,590",249,,,,,,,MDL,GUAM,PfP
 Monaco,"203,900",,,,,EUCU,Schengen 2,yes,€,,
-Montenegro,"6,550",699,,Candidate,,,EU visa-free,yes,€,,NATO
-Netherlands,"49,350","2,673",1957,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Montenegro,"6,550",699,Candidate,,,,EU visa-free,yes,€,,NATO
+Netherlands,"49,350","2,673",EU,1957,EEA,EUCU,Schengen,yes,€,OECD,NATO
 Norway,"86,440","6,079",,,EEA,,Schengen,exempt,NOK,OECD,NATO
-Poland,"12,260",612,2004,EU,EEA,EUCU,Schengen,obligated,PLN,OECD,NATO
-Portugal,"20,940","1,405",,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
-Romania,"8,330",515,2007,EU,EEA,EUCU,EU visa-free,obligated,RON,,NATO
+Poland,"12,260",612,EU,2004,EEA,EUCU,Schengen,obligated,PLN,OECD,NATO
+Portugal,"20,940","1,405",EU,,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Romania,"8,330",515,EU,2007,EEA,EUCU,EU visa-free,obligated,RON,,NATO
 Russia,"9,370",675,,,,EACU,,,RUB,,PfP
 San Marino,"50,670",,,,,EUCU,Schengen,yes,€,,
-Serbia,"5,990",461,,Candidate,,,EU visa-free,,RSD,,PfP
-Slovakia,"16,130",857,2004,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
-Slovenia,"23,520","1,405",2004,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
-Spain,"31,870","2,056",1986,EU,EEA,EUCU,Schengen,yes,€,OECD,NATO
-Sweden,"48,930","2,910",1995,EU,EEA,EUCU,Schengen,obligated,SEK,OECD,PfP
+Serbia,"5,990",461,Candidate,,,,EU visa-free,,RSD,,PfP
+Slovakia,"16,130",857,EU,2004,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Slovenia,"23,520","1,405",EU,2004,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Spain,"31,870","2,056",EU,1986,EEA,EUCU,Schengen,yes,€,OECD,NATO
+Sweden,"48,930","2,910",EU,1995,EEA,EUCU,Schengen,obligated,SEK,OECD,PfP
 Switzerland,"56,370",,,,bilat 3,,Schengen,,CHF,OECD,PfP
-Turkey,"8,730","1,123",,Candidate,,EUCU,,,TRY,OECD,NATO
+Turkey,"8,730","1,123",Candidate,,,EUCU,,,TRY,OECD,NATO
 Ukraine,"2,800",287,,,,,,,UAH,GUAM,PfP
-United Kingdom,"41,520","3,712",1973,EU,EEA,EUCU,,exempt,GBP,OECD,NATO
+United Kingdom,"41,520","3,712",EU,1973,EEA,EUCU,,exempt,GBP,OECD,NATO
 Vatican City,n/d,,,,,,Schengen,yes,€,,
