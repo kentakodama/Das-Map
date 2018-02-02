@@ -98,7 +98,7 @@
               <div id="enter-section-3"></div>
               <div id='pin4' class="third section"></div>
               <div id="reverse-enter-section-3"></div>
-              <div id="enter-seciton-4"></div>
+              <div id="enter-section-4"></div>
               <div id="reverse-enter-section-4"></div>
               <div id='pin5' class="fourth section"></div>
               <div id="enter-section-5"></div>
@@ -132,7 +132,7 @@
 											.setPin("#pin4")
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
-							var scene5 = new ScrollMagic.Scene({triggerElement: "#enter-seciton-4",triggerHook: 0, duration: 600})
+							var scene5 = new ScrollMagic.Scene({triggerElement: "#enter-section-4",triggerHook: 0, duration: 600})
 											.setPin("#pin5")
 											// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 											.addTo(controller);
@@ -350,7 +350,7 @@
       })
 
       const enter4 = new Waypoint({
-        element: document.getElementById('enter-seciton-4'),
+        element: document.getElementById('enter-section-4'),
         handler: function() {
           console.log('this is the EEA waypoint');
           handleUpdate('EEA')
