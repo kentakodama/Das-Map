@@ -46,7 +46,7 @@
 
       .second {
         height: 100vh;
-        background-color: yellow;
+        background-color: '#FBB135';
       }
 
       .third {
@@ -55,7 +55,7 @@
       }
       .fourth {
         height: 100vh;
-        background-color: blue;
+        background-color: #F6883F;
       }
       .fifth {
         height: 100vh;
@@ -216,7 +216,7 @@
             svg.append("rect")
                   .attr("width", "100%")
                   .attr("height", "100%")
-                  .attr("fill", "pink");
+                  .attr("fill", "#1E4675");
 
 
       const membership = {};
@@ -235,32 +235,32 @@
 
       const generalColorScheme = {
         'EU': {
-          'EU': 'blue',
+          'EU': '#F6883F',
           'Candidate': 'red'
         },
         'Currency': {
-          '€': 'blue',
+          '€': '#F6883F',
           'DKK': 'orange',
           'SEK': 'orange',
           'GBP': 'orange',
         },
         'Euro-relation': {
-          'yes': 'blue',
-          'obligated': '#87CEFA',
+          'yes': '#F6883F',
+          'obligated':'#FBB135',
           'exempt': 'orange'
         },
         'NATO': {
-          'NATO': 'blue'
+          'NATO': '#F6883F'
         },
         'CurrencyUnion': {
-          'EUCU': 'blue'
+          'EUCU': '#F6883F'
         },
         'Schengen': {
-          'Schengen': 'blue',
+          'Schengen': '#F6883F',
           'visa-free': 'red'
         },
         'EEA': {
-          'EEA': 'blue'
+          'EEA': '#F6883F'
         }
 
       }
@@ -316,12 +316,12 @@
 
       const handleIncome = (duration) => {
 
-        const colorbyIncome = d3.scaleLinear().domain([100, 50000]).range(['yellow', 'red']);
+        const colorbyIncome = d3.scaleLinear().domain([100, 50000]).range(['#FBB135', 'red']);
         makeMapTransparent(duration)
         d3.selectAll('path')
             .attr('fill', (d) => {
               let stateName = d.properties.admin
-              if (!membership[stateName]) { return 'yellow' }
+              if (!membership[stateName]) { return '#FBB135' }
               let status = membership[stateName]['GNI']
               // console.log(parseInt(status.split(',').join('')));
               let number = parseInt(status.split(',').join(''))
@@ -350,43 +350,43 @@
         switch (stage) {
           case 'six': {
             if(year === 1957) {
-              return '#87CEFA'
+              return '#FBB135'
             } else {
               return 'gray'
             }
           }
           case 'twelve': {
             if(year === 1957) {
-              return 'blue'
+              return '#F6883F'
             } else if (year > 1957 && year <= 1992) {
-              return '#87CEFA'
+              return '#FBB135'
             } else {
               return 'gray'
             }
           }
           case 'fifteen': {
             if(year <= 1992) {
-              return 'blue';
+              return '#F6883F';
             } else if (year === 1995) {
-              return '#87CEFA'
+              return '#FBB135'
             } else {
               return 'gray'
             }
           }
           case 'eastern': {
             if(year <= 1995) {
-              return 'blue';
+              return '#F6883F';
             } else if (year === 2004) {
-              return '#87CEFA'
+              return '#FBB135'
             } else {
               return 'gray'
             }
           }
           case 'now':{
             if(year <= 2004) {
-              return 'blue';
+              return '#F6883F';
             } else if (year) {
-              return '#87CEFA'
+              return '#FBB135'
             } else {
               return 'gray'
             }
@@ -395,7 +395,7 @@
             if(stateName === 'United Kingdom') {
               return 'orange';
             } else if (year) {
-              return 'blue'
+              return '#F6883F'
             } else {
               return 'gray'
             }
@@ -419,7 +419,8 @@
         europe.enter()
           .append('path')
           .attr('d', path)
-          .attr('stroke', '#555')
+          .attr('stroke', 'white')
+          .attr('stroke-width', 0.6)
           .attr('fill', (d) => colorify(d, 'EU'))
           // .on('click', (d) => console.log(d.properties.admin))
 
