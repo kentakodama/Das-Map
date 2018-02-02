@@ -30,6 +30,20 @@
         display: flex;
         flex-direction: row;
       }
+      #infoModal{
+         position: absolute;
+         z-index: 2;
+         background: rgba(0,153,76,0.8);
+         width:130px;
+         height:20px;
+         color:white;
+         font-size: 14px;
+         padding:5px;
+         top:-150px;
+         left:-150px;
+         font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+          "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      }
       #map{
         width: 60%;
         height: 100vh;
@@ -87,6 +101,7 @@
           </div>
           <div class="pin-container">
   					<div id="map"></div>
+            <div id="infoModal"></div>
   					<div id="pin2">
               <div class="first section"></div>
               <div id="reverse-enter-section-1"></div>
@@ -402,7 +417,13 @@
 
       }
 
-
+      const getCountryInfo = function(data) {
+        console.log('hover');
+           var div = document.getElementById('infoModal');
+           div.style.left = event.pageX +'px';
+           div.style.top = event.pageY + 'px';
+           div.innerHTML = data.properties.admin;
+      };
 
       d3.json("region_un_Europe_subunits.json", function(error, data) {
 
@@ -418,7 +439,8 @@
           .attr('stroke', 'white')
           .attr('stroke-width', 0.6)
           .attr('fill', (d) => colorify(d, 'EU'))
-          // .on('click', (d) => console.log(d.properties.admin))
+          .on('mouseover', (d) => getCountryInfo(d))
+
 
         europe.exit().remove();
       })
