@@ -424,25 +424,6 @@
       })
 
 
-      const ranges = {};
-      let windowHeight = window.innerHeight
-      const sections = document.querySelectorAll('.section')
-      for (var i = 0; i < sections.length; i++) {
-        let top = sections[i].offsetTop + windowHeight
-
-        ranges[top] = i + 1;
-      }
-
-      //
-      // const getPosition = () => {
-      //   let el = document.getElementById('enter-section-2')
-      //   let position = el.getBoundingClientRect().top
-      //   console.log(position);
-      // }
-      // document.addEventListener('scroll', () => getPosition() )
-      //
-
-
       const enter1 = new Waypoint({
         element: document.getElementById('trigger-first-section'),
         handler: function() {
