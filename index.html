@@ -100,8 +100,8 @@
             <div id="trigger-first-section"></div>
           </div>
           <div class="pin-container">
-  					<div id="map"></div>
             <div id="infoModal"></div>
+  					<div id="map"></div>
   					<div id="pin2">
               <div class="first section"></div>
               <div id="reverse-enter-section-1"></div>
@@ -417,13 +417,21 @@
 
       }
 
-      const getCountryInfo = function(data) {
+      const showModal = function(data) {
         console.log('hover');
-           var div = document.getElementById('infoModal');
-           div.style.left = event.pageX +'px';
-           div.style.top = event.pageY + 'px';
-           div.innerHTML = data.properties.admin;
+           var modal = document.getElementById('infoModal');
+           modal.style.left = event.pageX +'px';
+           modal.style.top = event.pageY + 'px';
+           modal.innerHTML = data.properties.admin;
       };
+
+      const hideModal = () => {
+        
+        var modal = document.getElementById('infoModal');
+        modal.style.left = '0px'
+        modal.style.top = '0px'
+        modal.innerHTML = '';
+      }
 
       d3.json("region_un_Europe_subunits.json", function(error, data) {
 
@@ -439,7 +447,9 @@
           .attr('stroke', 'white')
           .attr('stroke-width', 0.6)
           .attr('fill', (d) => colorify(d, 'EU'))
-          .on('mouseover', (d) => getCountryInfo(d))
+          .on('mouseover', (d) => showModal(d))
+          .on('wheel', () => hideModal())
+
 
 
         europe.exit().remove();
