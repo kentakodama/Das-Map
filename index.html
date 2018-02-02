@@ -33,8 +33,6 @@
       #map{
         width: 60%;
         height: 100vh;
-
-
       }
       #pin2 {
         width: 40%;
@@ -131,7 +129,7 @@
 					<script>
 						$(function () { // wait for document ready
 							// build scene
-							var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger-map",triggerHook: 0, duration: 10810})
+							var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger-map",triggerHook: 0, duration: 22000})
 											.setPin("#map")
 											// .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
 											.addTo(controller);
@@ -212,6 +210,13 @@
                     .append('svg')
                     .attr('height', height)
                     .attr('width', width)
+
+            //this creates the background
+            // by appending it before the 'g' map is rendered, it places it in the background
+            svg.append("rect")
+                  .attr("width", "100%")
+                  .attr("height", "100%")
+                  .attr("fill", "pink");
 
 
       const membership = {};
