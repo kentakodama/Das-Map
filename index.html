@@ -83,9 +83,10 @@
         height: 400px;
         width: 100%;
       }
-      .scrollmagic-pin-spacer {
+      /* THIS MAKES THE SPACING JITTERY BETWEEN first and second */
+      /* .scrollmagic-pin-spacer {
         padding: 0px !important;
-      }
+      } */
 
       .pin-container {
         display: flex;
@@ -150,10 +151,11 @@
       }
       #pin2 {
         width: 40%;
-        height: 5000px;
+        /* height: 5000px; */
 
       }
       .first {
+
         height: 100vh;
         background-color: orange;
       }
@@ -183,11 +185,11 @@
         height: 100vh;
         background-color: orange;
       }
-      .eight {
+      .eighth {
         height: 100vh;
         background-color: black;
       }
-      .nine {
+      .ninth {
         height: 100vh;
         background-color: orange;
       }
@@ -251,9 +253,9 @@
             <div id="trigger-explanation"></div>
             <div id="trigger-first-section"></div>
           </div>
+          <div id="infoModal"></div>
           <div class="pin-container">
 
-            <div id="infoModal"></div>
   					<div id="map"></div>
 
   					<div id="pin2">
@@ -340,9 +342,9 @@
 											// .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-							var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger-map",triggerHook: 0, duration: 22000})
+							var scene1 = new ScrollMagic.Scene({triggerElement: "#trigger-map",triggerHook: 0, duration: 300000})
 											.setPin("#map")
-                      // .offset(-100)
+                      .offset(-100)
 											// .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
