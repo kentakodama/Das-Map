@@ -75,9 +75,20 @@
       }
 
       .intro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 85vh;
         width: 100%;
+        background-color: #1E4675;
       }
+
+      #intro-phrase {
+        font-family: Helvetica;
+        font-size: 50px;
+        color: white;
+      }
+
 
       .box2 {
         height: 400px;
@@ -217,7 +228,7 @@
     <div class="scrollContent">
 				<section id="titlechart">
           <div class="intro">
-            <p>welcome to Europe</p>
+            <p id="intro-phrase">Welcome to Europe</p>
 					</div>
           <div id="trigger-header"></div>
           <div id="header">
@@ -260,7 +271,15 @@
 
   					<div id="pin2">
               <div id="enter-section-1"></div>
-              <div class="first section"></div>
+              <div class="first section">
+                <div class="section-title">
+                  <p>section title</p>
+                </div>
+                <div class="section-explanation">
+
+                  <p>section explanation</p>
+                </div>
+              </div>
               <div id="reverse-enter-section-1"></div>
               <div id="enter-section-2"></div>
               <div id="pin3" class="second section"></div>
@@ -408,7 +427,7 @@
 			</div>
       <script>
 
-      
+
       const height = 900;
       const width = 1200;
 
