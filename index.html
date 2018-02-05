@@ -1085,6 +1085,62 @@
 
       }
 
+      const handleEuro = (cate) => {
+        d3.selectAll('path')
+            .attr('fill', (d) => euroColorScheme(d, cate))
+      }
+
+      const euroColorScheme = (data, slide) => {
+        let stateName = data.properties.admin
+        if (!membership[stateName]) { return 'gray' }
+
+        // let currency = membership[stateName]['Currency'];
+        let euroRelation = membership[stateName]['Euro-relation']
+        let euStatus = membership[stateName]['EU']
+        // if (!year) { return 'gray' }
+
+        switch (slide) {
+          case 'eu':{
+            if (euStatus === 'EU') {
+              return 'orange'
+            } else {
+              return 'gray'
+            }
+          }
+          case 'eurozone':{
+            if (euroRelation === 'yes') {
+              return '#f75413'
+            } else if (euStatus === 'EU') {
+              return 'orange'
+            } else {
+              return 'gray'
+            }
+          }
+
+          case 'obligated':{
+            if (euroRelation === 'yes') {
+              return '#f75413'
+            } else if (euroRelation === 'obligated') {
+              return 'orange'
+            } else {
+              return 'gray'
+            }
+          }
+
+          case 'exempt':{
+            if (euroRelation === 'yes') {
+              return '#f75413'
+            } else if (euroRelation === 'obligated') {
+              return 'gray'
+            } else if (euroRelation === 'exempt') {
+              return 'orange'
+            } else {
+              return 'gray'
+            }
+          }
+        }
+      }
+
       const showModal = function(data) {
         console.log('hover');
            var modal = document.getElementById('infoModal');
@@ -1288,21 +1344,21 @@
       const enter12 = new Waypoint({
         element: document.getElementById('enter-section-12'),
         handler: function() {
-          handleTransition('income');
+          handleEuro('eu');
         },
         offset: '40%'
       })
       const reverseEnter12 = new Waypoint({
         element: document.getElementById('reverse-enter-section-12'),
         handler: function() {
-          handleTransition('income')
+          handleEuro('eu');
         },
         offset: '50%'
       })
       const enter13 = new Waypoint({
         element: document.getElementById('enter-section-13'),
         handler: function() {
-          handleTransition('income');
+          handleEuro('eurozone')
         },
         offset: '40%'
       })
@@ -1310,7 +1366,7 @@
         element: document.getElementById('reverse-enter-section-13'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income')
+          handleEuro('eurozone')
         },
         offset: '50%'
       })
@@ -1318,7 +1374,7 @@
         element: document.getElementById('enter-section-14'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income');
+          handleEuro('obligated')
         },
         offset: '40%'
       })
@@ -1326,15 +1382,14 @@
         element: document.getElementById('reverse-enter-section-14'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income')
-        },
+          handleEuro('obligated')        },
         offset: '50%'
       })
       const enter15 = new Waypoint({
         element: document.getElementById('enter-section-15'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income');
+          handleEuro('exempt');
         },
         offset: '40%'
       })
@@ -1342,7 +1397,7 @@
         element: document.getElementById('reverse-enter-section-15'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income')
+          handleEuro('exempt')
         },
         offset: '50%'
       })
@@ -1350,7 +1405,7 @@
         element: document.getElementById('enter-section-16'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income');
+          handleEuro('eurozone')
         },
         offset: '40%'
       })
@@ -1358,8 +1413,7 @@
         element: document.getElementById('reverse-enter-section-16'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income')
-        },
+          handleEuro('eurozone')        },
         offset: '50%'
       })
       const enter17 = new Waypoint({
