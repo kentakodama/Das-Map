@@ -1156,16 +1156,21 @@
             .attr('fill', (d) => colorByDebt(d, yr, piigs))
       }
 
-      const debtColorScheme = d3.scaleLinear().domain([0, 200]).range(['yellow', 'red']);
+      const debtLevelColorScheme = d3.scaleLinear().domain([0, 200]).range(['yellow', 'red']);
+      const debtPercentChangeColorScheme = d3.scaleLinear().domain([0, 160]).range(['yellow', 'red']);
 
       const colorByDebt = (data, year, piigs) => {
         let stateName = data.properties.admin
         if(!debtTable[stateName]) { return 'gray' }
 
-        if(piigs && debtTable[`${stateName}`][`${year}`] < 85) { return 'gray' }
+        if(piigs) {
+          console.log(debtTable[`${stateName}`]['percent-change']);
+          return debtPercentChangeColorScheme(debtTable[`${stateName}`]['percent-change'])
+        }
 
-        return debtColorScheme(debtTable[`${stateName}`][`${year}`])
+        return debtLevelColorScheme(debtTable[`${stateName}`][`${year}`])
       }
+
 
 
       const showModal = function(data) {
