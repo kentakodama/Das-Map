@@ -1143,13 +1143,29 @@
 
       const debtTable = {}
 
-      d3.csv("EuropeanStates.csv", function(data) {
+      d3.csv("debt.csv", function(data) {
 
         for (var i = 0; i < data.length; i++) {
-          membership[data[i].State] = data[i]
+          debtTable[data[i].country] = data[i]
         }
-          console.log(membership);
+          console.log(debtTable);
       });
+
+      const handleDebt = (yr, piigs) => {
+        d3.selectAll('path')
+            .attr('fill', (d) => colorByDebt(d, yr, piigs))
+      }
+
+      const debtColorScheme = d3.scaleLinear().domain([0, 200]).range(['yellow', 'red']);
+
+      const colorByDebt = (data, year, piigs) => {
+        let stateName = data.properties.admin
+        if(!debtTable[stateName]) { return 'gray' }
+
+        if(piigs && debtTable[`${stateName}`][`${year}`] < 85) { return 'gray' }
+
+        return debtColorScheme(debtTable[`${stateName}`][`${year}`])
+      }
 
 
       const showModal = function(data) {
@@ -1431,7 +1447,7 @@
         element: document.getElementById('enter-section-17'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income');
+          handleDebt(2008);
         },
         offset: '40%'
       })
@@ -1439,7 +1455,7 @@
         element: document.getElementById('reverse-enter-section-17'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income')
+          handleDebt(2008);
         },
         offset: '50%'
       })
@@ -1447,7 +1463,7 @@
         element: document.getElementById('enter-section-18'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income');
+          handleDebt(2016);
         },
         offset: '40%'
       })
@@ -1455,7 +1471,7 @@
         element: document.getElementById('reverse-enter-section-18'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income')
+          handleDebt(2016);
         },
         offset: '50%'
       })
@@ -1463,7 +1479,7 @@
         element: document.getElementById('enter-section-19'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income');
+          handleDebt(2016, true);
         },
         offset: '40%'
       })
@@ -1471,7 +1487,7 @@
         element: document.getElementById('reverse-enter-section-19'),
         handler: function() {
           console.log('entered new section' );
-          handleTransition('income')
+          handleDebt(2016, true);
         },
         offset: '50%'
       })
