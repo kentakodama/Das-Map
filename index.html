@@ -1141,6 +1141,17 @@
         }
       }
 
+      const debtTable = {}
+
+      d3.csv("EuropeanStates.csv", function(data) {
+
+        for (var i = 0; i < data.length; i++) {
+          membership[data[i].State] = data[i]
+        }
+          console.log(membership);
+      });
+
+
       const showModal = function(data) {
         console.log('hover');
            var modal = document.getElementById('infoModal');
