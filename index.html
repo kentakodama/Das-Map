@@ -1237,9 +1237,17 @@
       const asylumTotalColoring = d3.scaleLinear().domain([0, 500000]).range(['yellow', 'red']);
       const asylumByPopColoring = d3.scaleLinear().domain([0, 2]).range(['yellow', 'red']);
 
-      const handleMigration = (data, category) => {
 
+
+      const handleMigration = (category) => {
+
+        d3.selectAll('path')
+            .attr('fill', (d) => migrationColorScheme(d, category))
+      }
+
+      const migrationColorScheme = (data, category) => {
         let stateName = data.properties.admin
+        migrationTable[`${stateName}`][`${category}`]
         if(!membership[stateName]) { return 'gray' }
 
         switch (category) {
