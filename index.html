@@ -83,6 +83,10 @@
         background-color: #1E4675;
       }
 
+      #intro-info {
+        display: flex;
+      }
+
       #intro-phrase {
         font-family: Helvetica;
         font-size: 50px;
@@ -262,26 +266,31 @@
       }
 
       #outro {
-        clear: both;
-        height: 85vh;
+
+        height: 100vh;
         width: 100%;
         background-color: white;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
         background-color: #1E4675;
       }
 
       #outro-info {
         display: flex;
         flex-direction: row;
-        width: 80%;
-        height: 80%;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        width: 90%;
+        height: 90%;
         background-color: red;
       }
 
       #photo {
-        width: 30%;
-        height: 100%;
+        width: 25%;
+        height: 90%;
+        background-color: green;
       }
 
       #outro-content {
@@ -290,6 +299,8 @@
         background-color: blue;
         align-items: center;
         justify-content: center;
+        width: 75%;
+        height: 90%;
 
       }
 
@@ -301,7 +312,7 @@
       #resume-container {
         height: 40%;
         width: 90%;
-        background-color: white;
+        background-color: yellow;
       }
 
 
@@ -765,7 +776,7 @@
 											// .addIndicators({name: "1 (duration: 700)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-							var scene1 = new ScrollMagic.Scene({triggerElement: "#map",triggerHook: 0, duration: "3120%"})
+							var scene1 = new ScrollMagic.Scene({triggerElement: "#map",triggerHook: 0, duration: "3150%"})
 											.setPin("#map")
                       // .offset(-100)
 											// .addIndicators({name: "1 (duration: 700)"}) // add indicators (requires plugin)
