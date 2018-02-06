@@ -1009,7 +1009,7 @@
           }
           case 'six': {
             if(year === 1957) {
-              return '#FBB135'
+              return '#f75413'
             } else {
               return 'gray'
             }
@@ -1181,7 +1181,7 @@
         if(!membership[stateName]) { return 'gray' }
 
         let schengenStatus = membership[stateName]['Schengen']
-        let isEuMember = membership[stateName]['EU']
+        let isEuMember = membership[stateName]['EU'] === 'EU'
         switch (status) {
           case 'member': {
             if(schengenStatus === 'Schengen') {
@@ -1203,7 +1203,7 @@
           case 'nonEU': {
             if(schengenStatus === 'Schengen' && isEuMember) {
               return '#f75413'
-            } else if(schengenStatus && !isEuMember) {
+            } else if(schengenStatus === 'Schengen' && !isEuMember) {
               return 'orange'
             } else {
               return 'gray'
@@ -1549,20 +1549,23 @@
       const reverseEnter20 = new Waypoint({
         element: document.getElementById('reverse-enter-section-20'),
         handler: function() {
-          handleSchengen('member');        },
+          handleSchengen('member');
+        },
         offset: '50%'
       })
       const enter21 = new Waypoint({
         element: document.getElementById('enter-section-21'),
         handler: function() {
           handleSchengen('exempt');
+
         },
         offset: '40%'
       })
       const reverseEnter21 = new Waypoint({
         element: document.getElementById('reverse-enter-section-21'),
         handler: function() {
-          handleSchengen('exempt');        },
+          handleSchengen('exempt');
+        },
         offset: '50%'
       })
       const enter22 = new Waypoint({
@@ -1596,14 +1599,14 @@
       const enter24 = new Waypoint({
         element: document.getElementById('enter-section-24'),
         handler: function() {
-          handleTransition('income');
+          handleSchengen('nonEU');
         },
         offset: '40%'
       })
       const reverseEnter24 = new Waypoint({
         element: document.getElementById('reverse-enter-section-24'),
         handler: function() {
-          handleTransition('income')
+          handleSchengen('nonEU');
         },
         offset: '50%'
       })
