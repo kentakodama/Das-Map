@@ -1233,9 +1233,9 @@
           console.log(migrationTable);
       });
 
-      const entryColoring = d3.scaleLinear().domain([0, 250000]).range(['F9A641', 'red']);
-      const asylumTotalColoring = d3.scaleLinear().domain([0, 500000]).range(['F9A641', 'red']);
-      const asylumByPopColoring = d3.scaleLinear().domain([0, 2]).range(['F9A641', 'red']);
+      const entryColoring = d3.scaleLinear().domain([0, 250000]).range(['#F9A641', 'red']);
+      const asylumTotalColoring = d3.scaleLinear().domain([0, 500000]).range(['#FED130', 'red']);
+      const asylumByPopColoring = d3.scaleLinear().domain([0, 150]).range(['#F9A641', 'red']);
 
 
 
@@ -1250,10 +1250,10 @@
         if(!membership[stateName]) { return 'gray' }
         if(!migrationTable[`${stateName}`]) { return 'gray' }
 
-        let value = migrationTable[`${stateName}`][`${category}`]
-
+        let value = parseInt(migrationTable[`${stateName}`][`${category}`])
         switch (category) {
           case 'entry': {
+            if (!value) {return 'gray'}
             return entryColoring(value)
           }
           case 'asylumTotal': {
