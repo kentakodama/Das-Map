@@ -1234,8 +1234,8 @@
       });
 
       const entryColoring = d3.scaleLinear().domain([0, 250000]).range(['yellow', 'red']);
-      const asylumTotalColoring = d3.scaleLinear().domain([0, 250000]).range(['yellow', 'red']);
-      const asylumByPopColoring = d3.scaleLinear().domain([0, 250000]).range(['yellow', 'red']);
+      const asylumTotalColoring = d3.scaleLinear().domain([0, 500000]).range(['yellow', 'red']);
+      const asylumByPopColoring = d3.scaleLinear().domain([0, 2]).range(['yellow', 'red']);
 
       const handleMigration = (data, category) => {
 
@@ -1244,14 +1244,14 @@
 
         switch (category) {
           case 'entry': {
-
+            return entryColoring(stateName)
           }
           case 'asylumTotal': {
-
+            return asylumTotalColoring(stateName)
           }
 
           case 'asylumByPop': {
-
+            return asylumByPopColoring(stateName)
           }
         }
       }
