@@ -1233,6 +1233,31 @@
           console.log(migrationTable);
       });
 
+      const entryColoring = d3.scaleLinear().domain([0, 250000]).range(['yellow', 'red']);
+      const asylumTotalColoring = d3.scaleLinear().domain([0, 250000]).range(['yellow', 'red']);
+      const asylumByPopColoring = d3.scaleLinear().domain([0, 250000]).range(['yellow', 'red']);
+
+      const handleMigration = (data, category) => {
+
+        let stateName = data.properties.admin
+        if(!membership[stateName]) { return 'gray' }
+
+        switch (category) {
+          case 'entry': {
+
+          }
+          case 'asylumTotal': {
+
+          }
+
+          case 'asylumByPop': {
+
+          }
+        }
+      }
+
+
+
 
       const showModal = function(data) {
         console.log('hover');
