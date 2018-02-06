@@ -1277,17 +1277,62 @@
       });
 
 
-      const handleNato = (status) => {
+      const handleNato = (category) => {
 
         d3.selectAll('path')
-            .attr('fill', (d) => natoColorScheme(d, status))
+            .attr('fill', (d) => natoColorScheme(d, category))
       }
 
-      const natoColorScheme = (data, status) => {
+      const natoColorScheme = (data, category) => {
         let stateName = data.properties.admin
-        if(!membership[stateName]) { return 'gray' }
         if(!membership[`${stateName}`]['NATO']) { return 'gray' }
+        if(!natoMembers[stateName]) { return 'gray' }
 
+        let year = natoMembers[stateName]['joined'];
+
+        switch (category) {
+          case 'members': {
+            return '#f75413'
+          }
+          case 'original': {
+            if(year === 1949) {
+              return '#f75413'
+            } else {
+              return 'gray'
+            }
+          }
+          case 'expansion': {
+            if(year === 1949) {
+              return '#f75413'
+            } else if(year > 1949 && year < 1999) {
+              return 'orange'
+            } else {
+              return 'gray'
+            }
+          }
+          case 'eastern': {
+            if(year < 1999) {
+              return '#f75413'
+            } else if(year >= 1999) {
+              return 'orange'
+            } else {
+              return 'gray'
+            }
+          }
+          case 'ukraine': {
+            if(year === 1949) {
+              return '#f75413'
+            } else if (stateName === 'Ukraine') {
+              return 'orange'
+            } else {
+              return 'gray'
+            }
+          }
+
+
+
+
+        }
 
       }
 
@@ -1719,70 +1764,70 @@
       const enter28 = new Waypoint({
         element: document.getElementById('enter-section-28'),
         handler: function() {
-          handleTransition('income')
+          handleNato('member');
         },
         offset: '40%'
       })
       const reverseEnter28 = new Waypoint({
         element: document.getElementById('reverse-enter-section-28'),
         handler: function() {
-          handleTransition('income')
+          handleNato('member');
         },
         offset: '50%'
       })
       const enter29 = new Waypoint({
         element: document.getElementById('enter-section-29'),
         handler: function() {
-          handleTransition('income');
+          handleNato('original')
         },
         offset: '40%'
       })
       const reverseEnter29 = new Waypoint({
         element: document.getElementById('reverse-enter-section-29'),
         handler: function() {
-          handleTransition('income')
+          handleNato('original');
         },
         offset: '50%'
       })
       const enter30 = new Waypoint({
         element: document.getElementById('enter-section-30'),
         handler: function() {
-          handleTransition('income');
+          handleNato('expansion');;
         },
         offset: '40%'
       })
       const reverseEnter30 = new Waypoint({
         element: document.getElementById('reverse-enter-section-30'),
         handler: function() {
-          handleTransition('income')
+          handleNato('expansion');
         },
         offset: '50%'
       })
       const enter31 = new Waypoint({
         element: document.getElementById('enter-section-31'),
         handler: function() {
-          handleTransition('income');
+          handleNato('eastern');
         },
         offset: '40%'
       })
       const reverseEnter31 = new Waypoint({
         element: document.getElementById('reverse-enter-section-31'),
         handler: function() {
-          handleTransition('income')
+          handleNato('eastern');
         },
         offset: '50%'
       })
       const enter32 = new Waypoint({
         element: document.getElementById('enter-section-32'),
         handler: function() {
-          handleTransition('income');
+          handleNato('ukraine');
         },
         offset: '40%'
       })
       const reverseEnter32 = new Waypoint({
         element: document.getElementById('reverse-enter-section-32'),
         handler: function() {
-          handleTransition('income')
+          handleNato('ukraine');
         },
         offset: '50%'
       })
