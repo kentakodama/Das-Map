@@ -1266,6 +1266,17 @@
         }
       }
 
+      const natoMembers = {};
+
+      d3.csv("nato.csv", function(data) {
+
+        for (var i = 0; i < data.length; i++) {
+          natoMembers[data[i].country] = data[i]
+        }
+
+      });
+
+
       const handleNato = (status) => {
 
         d3.selectAll('path')
