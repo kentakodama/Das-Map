@@ -1094,7 +1094,6 @@
         if (!membership[stateName]) { return 'gray' }
 
         let year = parseInt(membership[stateName]['Year-joined']);
-        // if (!year) { return 'gray' }
 
         switch (stage) {
           case 'eu':{
@@ -1149,9 +1148,9 @@
           }
           case 'brexit':{
             if(stateName === 'United Kingdom') {
-              return '#f75413'
-            } else if (year) {
               return 'orange';
+            } else if (year) {
+              return '#f75413'
             } else {
               return 'gray'
             }
@@ -1465,7 +1464,7 @@
           .attr('d', path)
           .attr('stroke', 'white')
           .attr('stroke-width', 0.6)
-          .attr('fill', (d) => 'gray')
+          .attr('fill', (d) => '#f75413')
           .on('mouseover', (d) => showModal(d))
           .on('wheel', () => hideModal())
 
