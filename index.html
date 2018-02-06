@@ -257,12 +257,18 @@
         background-color: red;
       }
 
+      #buffer {
+        height: 50vh;
+      }
+
       #outro {
-        height: 100vh;
+        clear: both;
+        height: 85vh;
         width: 100%;
         background-color: white;
         display: flex;
         justify-content: space-around;
+        background-color: #1E4675;
       }
 
       #outro-info {
@@ -284,6 +290,7 @@
         background-color: blue;
         align-items: center;
         justify-content: center;
+
       }
 
       #bio-container {
@@ -677,13 +684,26 @@
                 </div>
               </div>
               <div id="reverse-enter-section-32"></div>
+              <div id="buffer" class="section">
+
+              </div>
   					</div>
 
-            <div id="outro">
-
-            </div>
 
           </div>
+            <div id="outro">
+              <div id="outro-info">
+                <div id="photo"></div>
+                <div id="outro-content">
+                  <div id="bio-container">
+
+                  </div>
+                  <div id="resume-container">
+
+                  </div>
+                </div>
+              </div>
+            </div>
 					<div class="spacer s2"></div>
 					<script>
             //   require('./animation.gsap');
@@ -745,7 +765,7 @@
 											// .addIndicators({name: "1 (duration: 700)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-							var scene1 = new ScrollMagic.Scene({triggerElement: "#map",triggerHook: 0})
+							var scene1 = new ScrollMagic.Scene({triggerElement: "#map",triggerHook: 0, duration: "3120%"})
 											.setPin("#map")
                       // .offset(-100)
 											// .addIndicators({name: "1 (duration: 700)"}) // add indicators (requires plugin)
