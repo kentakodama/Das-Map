@@ -83,15 +83,36 @@
         background-color: #1E4675;
       }
 
+
+
       #intro-info {
         display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        background-color: inherit;
+        height: 80%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #start-button {
+        width: 30%;
+        height: 20%;
+        background-color: white;
+        border-radius: 20px;
+        background-color: 'orange';
       }
 
       #intro-phrase {
         font-family: Helvetica;
-        font-size: 50px;
+        font-size: 4em;
         color: white;
+        align-self: center;
       }
+
+
 
 
       .box2 {
@@ -160,11 +181,7 @@
         background-color: white;
       }
 
-      .start-button {
-        width: 30%;
-        height: 60%;
-        background-color: white;
-      }
+    
 /*
       .header-fixed {
         position: fixed;
@@ -344,10 +361,12 @@
             </div>
           </nav>
           <div class="intro">
-            <p id="intro-phrase">Welcome to Europe</p>
-            <button id="start-button" data-position='enter-section-1' class="link">
-              <p>explore</p>
-            </button>
+            <div id="intro-info">
+              <p id="intro-phrase">Welcome to Europe</p>
+              <button id="start-button" data-position='enter-section-1' class="link">
+                <p>explore</p>
+              </button>
+            </div>
 					</div>
           <div id="trigger-header"></div>
 
