@@ -1110,8 +1110,6 @@
           case 'eurozone':{
             if (euroRelation === 'yes') {
               return '#f75413'
-            } else if (euStatus === 'EU') {
-              return 'orange'
             } else {
               return 'gray'
             }
@@ -1169,6 +1167,53 @@
         }
 
         return debtLevelColorScheme(debtTable[`${stateName}`][`${year}`])
+      }
+
+
+      const handleSchengen = (status) => {
+        d3.selectAll('path')
+            .attr('fill', (d) => schengenColorScheme(d, status))
+
+      }
+
+      const schengenColorScheme = (data, status) => {
+        let stateName = data.properties.admin
+        if(!membership[stateName]) { return 'gray' }
+
+        let schengenStatus = membership[stateName]['Schengen']
+        let isEuMember = membership[stateName]['EU']
+        switch (status) {
+          case 'member': {
+            if(schengenStatus === 'Schengen') {
+              return '#f75413'
+            } else {
+              return 'gray'
+            }
+          }
+
+          case 'exempt': {
+            if(schengenStatus === 'Schengen') {
+              return '#f75413'
+            } else if(!schengenStatus && isEuMember) {
+              return 'orange'
+            } else {
+              return 'gray'
+            }
+          }
+          case 'nonEU': {
+            if(schengenStatus === 'Schengen' && isEuMember) {
+              return '#f75413'
+            } else if(schengenStatus && !isEuMember) {
+              return 'orange'
+            } else {
+              return 'gray'
+            }
+          }
+
+
+
+        }
+
       }
 
 
