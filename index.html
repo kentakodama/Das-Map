@@ -1233,9 +1233,9 @@
           console.log(migrationTable);
       });
 
-      const entryColoring = d3.scaleLinear().domain([0, 250000]).range(['yellow', 'red']);
-      const asylumTotalColoring = d3.scaleLinear().domain([0, 500000]).range(['yellow', 'red']);
-      const asylumByPopColoring = d3.scaleLinear().domain([0, 2]).range(['yellow', 'red']);
+      const entryColoring = d3.scaleLinear().domain([0, 250000]).range(['F9A641', 'red']);
+      const asylumTotalColoring = d3.scaleLinear().domain([0, 500000]).range(['F9A641', 'red']);
+      const asylumByPopColoring = d3.scaleLinear().domain([0, 2]).range(['F9A641', 'red']);
 
 
 
@@ -1247,19 +1247,21 @@
 
       const migrationColorScheme = (data, category) => {
         let stateName = data.properties.admin
-        migrationTable[`${stateName}`][`${category}`]
         if(!membership[stateName]) { return 'gray' }
+        if(!migrationTable[`${stateName}`]) { return 'gray' }
+
+        let value = migrationTable[`${stateName}`][`${category}`]
 
         switch (category) {
           case 'entry': {
-            return entryColoring(stateName)
+            return entryColoring(value)
           }
           case 'asylumTotal': {
-            return asylumTotalColoring(stateName)
+            return asylumTotalColoring(value)
           }
 
           case 'asylumByPop': {
-            return asylumByPopColoring(stateName)
+            return asylumByPopColoring(value)
           }
         }
       }
@@ -1637,14 +1639,14 @@
       const enter24 = new Waypoint({
         element: document.getElementById('enter-section-24'),
         handler: function() {
-          handleSchengen('nonEU');
+          handleSchengen('member');
         },
         offset: '40%'
       })
       const reverseEnter24 = new Waypoint({
         element: document.getElementById('reverse-enter-section-24'),
         handler: function() {
-          handleSchengen('nonEU');
+          handleSchengen('member');
         },
         offset: '50%'
       })
