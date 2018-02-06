@@ -181,7 +181,7 @@
         background-color: white;
       }
 
-    
+
 /*
       .header-fixed {
         position: fixed;
@@ -197,11 +197,11 @@
 
       }
 
-      .big-space {
+      /* .big-space {
         height: 85vh;
         width: 100%;
         background-color: #1E4675;
-      }
+      } */
 
       .section {
         height: 100vh;
@@ -379,9 +379,9 @@
 				</section>
 				<section class="demo">
 					<div class="spacer s2"></div>
-          <div class="big-space">
+          <!-- <div class="big-space">
 
-          </div>
+          </div> -->
           <div class="trigger-container">
 
             <div id="trigger-map"></div>
@@ -1099,7 +1099,7 @@
         switch (stage) {
           case 'eu':{
             if (year) {
-              return 'orange'
+              return '#f75413'
             } else {
               return 'gray'
             }
@@ -1474,21 +1474,21 @@
         europe.exit().remove();
       })
 
-
-      const enter1 = new Waypoint({
-        element: document.getElementById('trigger-first-section'),
-        handler: function() {
-          handleMapColorUpdate('blank')
-        },
-        offset: '40%'
-      })
-      const reverseEnter1 = new Waypoint({
-        element: document.getElementById('reverse-enter-section-1'),
-        handler: function() {
-          handleMapColorUpdate('blank')
-        },
-        offset: '50%'
-      })
+      //
+      // const enter1 = new Waypoint({
+      //   element: document.getElementById('trigger-first-section'),
+      //   handler: function() {
+      //     handleMapColorUpdate('blank')
+      //   },
+      //   offset: '40%'
+      // })
+      // const reverseEnter1 = new Waypoint({
+      //   element: document.getElementById('reverse-enter-section-1'),
+      //   handler: function() {
+      //     handleMapColorUpdate('blank')
+      //   },
+      //   offset: '50%'
+      // })
 
       const enter2 = new Waypoint({
         element: document.getElementById('enter-section-2'),
