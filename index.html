@@ -1209,6 +1209,17 @@
               return 'gray'
             }
           }
+          case 'possibleExpansion': {
+            if(schengenStatus === 'Schengen') {
+              return '#f75413'
+            } else if(schengenStatus == 'EU visa-free') {
+              return 'orange'
+            } else {
+              return 'gray'
+            }
+          }
+
+
 
 
 
@@ -1442,7 +1453,6 @@
       const reverseEnter13 = new Waypoint({
         element: document.getElementById('reverse-enter-section-13'),
         handler: function() {
-          console.log('entered new section' );
           handleEuro('eurozone')
         },
         offset: '50%'
@@ -1450,7 +1460,6 @@
       const enter14 = new Waypoint({
         element: document.getElementById('enter-section-14'),
         handler: function() {
-          console.log('entered new section' );
           handleEuro('obligated')
         },
         offset: '40%'
@@ -1458,14 +1467,12 @@
       const reverseEnter14 = new Waypoint({
         element: document.getElementById('reverse-enter-section-14'),
         handler: function() {
-          console.log('entered new section' );
           handleEuro('obligated')        },
         offset: '50%'
       })
       const enter15 = new Waypoint({
         element: document.getElementById('enter-section-15'),
         handler: function() {
-          console.log('entered new section' );
           handleEuro('exempt');
         },
         offset: '40%'
@@ -1473,7 +1480,6 @@
       const reverseEnter15 = new Waypoint({
         element: document.getElementById('reverse-enter-section-15'),
         handler: function() {
-          console.log('entered new section' );
           handleEuro('exempt')
         },
         offset: '50%'
@@ -1481,7 +1487,6 @@
       const enter16 = new Waypoint({
         element: document.getElementById('enter-section-16'),
         handler: function() {
-          console.log('entered new section' );
           handleEuro('eurozone')
         },
         offset: '40%'
@@ -1489,14 +1494,12 @@
       const reverseEnter16 = new Waypoint({
         element: document.getElementById('reverse-enter-section-16'),
         handler: function() {
-          console.log('entered new section' );
           handleEuro('eurozone')        },
         offset: '50%'
       })
       const enter17 = new Waypoint({
         element: document.getElementById('enter-section-17'),
         handler: function() {
-          console.log('entered new section' );
           handleDebt(2008);
         },
         offset: '40%'
@@ -1504,7 +1507,6 @@
       const reverseEnter17 = new Waypoint({
         element: document.getElementById('reverse-enter-section-17'),
         handler: function() {
-          console.log('entered new section' );
           handleDebt(2008);
         },
         offset: '50%'
@@ -1512,7 +1514,6 @@
       const enter18 = new Waypoint({
         element: document.getElementById('enter-section-18'),
         handler: function() {
-          console.log('entered new section' );
           handleDebt(2016);
         },
         offset: '40%'
@@ -1520,7 +1521,6 @@
       const reverseEnter18 = new Waypoint({
         element: document.getElementById('reverse-enter-section-18'),
         handler: function() {
-          console.log('entered new section' );
           handleDebt(2016);
         },
         offset: '50%'
@@ -1528,7 +1528,6 @@
       const enter19 = new Waypoint({
         element: document.getElementById('enter-section-19'),
         handler: function() {
-          console.log('entered new section' );
           handleDebt(2016, true);
         },
         offset: '40%'
@@ -1536,7 +1535,6 @@
       const reverseEnter19 = new Waypoint({
         element: document.getElementById('reverse-enter-section-19'),
         handler: function() {
-          console.log('entered new section' );
           handleDebt(2016, true);
         },
         offset: '50%'
@@ -1544,71 +1542,60 @@
       const enter20 = new Waypoint({
         element: document.getElementById('enter-section-20'),
         handler: function() {
-          console.log('entered new section' );
-          handleTransition('income');
+          handleSchengen('member');
         },
         offset: '40%'
       })
       const reverseEnter20 = new Waypoint({
         element: document.getElementById('reverse-enter-section-20'),
         handler: function() {
-          console.log('entered new section' );
-          handleTransition('income')
-        },
+          handleSchengen('member');        },
         offset: '50%'
       })
       const enter21 = new Waypoint({
         element: document.getElementById('enter-section-21'),
         handler: function() {
-          console.log('entered new section' );
-          handleTransition('income');
+          handleSchengen('exempt');
         },
         offset: '40%'
       })
       const reverseEnter21 = new Waypoint({
         element: document.getElementById('reverse-enter-section-21'),
         handler: function() {
-          console.log('entered new section' );
-          handleTransition('income')
-        },
+          handleSchengen('exempt');        },
         offset: '50%'
       })
       const enter22 = new Waypoint({
         element: document.getElementById('enter-section-22'),
         handler: function() {
-          console.log('entered new section' );
-          handleTransition('income');
+          handleSchengen('nonEU');
         },
         offset: '40%'
       })
       const reverseEnter22 = new Waypoint({
         element: document.getElementById('reverse-enter-section-22'),
         handler: function() {
-          console.log('entered new section' );
-          handleTransition('income')
+          handleSchengen('nonEU')
         },
         offset: '50%'
       })
       const enter23 = new Waypoint({
         element: document.getElementById('enter-section-23'),
         handler: function() {
-          console.log('entered new section' );
-          handleTransition('income');
+          handleSchengen('possibleExpansion');
         },
         offset: '40%'
       })
       const reverseEnter23 = new Waypoint({
         element: document.getElementById('reverse-enter-section-23'),
         handler: function() {
-          console.log('entered new section' );
-          handleTransition('income')
+          handleSchengen('possibleExpansion');
         },
         offset: '50%'
       })
       const enter24 = new Waypoint({
         element: document.getElementById('enter-section-24'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income');
         },
         offset: '40%'
@@ -1616,7 +1603,6 @@
       const reverseEnter24 = new Waypoint({
         element: document.getElementById('reverse-enter-section-24'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income')
         },
         offset: '50%'
@@ -1624,7 +1610,6 @@
       const enter25 = new Waypoint({
         element: document.getElementById('enter-section-25'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income');
         },
         offset: '40%'
@@ -1632,7 +1617,6 @@
       const reverseEnter25 = new Waypoint({
         element: document.getElementById('reverse-enter-section-25'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income')
         },
         offset: '50%'
@@ -1640,7 +1624,6 @@
       const enter26 = new Waypoint({
         element: document.getElementById('enter-section-26'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income');
         },
         offset: '40%'
@@ -1648,7 +1631,6 @@
       const reverseEnter26 = new Waypoint({
         element: document.getElementById('reverse-enter-section-26'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income')
         },
         offset: '50%'
@@ -1656,7 +1638,6 @@
       const enter27 = new Waypoint({
         element: document.getElementById('enter-section-27'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income');
         },
         offset: '40%'
@@ -1664,7 +1645,6 @@
       const reverseEnter27 = new Waypoint({
         element: document.getElementById('reverse-enter-section-27'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income')
         },
         offset: '50%'
@@ -1672,7 +1652,6 @@
       const enter28 = new Waypoint({
         element: document.getElementById('enter-section-28'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income');
         },
         offset: '40%'
@@ -1680,7 +1659,6 @@
       const reverseEnter28 = new Waypoint({
         element: document.getElementById('reverse-enter-section-28'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income')
         },
         offset: '50%'
@@ -1688,7 +1666,6 @@
       const enter29 = new Waypoint({
         element: document.getElementById('enter-section-29'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income');
         },
         offset: '40%'
@@ -1696,7 +1673,6 @@
       const reverseEnter29 = new Waypoint({
         element: document.getElementById('reverse-enter-section-29'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income')
         },
         offset: '50%'
@@ -1704,7 +1680,6 @@
       const enter30 = new Waypoint({
         element: document.getElementById('enter-section-30'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income');
         },
         offset: '40%'
@@ -1712,7 +1687,6 @@
       const reverseEnter30 = new Waypoint({
         element: document.getElementById('reverse-enter-section-30'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income')
         },
         offset: '50%'
@@ -1720,7 +1694,6 @@
       const enter31 = new Waypoint({
         element: document.getElementById('enter-section-31'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income');
         },
         offset: '40%'
@@ -1728,7 +1701,6 @@
       const reverseEnter31 = new Waypoint({
         element: document.getElementById('reverse-enter-section-31'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income')
         },
         offset: '50%'
@@ -1736,7 +1708,6 @@
       const enter32 = new Waypoint({
         element: document.getElementById('enter-section-32'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income');
         },
         offset: '40%'
@@ -1744,7 +1715,6 @@
       const reverseEnter32 = new Waypoint({
         element: document.getElementById('reverse-enter-section-32'),
         handler: function() {
-          console.log('entered new section' );
           handleTransition('income')
         },
         offset: '50%'
