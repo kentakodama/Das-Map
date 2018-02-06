@@ -74,7 +74,7 @@
       	border-spacing: 0;
       }
 
-      .intro {
+      #intro {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -222,10 +222,16 @@
 
       .section-title {
         height: 40%;
+        width: 90%;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-top: 150px;
+      }
+      .title-text {
+        font-size: 2em;
+        color: white;
+        font-family: Helvetica;
+
       }
 
       .section-explanation {
@@ -369,7 +375,7 @@
               </button>
             </div>
           </nav>
-          <div class="intro">
+          <div id="intro">
             <div id="intro-info">
               <p id="intro-phrase">Welcome to Europe</p>
               <button id="start-button" data-position='enter-section-1' class="link">
@@ -406,7 +412,7 @@
               <div id="enter-section-1"></div>
               <div class="first section">
                 <div class="section-title">
-                  <p>Europe Map highlight all</p>
+                  <p class="title-text">Europe Map highlight all</p>
                 </div>
                 <div class="section-explanation">
                   <p>section explanation</p>
@@ -416,7 +422,7 @@
               <div id="enter-section-2"></div>
               <div id="pin3" class="second section">
                 <div class="section-title">
-                  <p>EU highlight EU</p>
+                  <p class="title-text">EU highlight EU</p>
                 </div>
                 <div class="section-explanation">
                   <p>Vast majority of nations in europe are members. the european union has no trade or labour barriers</p>
@@ -426,7 +432,7 @@
               <div id="enter-section-3"></div>
               <div id='pin4' class="third section">
                 <div class="section-title">
-                  <p>EU highlight candidates</p>
+                  <p class="title-text">EU highlight candidates</p>
                 </div>
                 <div class="section-explanation">
                   <p>theseguys want to join with varying levels of likely success</p>
@@ -436,7 +442,7 @@
               <div id="enter-section-4"></div>
               <div id='pin5' class="fourth section">
                 <div class="section-title">
-                  <p>reluctant shoe-ins</p>
+                  <p class="title-text">reluctant shoe-ins</p>
                 </div>
                 <div class="section-explanation">
                   <p>These countries have the economic, political, an culutural for near-automatic accession</p>
@@ -446,7 +452,7 @@
               <div id="enter-section-5"></div>
               <div id='pin6' class="fifth section">
                 <div class="section-title">
-                  <p>Current EU</p>
+                  <p class="title-text">Current EU</p>
                 </div>
                 <div class="section-explanation">
                   <p>The EU is big , but it wasn't always like this</p>
@@ -456,7 +462,7 @@
               <div id="enter-section-6"></div>
               <div id='pin7' class="sixth section">
                 <div class="section-title">
-                  <p>Inner Six</p>
+                  <p class="title-text">Inner Six</p>
                 </div>
                 <div class="section-explanation">
                   <p>European Economic Community, Treaty of Rome</p>
@@ -466,7 +472,7 @@
               <div id="enter-section-7"></div>
               <div id='pin8' class="seventh section">
                 <div class="section-title">
-                  <p>Original 12 Union Members</p>
+                  <p class="title-text">Original 12 Union Members</p>
                 </div>
                 <div class="section-explanation">
                   <p>The European Union was founded with the Maastricht Treaty</p>
@@ -476,7 +482,7 @@
               <div id="enter-section-8"></div>
               <div id='pin9' class="eighth section">
                 <div class="section-title">
-                  <p>Western 15</p>
+                  <p class="title-text">Western 15</p>
                 </div>
                 <div class="section-explanation">
                   <p>Several heretofore reluctant members got on board and joined</p>
@@ -486,7 +492,7 @@
               <div id="enter-section-9"></div>
               <div id='pin10' class="ninth section">
                 <div class="section-title">
-                  <p>Eastern Expansion</p>
+                  <p class="title-text">Eastern Expansion</p>
                 </div>
                 <div class="section-explanation">
                   <p>The Biggest geographic expansion by far, the union welcomed former Soviet and Soviet-allied countries</p>
@@ -496,7 +502,7 @@
               <div id="enter-section-10"></div>
               <div id='pin11' class="tenth section">
                 <div class="section-title">
-                  <p>Now</p>
+                  <p class="title-text">Now</p>
                 </div>
                 <div class="section-explanation">
                   <p>current Union with 28 members with Croatia joining most recently</p>
@@ -506,7 +512,7 @@
               <div id="enter-section-11"></div>
               <div id='pin12' class="eleventh section">
                 <div class="section-title">
-                  <p>Brexit</p>
+                  <p class="title-text">Brexit</p>
                 </div>
                 <div class="section-explanation">
                   <p>...for some reason, The United Kingdom voted to leave the Union. It was the first time that the union shrank because a full member left</p>
@@ -516,7 +522,7 @@
               <div id="enter-section-12"></div>
               <div id='pin13' class="twelfth section">
                 <div class="section-title">
-                  <p>Euro highlight all Europe</p>
+                  <p class="title-text">Euro highlight all Europe</p>
                 </div>
                 <div class="section-explanation">
                   <p>perhaps most synonmous with European integration</p>
@@ -526,7 +532,7 @@
               <div id="enter-section-13"></div>
               <div id='pin14' class="thirteen section">
                 <div class="section-title">
-                  <p>Eurozone</p>
+                  <p class="title-text">Eurozone</p>
                 </div>
                 <div class="section-explanation">
                   <p>... but only these countries officially use the Euro</p>
@@ -536,7 +542,7 @@
               <div id="enter-section-14"></div>
               <div id='pin15' class="fourteenth section">
                 <div class="section-title">
-                  <p>Future Eurozone</p>
+                  <p class="title-text">Future Eurozone</p>
                 </div>
                 <div class="section-explanation">
                   <p>These nations are obligated under accession treaties to eventually forego their national currencies and join the single currency</p>
@@ -546,7 +552,7 @@
               <div id="enter-section-15"></div>
               <div id='pin16' class="fifteenth section">
                 <div class="section-title">
-                  <p>Sovereign Currencies</p>
+                  <p class="title-text">Sovereign Currencies</p>
                 </div>
                 <div class="section-explanation">
                   <p>These three nations are exempt from participating in the single currency from the time they became founding members of the EU</p>
@@ -556,7 +562,7 @@
               <div id="enter-section-16"></div>
               <div id='pin17' class="sixteen section">
                 <div class="section-title">
-                  <p>Euro Opportunities highlight all</p>
+                  <p class="title-text">Euro Opportunities highlight all</p>
                 </div>
                 <div class="section-explanation">
                   <p>These are the benefits of the using the euro, but there have been drawbacks for some...</p>
@@ -566,7 +572,7 @@
               <div id="enter-section-17"></div>
               <div id='pin18' class="seventeenth section">
                 <div class="section-title">
-                  <p>National Debt 2008</p>
+                  <p class="title-text">National Debt 2008</p>
                 </div>
                 <div class="section-explanation">
                   <p>section explanation</p>
@@ -576,7 +582,7 @@
               <div id="enter-section-18"></div>
               <div id='pin19' class="eigteenth section">
                 <div class="section-title">
-                  <p>National Debt 2016</p>
+                  <p class="title-text">National Debt 2016</p>
                 </div>
                 <div class="section-explanation">
                   <p>section explanation</p>
@@ -586,7 +592,7 @@
               <div id="enter-section-19"></div>
               <div id='pin20' class="ninteenth section">
                 <div class="section-title">
-                  <p>Euro highlight piigs</p>
+                  <p class="title-text">Euro highlight piigs</p>
                 </div>
                 <div class="section-explanation">
                   <p>Belonging to the single currency has made it difficult to set monetary policy for these countries. For example, they have been unable to unilaterally devalue their currency to ease debt burdens and make their export industries competitive</p>
@@ -596,7 +602,7 @@
               <div id="enter-section-20"></div>
               <div id='pin21' class="twentieth section">
                 <div class="section-title">
-                  <p>sSchengen highlight schengen countries</p>
+                  <p class="title-text">sSchengen highlight schengen countries</p>
                 </div>
                 <div class="section-explanation">
                   <p>explain schengen is the next most obvious feature of european integration pillar. Free movement of people. No internal border controls. Most EU member states participate</p>
@@ -606,7 +612,7 @@
               <div id="enter-section-21"></div>
               <div id='pin22' class="twentyfirst section">
                 <div class="section-title">
-                  <p>Schengen Exemptions</p>
+                  <p class="title-text">Schengen Exemptions</p>
                 </div>
                 <div class="section-explanation">
                   <p>Once again, the United Kingdom leads the way to avoid committing to greater integration. In order to prevent a physical schengen border between itself and Northern Ireland(UK), Ireland also doesn't participate in Schengen instead forming what's called a common travel area with the United Kingdom</p>
@@ -616,7 +622,7 @@
               <div id="enter-section-22"></div>
               <div id='pin23' class="twentysecond section">
                 <div class="section-title">
-                  <p>Schengen is popular - highlight non-EU states</p>
+                  <p class="title-text">Schengen is popular - highlight non-EU states</p>
                 </div>
                 <div class="section-explanation">
                   <p>Even non-EU states see the benefits of open borders for travel. these countries participate in Schengen while shying away from full EU member status</p>
@@ -626,7 +632,7 @@
               <div id="enter-section-23"></div>
               <div id='pin24' class="twentythird section">
                 <div class="section-title">
-                  <p>Scheduled Expansion highlight countries that will eventually join</p>
+                  <p class="title-text">Scheduled Expansion highlight countries that will eventually join</p>
                 </div>
                 <div class="section-explanation">
                   <p>section explanation</p>
@@ -636,7 +642,7 @@
               <div id="enter-section-24"></div>
               <div id='pin25' class="twentyfourth section">
                 <div class="section-title">
-                  <p>Schengen Results highlight all of schengen</p>
+                  <p class="title-text">Schengen Results highlight all of schengen</p>
                 </div>
                 <div class="section-explanation">
                   <p>Because of eliminating internal borders, one countries challenges becomes another country's</p>
@@ -646,7 +652,7 @@
               <div id="enter-section-25"></div>
               <div id='pin26' class="twentyfifth section">
                 <div class="section-title">
-                  <p>Migration Entry highlight border nations red(border nations) and yellow(base)</p>
+                  <p class="title-text">Migration Entry highlight border nations red(border nations) and yellow(base)</p>
                 </div>
                 <div class="section-explanation">
                   <p>section explanation</p>
@@ -656,7 +662,7 @@
               <div id="enter-section-26"></div>
               <div id='pin27' class="twentysixth section">
                 <div class="section-title">
-                  <p>Migration highligh total asylum</p>
+                  <p class="title-text">Migration highligh total asylum</p>
                 </div>
                 <div class="section-explanation">
                   <p>section explanation</p>
@@ -666,7 +672,7 @@
               <div id="enter-section-27"></div>
               <div id='pin28' class="twentyseventh section">
                 <div class="section-title">
-                  <p>Migration show population based</p>
+                  <p class="title-text">Migration show population based</p>
                 </div>
                 <div class="section-explanation">
                   <p>section explanation</p>
@@ -676,7 +682,7 @@
               <div id="enter-section-28"></div>
               <div id='pin29' class="twentyeighth section">
                 <div class="section-title">
-                  <p>Nato< highlight all Nato nations/p>
+                  <p class="title-text">Nato< highlight all Nato nations/p>
                 </div>
                 <div class="section-explanation">
                   <p>the final pillar of European integration security, perhaps the most remarkable fact that there hasnt been war. And Europeans have historically been quite good at it.</p>
@@ -686,7 +692,7 @@
               <div id="enter-section-29"></div>
               <div id='pin30' class="twentyninth section">
                 <div class="section-title">
-                  <p>Nato's Origins</p>
+                  <p class="title-text">Nato's Origins</p>
                 </div>
                 <div class="section-explanation">
                   <p>Cold War US and Canada, mutual defense article five treaty</p>
@@ -696,7 +702,7 @@
               <div id="enter-section-30"></div>
               <div id='pin31' class="thirtieth section">
                 <div class="section-title">
-                  <p>Expansion highlight joined nations</p>
+                  <p class="title-text">Expansion highlight joined nations</p>
                 </div>
                 <div class="section-explanation">
                   <p>section explanation</p>
@@ -706,7 +712,7 @@
               <div id="enter-section-31"></div>
               <div id='pin32' class="thirtyfirst section">
                 <div class="section-title">
-                  <p>Eastern Expansion</p>
+                  <p class="title-text">Eastern Expansion</p>
                 </div>
                 <div class="section-explanation">
                   <p>The collapse of the Soviet Union left and nearly all of them joined or would like to join Nato</p>
@@ -716,7 +722,7 @@
               <div id="enter-section-32"></div>
               <div id='pin33' class="thirtysecond section">
                 <div class="section-title">
-                  <p>Ukraine Conflict</p>
+                  <p class="title-text">Ukraine Conflict</p>
                 </div>
                 <div class="section-explanation">
                   <p>section explanation</p>
@@ -782,27 +788,30 @@
               	)
               }
 
-              var header = $('header');
-              var range = 200;
 
-              $(window).on('scroll', function () {
+              // var intro = $('#intro');
+              // var range = 200;
+              //
+              // $(window).on('scroll', function () {
+              //
+              //   var scrollTop = $(this).scrollTop(),
+              //       height = intro.outerHeight(),
+              //       offset = height/1.2,
+              //       calc = 1 - (scrollTop - offset + range) / range;
+              //
+              //   console.log(scrollTop);
+              //
+              //   intro.css({ 'opacity': calc });
+              //
+              //   if (calc > '1') {
+              //     intro.css({ 'opacity': 1 });
+              //   } else if ( calc < '0' ) {
+              //     intro.css({ 'opacity': 0 });
+              //   }
+              //
+              // });
 
-                var scrollTop = $(this).scrollTop(),
-                    height = header.outerHeight(),
-                    offset = height / 2,
-                    calc = 1 - (scrollTop - offset + range) / range;
-
-                header.css({ 'opacity': calc });
-
-                if (calc > '1') {
-                  header.css({ 'opacity': 1 });
-                } else if ( calc < '0' ) {
-                  header.css({ 'opacity': 0 });
-                }
-
-              });
-
-              // const nav = document.querySelector('#header');
+              // const nav = document.querySelector('#intro');
               // let topOfNav = nav.offsetTop;
               //
               // function fixNav() {
