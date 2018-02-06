@@ -1266,6 +1266,19 @@
         }
       }
 
+      const handleNato = (status) => {
+
+        d3.selectAll('path')
+            .attr('fill', (d) => natoColorScheme(d, status))
+      }
+
+      const natoColorScheme = (data, status) => {
+        let stateName = data.properties.admin
+        if(!membership[stateName]) { return 'gray' }
+        if(!membership[`${stateName}`]['NATO']) { return 'gray' }
+
+
+      }
 
 
 
