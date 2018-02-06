@@ -1285,10 +1285,11 @@
 
       const natoColorScheme = (data, category) => {
         let stateName = data.properties.admin
-        if(!membership[`${stateName}`]['NATO']) { return 'gray' }
-        if(!natoMembers[stateName]) { return 'gray' }
+        if(category === 'ukraine' && stateName === 'Ukraine') { return 'orange' }
+        if(!membership[`${stateName}`]) { return 'gray' }
+        if(!natoMembers[`${stateName}`]) { return 'gray' }
 
-        let year = natoMembers[stateName]['joined'];
+        let year = parseInt(natoMembers[stateName]['joined']);
 
         switch (category) {
           case 'members': {
@@ -1320,7 +1321,7 @@
             }
           }
           case 'ukraine': {
-            if(year === 1949) {
+            if(year) {
               return '#f75413'
             } else if (stateName === 'Ukraine') {
               return 'orange'
@@ -1764,14 +1765,14 @@
       const enter28 = new Waypoint({
         element: document.getElementById('enter-section-28'),
         handler: function() {
-          handleNato('member');
+          handleNato('members');
         },
         offset: '40%'
       })
       const reverseEnter28 = new Waypoint({
         element: document.getElementById('reverse-enter-section-28'),
         handler: function() {
-          handleNato('member');
+          handleNato('members');
         },
         offset: '50%'
       })
@@ -1792,7 +1793,7 @@
       const enter30 = new Waypoint({
         element: document.getElementById('enter-section-30'),
         handler: function() {
-          handleNato('expansion');;
+          handleNato('expansion');
         },
         offset: '40%'
       })
