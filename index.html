@@ -768,7 +768,11 @@
 
 
             	controller.scrollTo(function (newpos) {
-            		TweenMax.to(window, .8, {scrollTo: {y: newpos}});
+                let constant = .12
+                let distance = Math.abs(newpos - window.pageYOffset)
+                let slides = distance/window.innerWidth
+                let speed = slides * constant
+            		TweenMax.to(window, speed, {scrollTo: {y: newpos}});
             	});
 
             	//  bind scroll to anchor links
@@ -1011,11 +1015,9 @@
                   .attr("fill", "#1E4675");
 
       const switchLinkHighlight = (linkId, turnOn) => {
-        console.log('switch');
-        console.log(linkId);
-        //grab
+
         let link = document.getElementById(linkId)
-        console.log(link.classList);
+
         if (turnOn) {
           link.classList.add('highlight-link')
         } else {
@@ -1030,7 +1032,6 @@
         for (var i = 0; i < data.length; i++) {
           membership[data[i].State] = data[i]
         }
-          console.log(membership);
       });
 
       const generalColorScheme = {
@@ -1219,7 +1220,7 @@
             }
           }
           case 'candidates':{
-            console.log(membership[stateName]['EU']);
+
             if(membership[stateName]['EU'] === 'Candidate') {
               return 'orange';
             } else if (year) {
@@ -1295,7 +1296,6 @@
         for (var i = 0; i < data.length; i++) {
           debtTable[data[i].country] = data[i]
         }
-          console.log(debtTable);
       });
 
 
@@ -1312,7 +1312,6 @@
         if(!debtTable[stateName]) { return 'gray' }
 
         if(piigs) {
-          console.log(debtTable[`${stateName}`]['percent-change']);
           return debtPercentChangeColorScheme(debtTable[`${stateName}`]['percent-change'])
         }
 
@@ -1379,7 +1378,6 @@
         for (var i = 0; i < data.length; i++) {
           migrationTable[data[i].country] = data[i]
         }
-          console.log(migrationTable);
       });
 
       const entryColoring = d3.scaleLinear().domain([0, 250000]).range(['#F9A641', 'red']);
@@ -1489,7 +1487,6 @@
 
 
       const showModal = function(data) {
-        console.log('hover');
            var modal = document.getElementById('infoModal');
            modal.style.left = event.pageX +'px';
            modal.style.top = event.pageY + 'px';
