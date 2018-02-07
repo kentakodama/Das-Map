@@ -188,14 +188,16 @@
         width: 30%;
         height: 100%;
         background-color: white;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        cursor: pointer;
+      }
+      .highlight-link {
+        background-color: orange;
+        color: white;
       }
 
-
-/*
-      .header-fixed {
-        position: fixed;
-
-      } */
       #map{
         width: 70%;
         height: 92vh;
@@ -365,24 +367,12 @@
 
             </div>
             <div id="nav">
-              <button id="eu-link" data-position='enter-section-1' class="link">
-
-              </button>
-              <button id="eurozone-link" data-position='enter-section-2' class="link">
-
-              </button>
-              <button id="eurocrisis-link" data-position='enter-section-3' class="link">
-
-              </button>
-              <button id="Schengen-link" data-position='enter-section-3' class="link">
-
-              </button>
-              <button id="migration-link" data-position='enter-section-3' class="link">
-
-              </button>
-              <button id="nato-link" data-position='enter-section-3' class="link">
-
-              </button>
+              <button id="eu-link" data-position='enter-section-2' class="link">EU</button>
+              <button id="eurozone-link" data-position='enter-section-12' class="link">Eurozone</button>
+              <button id="eurocrisis-link" data-position='enter-section-16' class="link">Euro Crisis</button>
+              <button id="Schengen-link" data-position='enter-section-20' class="link">Schengen</button>
+              <button id="migration-link" data-position='enter-section-24' class="link">Migration</button>
+              <button id="nato-link" data-position='enter-section-28' class="link">NATO</button>
             </div>
           </nav>
           <div id="intro">
@@ -799,6 +789,8 @@
               }
 
 
+
+
               // var intro = $('#intro');
               // var range = 200;
               //
@@ -1018,7 +1010,19 @@
                   .attr("height", "100%")
                   .attr("fill", "#1E4675");
 
+      const switchLinkHighlight = (linkId, turnOn) => {
+        console.log('switch');
+        console.log(linkId);
+        //grab
+        let link = document.getElementById(linkId)
+        console.log(link.classList);
+        if (turnOn) {
+          link.classList.add('highlight-link')
+        } else {
+          link.classList.remove('highlight-link')
+        }
 
+      }
       const membership = {};
 
       d3.csv("EuropeanStates.csv", function(data) {
@@ -1541,7 +1545,8 @@
       const enter2 = new Waypoint({
         element: document.getElementById('enter-section-2'),
         handler: function() {
-          handleAccession('eu')
+          handleAccession('eu');
+          switchLinkHighlight('eu-link', true);
         },
         offset: '40%'
       })
@@ -1681,6 +1686,8 @@
         element: document.getElementById('reverse-enter-section-11'),
         handler: function() {
           handleAccession('brexit')
+          switchLinkHighlight('eu-link', true);
+          switchLinkHighlight('eurozone-link', false);
         },
         offset: '50%'
       })
@@ -1688,6 +1695,8 @@
         element: document.getElementById('enter-section-12'),
         handler: function() {
           handleEuro('eu');
+          switchLinkHighlight('eu-link', false);
+          switchLinkHighlight('eurozone-link', true);
         },
         offset: '40%'
       })
@@ -1735,14 +1744,18 @@
       const reverseEnter15 = new Waypoint({
         element: document.getElementById('reverse-enter-section-15'),
         handler: function() {
-          handleEuro('exempt')
+          handleEuro('exempt');
+          switchLinkHighlight('eurozone-link', true);
+          switchLinkHighlight('eurocrisis-link', false);
         },
         offset: '50%'
       })
       const enter16 = new Waypoint({
         element: document.getElementById('enter-section-16'),
         handler: function() {
-          handleEuro('eurozone')
+          handleEuro('eurozone');
+          switchLinkHighlight('eurocrisis-link', true);
+          switchLinkHighlight('eurozone-link', false);
         },
         offset: '40%'
       })
@@ -1791,6 +1804,8 @@
         element: document.getElementById('reverse-enter-section-19'),
         handler: function() {
           handleDebt(2016, true);
+          switchLinkHighlight('eurocrisis-link', true)
+          switchLinkHighlight('Schengen-link', false);
         },
         offset: '50%'
       })
@@ -1798,6 +1813,8 @@
         element: document.getElementById('enter-section-20'),
         handler: function() {
           handleSchengen('member');
+          switchLinkHighlight('Schengen-link', true)
+          switchLinkHighlight('eurocrisis-link', false)
         },
         offset: '40%'
       })
