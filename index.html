@@ -78,7 +78,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 85vh;
+        height: 92vh;
         width: 100%;
         background-color: #1E4675;
       }
@@ -157,7 +157,7 @@
         flex-direction: row;
         background-color: black;
         top:0;
-        height: 15vh;
+        height: 8vh;
         width: 100%;
 
         /* transition:all 0.5s; */
@@ -197,17 +197,17 @@
 
       } */
       #map{
-        width: 60%;
-        height: 85vh;
+        width: 70%;
+        height: 92vh;
       }
       #pin2 {
-        width: 40%;
+        width: 30%;
         /* height: 5000px; */
 
       }
 
       /* .big-space {
-        height: 85vh;
+        height: 92vh;
         width: 100%;
         background-color: #1E4675;
       } */
@@ -986,10 +986,10 @@
       const width = document.documentElement.clientWidth
 
       const projection = d3.geoOrthographic()
-                        .center([ 25, 34 ])
+                        .center([ 12, 33 ])
                         .translate([ width/2, height/2 ])
-                        .scale([ width/1.25 ])
-                        .rotate([-10, -20, -10 ]);
+                        .scale([ width/1.07 ])
+                        .rotate([-10, -20, 0 ]);
 
 
       let europe = void 0;
