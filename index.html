@@ -1865,6 +1865,8 @@
         element: document.getElementById('reverse-enter-section-23'),
         handler: function() {
           handleSchengen('possibleExpansion');
+          switchLinkHighlight('Schengen-link', true)
+          switchLinkHighlight('migration-link', false)
         },
         offset: '50%'
       })
@@ -1872,6 +1874,8 @@
         element: document.getElementById('enter-section-24'),
         handler: function() {
           handleSchengen('member');
+          switchLinkHighlight('migration-link', true);
+          switchLinkHighlight('Schengen-link', false);
         },
         offset: '40%'
       })
@@ -1920,7 +1924,10 @@
       const reverseEnter27 = new Waypoint({
         element: document.getElementById('reverse-enter-section-27'),
         handler: function() {
-          handleMigration('asylumByPop')
+          handleMigration('asylumByPop');
+          switchLinkHighlight('migration-link', true);
+          switchLinkHighlight('nato-link', false);
+
         },
         offset: '50%'
       })
@@ -1928,6 +1935,9 @@
         element: document.getElementById('enter-section-28'),
         handler: function() {
           handleNato('members');
+          switchLinkHighlight('nato-link', true);
+          switchLinkHighlight('migration-link', false);
+
         },
         offset: '40%'
       })
@@ -1991,6 +2001,7 @@
         element: document.getElementById('reverse-enter-section-32'),
         handler: function() {
           handleNato('ukraine');
+          switchLinkHighlight('nato-link', true);
         },
         offset: '50%'
       })
