@@ -786,10 +786,10 @@
             	controller.scrollTo(function (newpos) {
                 let constant = .12
                 let distance = Math.abs(newpos - window.pageYOffset)
-                if(distance < window.innerWidth) {
+                if(distance < window.innerHeight) {
                   constant = 1
                 }
-                let slides = distance/window.innerWidth
+                let slides = distance/window.innerHeight
                 let speed = slides * constant
             		TweenMax.to(window, speed, {scrollTo: {y: newpos}});
             	});
@@ -807,11 +807,9 @@
                   }
               			// trigger scroll
               			controller.scrollTo(`#${pos}`)
-
                 }
               	)
               }
-
 
 
 
@@ -1006,6 +1004,19 @@
 
 			</div>
       <script>
+
+      // const hideIntro = () => {
+        let intro = document.getElementById('intro');
+        console.log('pageoffset', window.pageYOffset);
+        console.log('innerWidth', window.innerWidth);
+        console.log('bounding', intro.getBoundingClientRect());
+        console.log('client height', intro.clientHeight);
+
+        intro.style.height = 0;
+
+      }
+
+
 
 
 
@@ -1544,18 +1555,18 @@
         europe.exit().remove();
       })
 
-      //
-      // const enter1 = new Waypoint({
-      //   element: document.getElementById('trigger-first-section'),
-      //   handler: function() {
-      //     handleMapColorUpdate('blank')
-      //   },
-      //   offset: '40%'
-      // })
+
+      const enter1 = new Waypoint({
+        element: document.getElementById('trigger-first-section'),
+        handler: function() {
+          hideIntro();
+        }
+        // offset: '40%'
+      })
       const reverseEnter1 = new Waypoint({
         element: document.getElementById('reverse-enter-section-1'),
         handler: function() {
-          handleMapColorUpdate('blank')
+          // handleMapColorUpdate('blank')
           switchLinkHighlight('eu-link', false);
         },
         offset: '50%'
