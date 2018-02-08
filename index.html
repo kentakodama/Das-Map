@@ -246,7 +246,6 @@
         display: flex;
         align-items: center;
         justify-content: left;
-
       }
 
       .explanation-text {
@@ -260,6 +259,7 @@
         font-family: Helvetica;
         line-height: 1.4;
         border-top: solid;
+        font-style: italic;
       }
 
 /*
@@ -664,24 +664,24 @@
                   <p class="title-text">Schengen Results</p>
                 </div>
                 <div class="section-explanation">
-                  <p class="explanation-text">Because of eliminating internal borders, one countries challenges becomes another country's</p>
+                  <p class="explanation-text">While the agreement facilitated invaluable cultural exchange among citizens of participating countries, it has also led to greater difficulty addressing immigration from outside the EU. Similar to how nations lost a degree of independence to the Euro, states delegated border controls to the EU, therefore making one nation's problem a club-wide challenge.</p>
                 </div>
               </div>
               <div id="reverse-enter-section-24"></div>
               <div id="enter-section-25"></div>
               <div id='pin26' class="twentyfifth section">
                 <div class="section-title">
-                  <p class="title-text">The <br> Migrants <br> Arrive </p>
+                  <p class="title-text">Migrant <br> Crisis </p>
                 </div>
                 <div class="section-explanation">
-                  <p class="explanation-text">section explanation</p>
+                  <p class="explanation-text">In 2015, several factors converged leading to an unprecedented influx of migrants. Macedonia eased onward journeys to the EU opening a cheaper and safer route and Syria's government eased emmigration to rid itself of political opponents in its civil war. Southern European nations, especially Greece and Bulgaria, received the the vast majority of new arrivals into the Schengen Area.</p>
                 </div>
               </div>
               <div id="reverse-enter-section-25"></div>
               <div id="enter-section-26"></div>
               <div id='pin27' class="twentysixth section">
                 <div class="section-title">
-                  <p class="title-text">Asylum <br>Applicants </p>
+                  <p class="title-text">Asylum <br>Applicants</p>
                 </div>
                 <div class="section-explanation">
                   <p class="explanation-text">section explanation</p>
@@ -1419,7 +1419,7 @@
         }
       });
 
-      const entryColoring = d3.scaleLinear().domain([0, 250000]).range(['#F9A641', 'red']);
+      const entryColoring = d3.scaleLinear().domain([10000, 250000]).range(['#fd8828', 'red']);
       const asylumTotalColoring = d3.scaleLinear().domain([0, 500000]).range(['#FED130', 'red']);
       const asylumByPopColoring = d3.scaleLinear().domain([0, 150]).range(['#F9A641', 'red']);
 
@@ -1439,7 +1439,7 @@
         let value = parseInt(migrationTable[`${stateName}`][`${category}`])
         switch (category) {
           case 'entry': {
-            if (!value) {return 'gray'}
+            if (!value) {return '#FDA429'}
             return entryColoring(value)
           }
           case 'asylumTotal': {
