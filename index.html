@@ -327,48 +327,67 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #1E4675;
+        justify-content: flex-end;
+        background-color: orange;
       }
 
       #outro-info {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-content: center;
         align-items: center;
-        width: 90%;
-        height: 90%;
-        background-color: red;
+        width: 70%;
+        height: 70%;
+        margin-bottom: 2em;
+        background-color: orange;
       }
 
       #photo {
-        width: 25%;
-        height: 90%;
-        background-color: green;
+        width: 40%;
+        height: auto;
+        max-height: 100%;
       }
 
       #outro-content {
         display: flex;
         flex-direction: column;
-        background-color: blue;
+        background-color: orange;
         align-items: center;
         justify-content: center;
-        width: 75%;
-        height: 90%;
-
+        width: 60%;
+        max-height: 100%;
+        height: auto;
       }
 
       #bio-container {
         height: 40%;
         width: 90%;
-        background-color: white;
+        background-color: orange;
       }
+      #bio-container p {
+        color: white;
+        font-size: 1.5em;
+        font-family: Helvetica;
+      }
+
+
       #resume-container {
         height: 40%;
         width: 90%;
-        background-color: yellow;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        align-content: flex-end;
+        background-color: orange;
       }
-
+      #resume-container a {
+        text-decoration: none;
+        font-family: Helvetica;
+        font-size: 1em;
+        color: white;
+      }
 
 
       /* disable scroll bar but only for chrome */
@@ -757,13 +776,15 @@
           </div>
             <div id="outro">
               <div id="outro-info">
-                <div id="photo"></div>
+                <img id="photo" src="https://res.cloudinary.com/dql6mlrow/image/upload/q_66/v1518084261/DSCF5974_yrqu9o.jpg"/>
                 <div id="outro-content">
                   <div id="bio-container">
-
+                    <p>Kenta Kodama is a software developer and cartographer currently located in the San Francisco Bay Area. If you would like to hire him to make your data map please feel free to contact him at any of the links below.</p>
                   </div>
                   <div id="resume-container">
-
+                    <a href="https://github.com/kentakodama">GitHub</a>
+                    <a href="https://www.linkedin.com/in/kentakodama/">Linkedin</a>
+                    <a href="mailto:kentakodama@gmail.com">email</a>
                   </div>
                 </div>
               </div>
@@ -862,7 +883,7 @@
 											// .addIndicators({name: "1 (duration: 700)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-							var scene1 = new ScrollMagic.Scene({triggerElement: "#map",triggerHook: 0, duration: "3150%"})
+							var scene1 = new ScrollMagic.Scene({triggerElement: "#map",triggerHook: 0, duration: "3151%"})
 											.setPin("#map")
                       // .offset(-100)
 											// .addIndicators({name: "1 (duration: 700)"}) // add indicators (requires plugin)
@@ -2040,6 +2061,13 @@
         handler: function() {
           handleNato('ukraine');
           switchLinkHighlight('nato-link', true);
+        },
+        offset: '50%'
+      })
+      const outro = new Waypoint({
+        element: document.getElementById('outro'),
+        handler: function() {
+          switchLinkHighlight('nato-link', false);
         },
         offset: '50%'
       })
