@@ -122,6 +122,13 @@
         align-self: center;
       }
 
+      #tag-line {
+        font-family: Helvetica;
+        font-size: 2em;
+        color: white;
+        align-self: center;
+      }
+
 
 
 
@@ -174,7 +181,18 @@
         height: 100%;
         width: 15%;
         background-color: #F55526;
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #logo p {
+        color: white;
+        font-family: Helvetica;
+        font-style: italic;
+        border: none;
+        outline: none;
+        font-size: 1.4em;
+        font-weight: bold;
       }
 
       #nav {
@@ -402,20 +420,22 @@
 				<section id="titlechart">
           <nav id="header">
             <div id="logo">
-
+              <p>Das Map!</p>
             </div>
             <div id="nav">
               <button id="eu-link" data-position='enter-section-2' class="link">EU</button>
               <button id="eurozone-link" data-position='enter-section-12' class="link">Eurozone</button>
               <button id="eurocrisis-link" data-position='enter-section-16' class="link">Euro Crisis</button>
               <button id="Schengen-link" data-position='enter-section-20' class="link">Schengen</button>
-              <button id="migration-link" data-position='enter-section-24' class="link">Migration</button>
+              <button id="migration-link" data-position='enter-section-25' class="link">Migration</button>
               <button id="nato-link" data-position='enter-section-28' class="link">NATO</button>
+              <button id="about-link" data-position='outro' class="link">About</button>
             </div>
           </nav>
           <div id="intro">
             <div id="intro-info">
-              <p id="intro-phrase">Welcome to Europe</p>
+              <p id="intro-phrase">European Integration</p>
+              <p id="tag-line">via maps</p>
               <button id="start-button" data-position='enter-section-1' class="link">
                 EXPLORE
               </button>
@@ -610,20 +630,20 @@
               <div id="enter-section-17"></div>
               <div id='pin18' class="seventeenth section">
                 <div class="section-title">
-                  <p class="title-text">National Debt <br> 2008</p>
+                  <p class="title-text">National <br> Debt 2008</p>
                 </div>
                 <div class="section-explanation">
-                  <p class="explanation-text">section explanation</p>
+                  <p class="explanation-text">All nations in the Eurozone entered the financial crisis of late 2008 with what appeared to be manageable levels of debt.</p>
                 </div>
               </div>
               <div id="reverse-enter-section-17"></div>
               <div id="enter-section-18"></div>
               <div id='pin19' class="eigteenth section">
                 <div class="section-title">
-                  <p class="title-text">National Debt <br> 2016</p>
+                  <p class="title-text">National <br> Debt 2016</p>
                 </div>
                 <div class="section-explanation">
-                  <p class="explanation-text">section explanation</p>
+                  <p class="explanation-text">... in 2016 - well after economies should have been growing - European nations, in particular the Eurozone, experienced growing debt to GDP burdens.</p>
                 </div>
               </div>
               <div id="reverse-enter-section-18"></div>
@@ -633,7 +653,7 @@
                   <p class="title-text">The Euro <br> Handcuffs </p>
                 </div>
                 <div class="section-explanation">
-                  <p class="explanation-text">Participating in the single currency meant relinquishing control over monetary policy, in this case, to the European Central Bank. A nation with monetary sovereignty can control the supply of their currency giving it the ability to increase or decrease its worth in response trade or fiscal conditions. For example, the United Kingdom, which retains the Pound, might unilaterally devalue its currency to lower the cost of exports and lessen its debt burden. Eurozone debt, as seen here, has outpaced that of EU members not participating in the Euro.</p>
+                  <p class="explanation-text">Participating in the single currency meant relinquishing control over monetary policy to the European Central Bank. A nation with monetary sovereignty can control the supply of its currency, allowing it to influence exchange rates in response trade or fiscal conditions. For example, the United Kingdom might devalue its currency, the Pound, to lower the cost of exports and lessen its debt burden. Eurozone debt, as seen here, has outpaced that of EU members not participating in the Euro. Countries in red experienced a faster debt increases nations colored yellow.</p>
                 </div>
               </div>
               <div id="reverse-enter-section-19"></div>
@@ -1924,8 +1944,6 @@
         element: document.getElementById('reverse-enter-section-23'),
         handler: function() {
           handleSchengen('possibleExpansion');
-          switchLinkHighlight('Schengen-link', true)
-          switchLinkHighlight('migration-link', false)
         },
         offset: '50%'
       })
@@ -1933,8 +1951,7 @@
         element: document.getElementById('enter-section-24'),
         handler: function() {
           handleSchengen('member');
-          switchLinkHighlight('migration-link', true);
-          switchLinkHighlight('Schengen-link', false);
+
         },
         offset: '30%'
       })
@@ -1942,6 +1959,8 @@
         element: document.getElementById('reverse-enter-section-24'),
         handler: function() {
           handleSchengen('member');
+          switchLinkHighlight('Schengen-link', true)
+          switchLinkHighlight('migration-link', false)
         },
         offset: '50%'
       })
@@ -1949,6 +1968,8 @@
         element: document.getElementById('enter-section-25'),
         handler: function() {
           handleMigration('entry');
+          switchLinkHighlight('migration-link', true);
+          switchLinkHighlight('Schengen-link', false);
         },
         offset: '30%'
       })
@@ -2061,6 +2082,7 @@
         handler: function() {
           handleNato('ukraine');
           switchLinkHighlight('nato-link', true);
+          switchLinkHighlight('about-link', false);
         },
         offset: '50%'
       })
@@ -2068,6 +2090,7 @@
         element: document.getElementById('outro'),
         handler: function() {
           switchLinkHighlight('nato-link', false);
+          switchLinkHighlight('about-link', true);
         },
         offset: '50%'
       })
