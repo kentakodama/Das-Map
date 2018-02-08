@@ -241,6 +241,14 @@
         background-color: #1E4675;
         height: 100vh;
       }
+      .thirtysecond {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        flex-direction: column;
+        background-color: #1E4675;
+        height: 100vh;
+      }
 
       .section-title {
         height: 50%;
@@ -776,7 +784,7 @@
               </div>
               <div id="reverse-enter-section-31"></div>
               <div id="enter-section-32"></div>
-              <div id='pin33' class="thirtysecond section">
+              <div id='pin33' class="thirtysecond">
                 <div class="section-title">
                   <p class="title-text">The <br> Ukraine <br> Conflict</p>
                 </div>
@@ -1032,10 +1040,10 @@
 							// 				.setPin("#pin32")
 							// 				// .offset(-100)// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
 							// 				.addTo(controller);
-							// var scene33 = new ScrollMagic.Scene({triggerElement: "#enter-section-32",triggerHook: 0, duration: 700})
-							// 				.setPin("#pin33")
-							// 				// .offset(-100)// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
-							// 				.addTo(controller);
+							var scene33 = new ScrollMagic.Scene({triggerElement: "#enter-section-32",triggerHook: 0})
+											.setPin("#pin33")
+											// .offset(-100)// .addIndicators({name: "2 (duration: 500)"}) // add indicators (requires plugin)
+											.addTo(controller);
 
 
 						});
@@ -2078,18 +2086,18 @@
         handler: function() {
           handleNato('ukraine');
           switchLinkHighlight('nato-link', true);
-          switchLinkHighlight('about-link', false);
+          // switchLinkHighlight('about-link', false);
         },
         offset: '50%'
       })
-      const outro = new Waypoint({
-        element: document.getElementById('outro'),
-        handler: function() {
-          switchLinkHighlight('nato-link', false);
-          switchLinkHighlight('about-link', true);
-        },
-        offset: '50%'
-      })
+      // const outro = new Waypoint({
+      //   element: document.getElementById('outro'),
+      //   handler: function() {
+      //     switchLinkHighlight('nato-link', false);
+      //     switchLinkHighlight('about-link', true);
+      //   },
+      //   offset: '50%'
+      // })
 
     </script>
   </body>
