@@ -217,6 +217,11 @@
         color: white;
       }
 
+      .stop-scrolling {
+        height: 100%;
+        overflow: hidden;
+      }
+
       #map{
         width: 65%;
         height: 92vh;
@@ -715,7 +720,7 @@
                 let constant = .12
                 let distance = Math.abs(newpos - window.pageYOffset)
                 if(distance < window.innerHeight) {
-                  constant = 1
+                  constant = .8
                 }
                 let slides = distance/window.innerHeight
                 let speed = slides * constant
@@ -949,8 +954,13 @@
       // // }
 
 
-
-
+      // window.addEventListener('scroll', () => {
+      //   let intro = document.getElementById('intro')
+      //   if (intro.clientHeight > 0) {
+      //     intro.classList.add('stop-scrolling')
+      //   }
+      //
+      // })
 
       const height = document.documentElement.clientHeight
       const width = document.documentElement.clientWidth
