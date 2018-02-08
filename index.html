@@ -431,10 +431,10 @@
               <div id="enter-section-1"></div>
               <div class="first section">
                 <div class="section-title">
-                  <p class="title-text"> <br> Europe</p>
+                  <p class="title-text"> Modern<br>Europe</p>
                 </div>
                 <div class="section-explanation">
-                  <p class="explanation-text" class="explanation-text">section explanation</p>
+                  <p class="explanation-text" class="explanation-text">Europe the most integrated area set of countries in the world. Several unique institutions bind these once disparate, and historically warring, nations together.</p>
                 </div>
               </div>
               <div id="reverse-enter-section-1"></div>
@@ -744,7 +744,7 @@
                   <p class="title-text">The <br> Ukraine <br> Conflict</p>
                 </div>
                 <div class="section-explanation">
-                  <p class="explanation-text">section explanation</p>
+                  <p class="explanation-text">Although precipitated by the status of a EU-Ukraine association agreement, the prospect of Ukraine being absorbed into the European Union or, worse, NATO proved untenable for Russia. Russia annexed the Crimean Peninsula and invaded eastern Ukraine with the help of local separatists.</p>
                 </div>
               </div>
               <div id="reverse-enter-section-32"></div>
@@ -1553,7 +1553,7 @@
           .attr('d', path)
           .attr('stroke', 'white')
           .attr('stroke-width', 0.6)
-          .attr('fill', (d) => '#f75413')
+          .attr('fill', (d) => 'gray')
           .on('mouseover', (d) => showModal(d))
           .on('wheel', () => hideModal())
 
@@ -1567,13 +1567,14 @@
         element: document.getElementById('trigger-first-section'),
         handler: function() {
           // hideIntro();
+          handleMapColorUpdate('blank');
         }
         // offset: '40%'
       })
       const reverseEnter1 = new Waypoint({
         element: document.getElementById('reverse-enter-section-1'),
         handler: function() {
-          // handleMapColorUpdate('blank')
+          handleMapColorUpdate('blank');
           switchLinkHighlight('eu-link', false);
         },
         offset: '50%'
