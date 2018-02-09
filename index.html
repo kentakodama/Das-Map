@@ -143,20 +143,29 @@
         display: flex;
         flex-direction: row;
       }
-      #infoModal{
+
+      #infoModal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
          position: absolute;
-         z-index: 2;
-         background: rgba(0,153,76,0.8);
-         width:140px;
-         height:20px;
-         color:black;
-         font-size: 14px;
-         padding:5px;
+         z-index: 1;
+         background: white;
+         width: 14em;
+         height:6em;
+         color: white;
+         font-size: 1em;
          top:-150px;
          left:-150px;
-         font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
-          "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+         border-radius: 5px;
+         border: solid white;
+         border-width: 1px;
+         background-color: #214773;
+         font-family: Helvetica;
+         opacity: .8;
+         /* padding: .5em; */
       }
+
 
       #header {
         display: flex;
@@ -322,6 +331,7 @@
               <!-- <button id="about-link" data-position='outro' class="link">About</button> -->
             </div>
           </nav>
+          <div id="infoModal"></div>
           <div id="intro">
             <div id="intro-info">
               <p id="intro-phrase">European Integration</p>
@@ -351,9 +361,8 @@
             <div id="trigger-explanation"></div>
             <div id="trigger-first-section"></div>
           </div>
-          <div id="infoModal"></div>
-          <div class="pin-container">
 
+          <div class="pin-container">
   					<div id="map"></div>
 
   					<div id="pin2">
@@ -945,13 +954,13 @@
       //     containerInfo = intro.getBoundingClientRect();
       //     if (containerInfo.top < 0) {
       //       console.log(containerInfo.bottom);
-      //       intro.style.height = containerInfo.bottom;
+      //       intro.style.height = `${containerInfo.bottom}px`;
       //     }
       // })
-      //
-      //   //intro.style.height = 0;
-      //
-      // // }
+
+        //intro.style.height = 0;
+
+      // }
 
 
       // window.addEventListener('scroll', () => {
@@ -1461,18 +1470,29 @@
 
       const showModal = function(data) {
            var modal = document.getElementById('infoModal');
+
            modal.style.left = event.pageX +'px';
            modal.style.top = event.pageY + 'px';
+           modal.style.height = '50px';
+           modal.style.width = '100px';
+           modal.style.paddingRight = '.7em';
+           modal.style.paddingLeft = '.7em';
            modal.innerHTML = data.properties.admin;
       };
 
       const hideModal = () => {
 
+        // modal.classList.add('hide-modal')
         var modal = document.getElementById('infoModal');
-        modal.style = "height: 0px"
-        modal.style.top = 'width: 0px'
+        modal.style.height = 0;
+        modal.style.width = 0;
+        modal.style.padding = 0;
+        modal.style.border = 'none';
         modal.innerHTML = '';
       }
+
+      //must have window events here not on the country
+      window.addEventListener('scroll', () => hideModal())
 
       d3.json("region_un_Europe_subunits.json", function(error, data) {
 
@@ -1489,7 +1509,8 @@
           .attr('stroke-width', 0.6)
           .attr('fill', (d) => 'gray')
           .on('mouseover', (d) => showModal(d))
-          .on('wheel', () => hideModal())
+
+
 
 
 
