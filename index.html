@@ -113,33 +113,47 @@
         width: 85%;
       }
 
-
-      #author {
+      #resume {
+        width: 85%;
         margin-top: 1.2em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+      }
+      #author {
         font-size: 1em;
         color: white;
         font-family: Helvetica;
+        width: 50%;
       }
 
       #link-container {
         font-size: 1em;
         color: white;
         font-family: Helvetica;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 50%;
+
       }
 
 
 
       #start-button {
-        width: 20%;
+        width: 15vw;
         height: 8vh;
         background-color: white;
         background-color: #F55526;
         padding: 0;
         border: none;
         outline: none;
-        font-size: 1.5em;
+        font-size: 1em;
         color: white;
         cursor: pointer;
+        margin-top: 3em;
+        margin-right: 2em;
       }
 
 
@@ -382,17 +396,21 @@
                 <div id="intro-title">
                   <p id="title">European <br>Integration</p>
                   <p id="description">a geographic history</p>
-                  <p id="author">by Kenta Kodama</p>
-                </div>
-                <div id="intro-bio">
-                  <a href="https://github.com/kentakodama">GitHub</a>
-                  <a href="https://www.linkedin.com/in/kentakodama/">Linkedin</a>
-                  <a href="mailto:kentakodama@gmail.com">email</a>
+                  <div id="resume">
+                    <div id="author">
+                      <p>by Kenta Kodama</p>
+                    </div>
+                    <div id="link-container">
+                      <a href="https://github.com/kentakodama">GitHub</a>
+                      <a href="https://www.linkedin.com/in/kentakodama/">Linkedin</a>
+                    </div>
+                  </div>
                 </div>
                 <button id="start-button" data-position='enter-section-1' class="link">
                   EXPLORE
                 </button>
               </div>
+              <div id="enter-section-1"></div>
               <div class="first section">
                 <div class="section-title">
                   <p class="title-text"> Modern<br>Europe</p>
