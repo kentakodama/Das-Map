@@ -322,6 +322,7 @@
               <p>Das Map!</p>
             </div>
             <div id="nav">
+              <button id="welcome-link" data-position='intro' class="link highlight-link">Welcome</button>
               <button id="eu-link" data-position='enter-section-2' class="link">EU</button>
               <button id="eurozone-link" data-position='enter-section-12' class="link">Eurozone</button>
               <button id="eurocrisis-link" data-position='enter-section-16' class="link">Euro Crisis</button>
@@ -1523,13 +1524,10 @@
         europe.exit().remove();
       })
 
-      // const cycleHighlight = () => {
-      //     d3.selectAll('path')
-      //         .attr('fill', (d) => natoColorScheme(d, category))
-      //
-      // }
+      let runCycle = true
 
       function cycleHighlight(delay) {
+          if (!runCycle) { return }
           var x = 0;
           var intervalID = window.setInterval(function () {
 
@@ -1544,8 +1542,8 @@
                   }
                 })
 
-
              if (++x === nations.length) {
+               runCycle = false;
                  window.clearInterval(intervalID);
                  d3.selectAll('path')
                      .attr('fill', 'gray')
@@ -1559,7 +1557,8 @@
       const enter1 = new Waypoint({
         element: document.getElementById('trigger-first-section'),
         handler: function() {
-          cycleHighlight(120)
+          cycleHighlight(120);
+
         }
         // offset: '40%'
       })
@@ -1567,6 +1566,7 @@
         element: document.getElementById('reverse-enter-section-1'),
         handler: function() {
           handleMapColorUpdate('blank');
+          switchLinkHighlight('welcome-link', true);
           switchLinkHighlight('eu-link', false);
         },
         offset: '50%'
@@ -1576,6 +1576,7 @@
         element: document.getElementById('enter-section-2'),
         handler: function() {
           handleAccession('eu');
+          switchLinkHighlight('welcome-link', false);
           switchLinkHighlight('eu-link', true);
         },
         offset: '30%'
