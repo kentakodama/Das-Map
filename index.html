@@ -78,6 +78,7 @@
 
       #intro {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 92vh;
@@ -85,27 +86,54 @@
         background-color: #1E4675;
       }
 
-
-
-      #intro-info {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        align-content: center;
-        background-color: inherit;
-        height: 80%;
-        width: 90%;
+      #intro-title {
         display: flex;
         flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        height: 50%;
+        width: 100%
       }
+
+      #title {
+        font-size: 4em;
+        color: white;
+        font-family: Helvetica;
+        width: 100%;
+      }
+
+      #description {
+        margin-top: 1em;
+        padding-bottom: 1em;
+        font-size: 1.5em;
+        color: white;
+        font-family: Helvetica;
+        font-style: italic;
+        border-bottom: solid white;
+        width: 85%;
+      }
+
+
+      #author {
+        margin-top: 1.2em;
+        font-size: 1em;
+        color: white;
+        font-family: Helvetica;
+      }
+
+      #link-container {
+        font-size: 1em;
+        color: white;
+        font-family: Helvetica;
+      }
+
+
 
       #start-button {
         width: 20%;
         height: 8vh;
         background-color: white;
-        /* border-radius: 10px; */
         background-color: #F55526;
-        margin-top: 3em;
         padding: 0;
         border: none;
         outline: none;
@@ -114,13 +142,6 @@
         cursor: pointer;
       }
 
-
-      #intro-phrase {
-        font-family: Helvetica;
-        font-size: 5em;
-        color: white;
-        align-self: center;
-      }
 
       #tag-line {
         font-family: Helvetica;
@@ -333,15 +354,6 @@
             </div>
           </nav>
           <div id="infoModal"></div>
-          <!-- <div id="intro">
-            <div id="intro-info">
-              <p id="intro-phrase">European Integration</p>
-              <p id="tag-line">History Through Maps</p>
-              <button id="start-button" data-position='enter-section-1' class="link">
-                EXPLORE
-              </button>
-            </div>
-					</div> -->
           <div id="trigger-header"></div>
 
 					<script>
@@ -366,13 +378,20 @@
   					<div id="map"></div>
 
   					<div id="pin2">
-              <div class="intro section">
-                <div class="section-title">
-                  <p class="title-text"> intro</p>
+              <div id="intro">
+                <div id="intro-title">
+                  <p id="title">European <br>Integration</p>
+                  <p id="description">a geographic history</p>
+                  <p id="author">by Kenta Kodama</p>
                 </div>
-                <div class="section-explanation">
-                  <p class="explanation-text" class="explanation-text">The nations of Europe constitute the most integrated area in the world. Several unique institutions bind these once disparate, and historically warring, nations together.</p>
+                <div id="intro-bio">
+                  <a href="https://github.com/kentakodama">GitHub</a>
+                  <a href="https://www.linkedin.com/in/kentakodama/">Linkedin</a>
+                  <a href="mailto:kentakodama@gmail.com">email</a>
                 </div>
+                <button id="start-button" data-position='enter-section-1' class="link">
+                  EXPLORE
+                </button>
               </div>
               <div class="first section">
                 <div class="section-title">
@@ -707,9 +726,7 @@
                     <p>Kenta Kodama is a software developer and cartographer currently located in the San Francisco Bay Area. If you would like to hire him to make your data map please feel free to contact him at any of the links below.</p>
                   </div>
                   <div id="resume-container">
-                    <a href="https://github.com/kentakodama">GitHub</a>
-                    <a href="https://www.linkedin.com/in/kentakodama/">Linkedin</a>
-                    <a href="mailto:kentakodama@gmail.com">email</a>
+
                   </div>
                 </div>
             </div> -->
