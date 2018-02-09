@@ -1523,12 +1523,43 @@
         europe.exit().remove();
       })
 
+      // const cycleHighlight = () => {
+      //     d3.selectAll('path')
+      //         .attr('fill', (d) => natoColorScheme(d, category))
+      //
+      // }
+
+      function cycleHighlight(delay) {
+          var x = 0;
+          var intervalID = window.setInterval(function () {
+
+            let nations = ['Germany', 'Ukaine', 'Greece', 'Italy', 'Romania', 'Czech Republic', 'Portugal', 'France', 'Sweden', 'Slovenia', 'Spain', 'Belarus' ]
+
+            d3.selectAll('path')
+                .attr('fill', (d) => {
+                  if(d.properties.admin == nations[x]) {
+                    return 'orange';
+                  } else {
+                    return 'gray'
+                  }
+                })
+
+
+             if (++x === nations.length) {
+                 window.clearInterval(intervalID);
+                 d3.selectAll('path')
+                     .attr('fill', 'gray')
+             }
+          }, delay);
+      }
+
+
+
 
       const enter1 = new Waypoint({
         element: document.getElementById('trigger-first-section'),
         handler: function() {
-          // hideIntro();
-          handleMapColorUpdate('blank');
+          cycleHighlight(120)
         }
         // offset: '40%'
       })
