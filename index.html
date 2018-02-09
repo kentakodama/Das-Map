@@ -9,6 +9,7 @@
 
     <script src="./ScrollToPlugin.min.js"></script>
 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <script src="./animation.gsap"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
@@ -134,9 +135,17 @@
         font-family: Helvetica;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: flex-end;
         width: 50%;
+      }
 
+      #link-container a {
+        color: white;
+        margin-left: 1.5em;
+      }
+
+      #link-container span {
+        font-size: 1.1em;
       }
 
 
@@ -401,8 +410,8 @@
                       <p>by Kenta Kodama</p>
                     </div>
                     <div id="link-container">
-                      <a href="https://github.com/kentakodama">GitHub</a>
-                      <a href="https://www.linkedin.com/in/kentakodama/">Linkedin</a>
+                      <a href="https://github.com/kentakodama"><span class="fa fa-github"></span></a>
+                      <a href="https://www.linkedin.com/in/kentakodama/"><span class="fa fa-linkedin-square"></span></a>
                     </div>
                   </div>
                 </div>
@@ -842,7 +851,7 @@
 											// .addIndicators({name: "1 (duration: 700)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
-							var scene1 = new ScrollMagic.Scene({triggerElement: "#header",triggerHook: 0, duration: "3151%"})
+							var scene1 = new ScrollMagic.Scene({triggerElement: "#header",triggerHook: 0})
 											.setPin("#map")
                       // .offset(-100)
 											// .addIndicators({name: "1 (duration: 700)"}) // add indicators (requires plugin)
