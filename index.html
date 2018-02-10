@@ -384,6 +384,7 @@
 					<script>
 						// init controller
 						var controller = new ScrollMagic.Controller();
+
 					</script>
 
 				</section>
@@ -401,6 +402,34 @@
 
           <div class="pin-container">
   					<div id="map"></div>
+
+            <script>
+            const height = document.documentElement.clientHeight
+            const width = document.documentElement.clientWidth
+
+            const projection = d3.geoOrthographic()
+                              .center([ 16, 30 ])
+                              .translate([ width/2, height/2 ])
+                              .scale([ width/1.07 ])
+                              .rotate([-10, -20, 0 ]);
+
+
+            let europe = void 0;
+
+            const path = d3.geoPath().projection(projection);
+
+            const svg = d3.select('#map')
+                          .append('svg')
+                          .attr('height', height)
+                          .attr('width', width)
+
+                  //this creates the background
+                  // by appending it before the 'g' map is rendered, it places it in the background
+                  svg.append("rect")
+                        .attr("width", "100%")
+                        .attr("height", "100%")
+                        .attr("fill", "#1E4675");
+            </script>
 
   					<div id="pin2">
               <div id="intro">
@@ -764,6 +793,8 @@
             //   require('./animation.gsap');
             //   var gsap = require("gsap");
 
+
+
 						$(function () { // wait for document ready
 							// build scene
 
@@ -1024,31 +1055,7 @@
       //
       // })
 
-      const height = document.documentElement.clientHeight
-      const width = document.documentElement.clientWidth
 
-      const projection = d3.geoOrthographic()
-                        .center([ 16, 30 ])
-                        .translate([ width/2, height/2 ])
-                        .scale([ width/1.07 ])
-                        .rotate([-10, -20, 0 ]);
-
-
-      let europe = void 0;
-
-      const path = d3.geoPath().projection(projection);
-
-      const svg = d3.select('#map')
-                    .append('svg')
-                    .attr('height', height)
-                    .attr('width', width)
-
-            //this creates the background
-            // by appending it before the 'g' map is rendered, it places it in the background
-            svg.append("rect")
-                  .attr("width", "100%")
-                  .attr("height", "100%")
-                  .attr("fill", "#1E4675");
 
       const switchLinkHighlight = (linkId, turnOn) => {
 
