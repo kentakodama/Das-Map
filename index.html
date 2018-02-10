@@ -193,7 +193,7 @@
       }
 
       #infoModal {
-      
+
         text-align: center;
 
         display: flex;
@@ -215,10 +215,6 @@
          opacity: 0;
          display: none;
          padding: .5em;
-      }
-
-      #infoModal p {
-        align-self: center;
       }
 
 
@@ -1538,7 +1534,7 @@
           .attr('stroke-width', 0.6)
           .attr('fill', (d) => 'gray')
           .on('mouseenter', (d) => showModal(d))
-          // .on('mouseout', () => hideModal())
+          .on('mouseout', () => hideModal())
 
 
 
