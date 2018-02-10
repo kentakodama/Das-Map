@@ -193,25 +193,32 @@
       }
 
       #infoModal {
+      
+        text-align: center;
+
         display: flex;
         justify-content: center;
         align-items: center;
          position: absolute;
          z-index: 1;
          background: white;
-         width: 14em;
-         height:6em;
+         min-width: 4em;
+         max-width: 7em;
+         height: auto
          color: white;
          font-size: 1em;
-         top:-150px;
-         left:-150px;
          border-radius: 5px;
          border: solid white;
          border-width: 1px;
-         background-color: #214773;
+         background-color:  #1E4675;
          font-family: Helvetica;
-         opacity: .8;
-         /* padding: .5em; */
+         opacity: 0;
+         display: none;
+         padding: .5em;
+      }
+
+      #infoModal p {
+        align-self: center;
       }
 
 
@@ -1129,7 +1136,7 @@
       const handleIncome = (duration) => {
 
         const colorbyIncome = d3.scaleLinear().domain([100, 50000]).range(['#FBB135', 'red']);
-        // makeMapTransparent(duration)
+
         d3.selectAll('path')
             .attr('fill', (d) => {
               let stateName = d.properties.admin
@@ -1141,8 +1148,6 @@
               return colorbyIncome(adjusted)
 
             })
-
-            // makeMapOpaque(duration);
       }
 
       const handleAccession = (stage) => {
@@ -1499,21 +1504,19 @@
 
            modal.style.left = event.pageX +'px';
            modal.style.top = event.pageY + 'px';
-           modal.style.height = '50px';
-           modal.style.width = '100px';
-           modal.style.paddingRight = '.7em';
-           modal.style.paddingLeft = '.7em';
+           modal.style.display = 'block';
+           modal.style.opacity = .8;
+
            modal.innerHTML = data.properties.admin;
       };
 
       const hideModal = () => {
+        console.log('hidiing modal');
 
-        // modal.classList.add('hide-modal')
         var modal = document.getElementById('infoModal');
-        modal.style.height = 0;
-        modal.style.width = 0;
-        modal.style.padding = 0;
-        modal.style.border = 'none';
+        modal.style.display = 'none';
+        modal.style.opacity = 0;
+
         modal.innerHTML = '';
       }
 
@@ -1534,7 +1537,9 @@
           .attr('stroke', 'white')
           .attr('stroke-width', 0.6)
           .attr('fill', (d) => 'gray')
-          .on('mouseover', (d) => showModal(d))
+          .on('mouseenter', (d) => showModal(d))
+          // .on('mouseout', () => hideModal())
+
 
 
 
