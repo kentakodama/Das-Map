@@ -1,10 +1,8 @@
-//   require('./animation.gsap');
-//   var gsap = require("gsap");
 
-$.getScript("../noframework.waypoints.min.js", function() {
-   alert("Script loaded but not necessarily executed.");
+// init controller
+var controller = new ScrollMagic.Controller();
 
-});
+
 const height = document.documentElement.clientHeight
 const width = document.documentElement.clientWidth
 
@@ -33,20 +31,8 @@ svg.append("rect")
 
 
 $(function () { // wait for document ready
-  // build scene
 
-  // init controller
-  var controller = new ScrollMagic.Controller();
-
-
-  // build tween
   var tween = TweenMax.from("#animate", 0.5, {autoAlpha: 0, scale: 0.7});
-
-  // var sceneNav = new ScrollMagic.Scene({triggerElement: "#pin3", duration: 200, triggerHook: "onLeave"})
-  // 				.setTween(tween)
-  // 				// .addIndicators() // add indicators (requires plugin)
-  // 				.addTo(controller);
-
 
 
   controller.scrollTo(function (newpos) {
@@ -628,6 +614,8 @@ function cycleHighlight(delay) {
 
 
 
+let el = document.getElementById('trigger-first-section')
+console.log(el);
 const enter1 = new Waypoint({
   element: document.getElementById('trigger-first-section'),
   handler: function() {
