@@ -30,10 +30,6 @@
 
     <style>
 
-    /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
       html, body, div, span, applet, object, iframe,
       h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -55,7 +51,7 @@
       	font: inherit;
       	vertical-align: baseline;
       }
-      /* HTML5 display-role reset for older browsers */
+
       article, aside, details, figcaption, figure,
       footer, header, hgroup, menu, nav, section {
       	display: block;
@@ -226,15 +222,9 @@
         height: 8vh;
         width: 100%;
 
-        /* transition:all 0.5s; */
-        /* position: relative; */
         z-index: 1;
       }
-/*
-      body.header-fixed nav {
-        position: fixed;
-        box-shadow:0 5px 0 rgba(0,0,0,0.1);
-      } */
+
       #logo {
         height: 100%;
         width: 15%;
@@ -288,15 +278,9 @@
       }
       #pin2 {
         width: 35%;
-        /* height: 5000px; */
+
 
       }
-
-      /* .big-space {
-        height: 92vh;
-        width: 100%;
-        background-color: #1E4675;
-      } */
 
       .section {
         display: flex;
@@ -380,7 +364,6 @@
               <button id="Schengen-link" data-position='enter-section-20' class="link">Schengen</button>
               <button id="migration-link" data-position='enter-section-25' class="link">Migration</button>
               <button id="nato-link" data-position='enter-section-28' class="link">NATO</button>
-              <!-- <button id="about-link" data-position='outro' class="link">About</button> -->
             </div>
           </nav>
           <div id="infoModal"></div>
@@ -395,9 +378,6 @@
 				</section>
 				<section class="demo">
 					<div class="spacer s2"></div>
-          <!-- <div class="big-space">
-
-          </div> -->
           <div class="trigger-container">
 
             <div id="trigger-map"></div>
@@ -782,17 +762,7 @@
 
 
           </div>
-            <!-- <div id="outro">
-              <img id="photo" src="https://res.cloudinary.com/dql6mlrow/image/upload/q_66/v1518084261/DSCF5974_yrqu9o.jpg"/>
-                <div id="outro-content">
-                  <div id="bio-container">
-                    <p>Kenta Kodama is a software developer and cartographer currently located in the San Francisco Bay Area. If you would like to hire him to make your data map please feel free to contact him at any of the links below.</p>
-                  </div>
-                  <div id="resume-container">
 
-                  </div>
-                </div>
-            </div> -->
 					<div class="spacer s2"></div>
 					<script>
             //   require('./animation.gsap');
@@ -843,56 +813,13 @@
               }
 
 
-
-
-              // var intro = $('#intro');
-              // var range = 200;
-              //
-              // $(window).on('scroll', function () {
-              //
-              //   var scrollTop = $(this).scrollTop(),
-              //       height = intro.outerHeight(),
-              //       offset = height/1.2,
-              //       calc = 1 - (scrollTop - offset + range) / range;
-              //
-              //   console.log(scrollTop);
-              //
-              //   intro.css({ 'opacity': calc });
-              //
-              //   if (calc > '1') {
-              //     intro.css({ 'opacity': 1 });
-              //   } else if ( calc < '0' ) {
-              //     intro.css({ 'opacity': 0 });
-              //   }
-              //
-              // });
-
-              // const nav = document.querySelector('#intro');
-              // let topOfNav = nav.offsetTop;
-              //
-              // function fixNav() {
-              //   if(window.scrollY >= topOfNav) {
-              //     document.body.style.paddingTop = nav.offsetHeight + 'px';
-              //     document.body.classList.add('header-fixed');
-              //   } else {
-              //     document.body.classList.remove('header-fixed');
-              //     document.body.style.paddingTop = 0;
-              //   }
-              // }
-              //
-              // window.addEventListener('scroll', fixNav);
-              //
-
-
 							var headerScene = new ScrollMagic.Scene({triggerElement: "#header",triggerHook: 0})
 											.setPin("#header")
-											// .addIndicators({name: "1 (duration: 700)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
 							var scene1 = new ScrollMagic.Scene({triggerElement: "#header",triggerHook: 0})
 											.setPin("#map")
                       // .offset(-100)
-											// .addIndicators({name: "1 (duration: 700)"}) // add indicators (requires plugin)
 											.addTo(controller);
 
 							var scene2 = new ScrollMagic.Scene({triggerElement: "#map",triggerHook: 0, duration: 1})
