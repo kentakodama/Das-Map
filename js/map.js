@@ -184,13 +184,12 @@ const handleIncome = (duration) => {
 
   d3.selectAll('path')
       .attr('fill', (d) => {
-        let stateName = d.properties.admin
+        let stateName = d.properties.admin;
         if (!membership[stateName]) { return '#FBB135' }
-        let status = membership[stateName]['GNI']
-        // console.log(parseInt(status.split(',').join('')));
-        let number = parseInt(status.split(',').join(''))
-        let adjusted = adjustIncome(number)
-        return colorbyIncome(adjusted)
+        let status = membership[stateName]['GNI'];
+        let number = parseInt(status.split(',').join(''));
+        let adjusted = adjustIncome(number);
+        return colorbyIncome(adjusted);
 
       })
 }
@@ -553,12 +552,9 @@ const showModal = function(data) {
 };
 
 const hideModal = () => {
-  console.log('hidiing modal');
-
   var modal = document.getElementById('infoModal');
   modal.style.display = 'none';
   modal.style.opacity = 0;
-
   modal.innerHTML = '';
 }
 
@@ -613,9 +609,6 @@ function cycleHighlight(delay) {
 }
 
 
-
-let el = document.getElementById('trigger-first-section')
-console.log(el);
 const enter1 = new Waypoint({
   element: document.getElementById('trigger-first-section'),
   handler: function() {
