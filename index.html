@@ -67,33 +67,6 @@
           <div class="pin-container">
   					<div id="map"></div>
 
-            <script>
-            const height = document.documentElement.clientHeight
-            const width = document.documentElement.clientWidth
-
-            const projection = d3.geoOrthographic()
-                              .center([ 16, 30 ])
-                              .translate([ width/2, height/2 ])
-                              .scale([ width/1.07 ])
-                              .rotate([-10, -20, 0 ]);
-
-
-            let europe = void 0;
-
-            const path = d3.geoPath().projection(projection);
-
-            const svg = d3.select('#map')
-                          .append('svg')
-                          .attr('height', height)
-                          .attr('width', width)
-
-                  //this creates the background
-                  // by appending it before the 'g' map is rendered, it places it in the background
-                  svg.append("rect")
-                        .attr("width", "100%")
-                        .attr("height", "100%")
-                        .attr("fill", "#1E4675");
-            </script>
 
   					<div id="pin2">
               <div id="intro">
@@ -443,81 +416,107 @@
           </div>
 
 					<div class="spacer s2"></div>
-					<script>
-            //   require('./animation.gsap');
-            //   var gsap = require("gsap");
-
-
-
-						$(function () { // wait for document ready
-							// build scene
-
-
-              // build tween
-            	var tween = TweenMax.from("#animate", 0.5, {autoAlpha: 0, scale: 0.7});
-
-            	// var sceneNav = new ScrollMagic.Scene({triggerElement: "#pin3", duration: 200, triggerHook: "onLeave"})
-            	// 				.setTween(tween)
-            	// 				// .addIndicators() // add indicators (requires plugin)
-            	// 				.addTo(controller);
-
-
-
-            	controller.scrollTo(function (newpos) {
-                let constant = .12
-                let distance = Math.abs(newpos - window.pageYOffset)
-                if(distance < window.innerHeight) {
-                  constant = .8
-                }
-                let slides = distance/window.innerHeight
-                let speed = slides * constant
-            		TweenMax.to(window, speed, {scrollTo: {y: newpos}});
-            	});
-
-
-            	//  bind scroll to anchor links
-              const buttons = document.querySelectorAll('.link')
-              for (var i = 0; i < buttons.length; i++) {
-                buttons[i].addEventListener("click", function (e) {
-
-              		var pos = $(this).attr("data-position");
-
-              		if ($(pos).length > 0) {
-              			e.preventDefault();
-                  }
-              			// trigger scroll
-              			controller.scrollTo(`#${pos}`)
-                }
-              	)
-              }
-
-
-							var headerScene = new ScrollMagic.Scene({triggerElement: "#header",triggerHook: 0})
-											.setPin("#header")
-											.addTo(controller);
-
-							var scene1 = new ScrollMagic.Scene({triggerElement: "#header",triggerHook: 0})
-											.setPin("#map")
-                      // .offset(-100)
-											.addTo(controller);
-
-							var scene2 = new ScrollMagic.Scene({triggerElement: "#map",triggerHook: 0, duration: 1})
-											.setPin("#pin2")
-                      // .offset(-100)
-											.addTo(controller);
-
-							var scene33 = new ScrollMagic.Scene({triggerElement: "#enter-section-32",triggerHook: 0})
-											.setPin("#pin33")
-											.addTo(controller);
-
-
-						});
-					</script>
+			
 				</section>
 
 
 			</div>
       <script>
+
+      //   require('./animation.gsap');
+      //   var gsap = require("gsap");
+
+      const height = document.documentElement.clientHeight
+      const width = document.documentElement.clientWidth
+
+      const projection = d3.geoOrthographic()
+      .center([ 16, 30 ])
+      .translate([ width/2, height/2 ])
+      .scale([ width/1.07 ])
+      .rotate([-10, -20, 0 ]);
+
+
+      let europe = void 0;
+
+      const path = d3.geoPath().projection(projection);
+
+      const svg = d3.select('#map')
+      .append('svg')
+      .attr('height', height)
+      .attr('width', width)
+
+      //this creates the background
+      // by appending it before the 'g' map is rendered, it places it in the background
+      svg.append("rect")
+      .attr("width", "100%")
+      .attr("height", "100%")
+      .attr("fill", "#1E4675");
+
+
+      $(function () { // wait for document ready
+        // build scene
+
+
+
+        // build tween
+        var tween = TweenMax.from("#animate", 0.5, {autoAlpha: 0, scale: 0.7});
+
+        // var sceneNav = new ScrollMagic.Scene({triggerElement: "#pin3", duration: 200, triggerHook: "onLeave"})
+        // 				.setTween(tween)
+        // 				// .addIndicators() // add indicators (requires plugin)
+        // 				.addTo(controller);
+
+
+
+        controller.scrollTo(function (newpos) {
+          let constant = .12
+          let distance = Math.abs(newpos - window.pageYOffset)
+          if(distance < window.innerHeight) {
+            constant = .8
+          }
+          let slides = distance/window.innerHeight
+          let speed = slides * constant
+          TweenMax.to(window, speed, {scrollTo: {y: newpos}});
+        });
+
+
+        //  bind scroll to anchor links
+        const buttons = document.querySelectorAll('.link')
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].addEventListener("click", function (e) {
+
+            var pos = $(this).attr("data-position");
+
+            if ($(pos).length > 0) {
+              e.preventDefault();
+            }
+              // trigger scroll
+              controller.scrollTo(`#${pos}`)
+          }
+          )
+        }
+
+
+        var headerScene = new ScrollMagic.Scene({triggerElement: "#header",triggerHook: 0})
+                .setPin("#header")
+                .addTo(controller);
+
+        var scene1 = new ScrollMagic.Scene({triggerElement: "#header",triggerHook: 0})
+                .setPin("#map")
+                // .offset(-100)
+                .addTo(controller);
+
+        var scene2 = new ScrollMagic.Scene({triggerElement: "#map",triggerHook: 0, duration: 1})
+                .setPin("#pin2")
+                // .offset(-100)
+                .addTo(controller);
+
+        var scene33 = new ScrollMagic.Scene({triggerElement: "#enter-section-32",triggerHook: 0})
+                .setPin("#pin33")
+                .addTo(controller);
+
+
+      });
 
 
       const switchLinkHighlight = (linkId, turnOn) => {
