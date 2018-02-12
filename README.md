@@ -1,6 +1,8 @@
 # Das Map!
 
-[Live](http://kentakodama.github.io/Das-Map)
+![Demo](demo/dasmap-min.gif)
+
+## [Live](http://kentakodama.github.io/Das-Map)
 
 ## Background
 
@@ -15,5 +17,3 @@ As a History major, I wrote my thesis on European integration and how it has aff
 +  Data map that responds to scrolling function calls.
 + Synthesizes geopolitical and economic data to create a historical timeline.
 +  Responsive navigation bar that doubles as an informative progress bar.
-
-![Demo](demo/dasmap-min.gif)
