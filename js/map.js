@@ -99,7 +99,7 @@ const switchLinkHighlight = (linkId, turnOn) => {
 }
 const membership = {};
 
-d3.csv("EuropeanStates.csv", function(data) {
+d3.csv("data/EuropeanStates.csv", function(data) {
 
   for (var i = 0; i < data.length; i++) {
     membership[data[i].State] = data[i]
@@ -349,7 +349,7 @@ const euroColorScheme = (data, slide) => {
 
 const debtTable = {}
 
-d3.csv("debt.csv", function(data) {
+d3.csv("data/debt.csv", function(data) {
 
   for (var i = 0; i < data.length; i++) {
     debtTable[data[i].country] = data[i]
@@ -431,7 +431,7 @@ const schengenColorScheme = (data, status) => {
 
 const migrationTable = {}
 
-d3.csv("migration.csv", function(data) {
+d3.csv("data/migration.csv", function(data) {
 
   for (var i = 0; i < data.length; i++) {
     migrationTable[data[i].country] = data[i]
@@ -473,7 +473,7 @@ const migrationColorScheme = (data, category) => {
 
 const natoMembers = {};
 
-d3.csv("nato.csv", function(data) {
+d3.csv("data/nato.csv", function(data) {
 
   for (var i = 0; i < data.length; i++) {
     natoMembers[data[i].country] = data[i]
@@ -565,7 +565,7 @@ const hideModal = () => {
 //must have window events here not on the country
 window.addEventListener('scroll', () => hideModal())
 
-d3.json("region_un_Europe_subunits.json", function(error, data) {
+d3.json("data/region_un_Europe_subunits.json", function(error, data) {
 
    const countries = data.features
 
